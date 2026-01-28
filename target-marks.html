@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CBSE Class 10 Target Percentage Calculator - Find out how many marks you need in each subject to achieve your desired percentage.">
+    <meta name="keywords" content="CBSE target calculator, class 10 marks calculator, percentage goal, CBSE planning">
+    <title>CBSE Class 10 Target Percentage Calculator 2025 | Plan Your Marks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 45px;
+            animation: fadeIn 0.5s ease-in;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        .target-input {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        input[type="number"] {
+            padding: 16px 50px 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .percentage-symbol {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        input[type="number"].valid {
+            border-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        input[type="number"].invalid {
+            border-color: #fc8181;
+            background: #fff5f5;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-calculate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-calculate:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        .btn-reset:hover {
+            background: #e0e0e0;
+        }
+
+        /* Error message styling */
+        .error-message {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: shake 0.3s ease;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        /* Result Section */
+        .result {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+            animation: slideIn 0.5s ease;
+            margin-bottom: 30px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border: none;
+            padding: 0;
+        }
+
+        .marks-display {
+            font-size: 56px;
+            font-weight: bold;
+            color: white;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .marks-label {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .result-details {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            color: white;
+        }
+
+        .result-details p {
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .breakdown-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .breakdown-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .breakdown-item span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Example Box */
+        .example-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #f6ad55;
+        }
+
+        .example-box h3 {
+            color: #744210;
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .example-box p {
+            color: #744210;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .try-example-btn {
+            background: #ed8936;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .try-example-btn:hover {
+            background: #dd6b20;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(237, 137, 54, 0.3);
+        }
+
+        /* Info Section */
+        .info-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-section ul {
+            color: #666;
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .info-section li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: #2c5282;
+            margin-bottom: 10px;
+        }
+
+        /* Tips Section */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tip-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .tip-card h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .tip-card p {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .marks-display {
+                font-size: 42px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .example-box {
+                padding: 20px;
+            }
+
+            .breakdown-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav style="text-align:center; margin-bottom:20px;">
+            <a href="index.html">Best of 5 Calculator</a> |
+            <a href="target-marks.html">Target % Calculator</a>
+        </nav>
+        <h1>🎯 CBSE Class 10 Target Percentage Calculator</h1>
+        <p class="subtitle">Plan Your Study Goals - Calculate Required Marks Per Subject</p>
+        <p style="text-align:center; font-size:14px; color:#555;">
+            ✅ Based on official CBSE Class 10 calculation rules | Updated
+        </p>
+
+        <!-- Error Message Display -->
+        <div class="error-message" id="errorMessage"></div>
+
+        <!-- Example Section -->
+        <div class="example-box">
+            <h3>📝 Quick Example</h3>
+            <p><strong>Goal:</strong> Want to score 90% in Class 10?</p>
+            <p><strong>Required:</strong> You need to score an average of 90 marks in each of your best 5 subjects.</p>
+            <p><strong>Total:</strong> 450 out of 500 marks</p>
+            <button class="try-example-btn" onclick="fillExampleData()">Try 90% Target</button>
+        </div>
+
+        <h2>Enter Your Target Percentage</h2>
+
+        <div class="input-section">
+            <div class="target-input">
+                <label for="targetPercentage">What percentage do you want to achieve?</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number" 
+                        id="targetPercentage" 
+                        min="0" 
+                        max="100" 
+                        step="0.01"
+                        placeholder="Enter your target percentage"
+                        oninput="validateInput(this)"
+                    >
+                    <span class="percentage-symbol">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-calculate" onclick="calculateRequiredMarks()" id="calculateBtn">Calculate Required Marks</button>
+            <button class="btn-reset" onclick="resetForm()">Reset</button>
+        </div>
+
+        <!-- Result Display -->
+        <div class="result" id="result">
+            <h2>Your Target Plan</h2>
+            <div class="marks-display" id="marksDisplay">0</div>
+            <div class="marks-label">Average marks needed per subject (out of 100)</div>
+            
+            <div class="result-details">
+                <p><strong>Target Percentage:</strong> <span id="targetDisplay">0</span>%</p>
+                <p><strong>Total Marks Required:</strong> <span id="totalRequired">0</span> out of 500</p>
+                
+                <div class="breakdown-grid">
+                    <div class="breakdown-item">
+                        <strong>📚 Best 5 Subjects</strong>
+                        <span id="best5Average">0</span> marks each
+                    </div>
+                    <div class="breakdown-item">
+                        <strong>🎓 Total Score</strong>
+                        <span id="totalScore">0</span> / 500
+                    </div>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+                    <strong>Remember:</strong> CBSE uses your best 5 subjects for percentage calculation. 
+                    Your 6th subject acts as a backup!
+                </p>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>How to Use This Target Calculator</h2>
+            <p>
+                This calculator helps you plan your study goals by showing exactly how many marks you need 
+                to achieve your desired CBSE Class 10 percentage. It's based on the official CBSE Best of 5 
+                calculation method.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>📊 Calculation Formula:</strong></p>
+                <p>Required Marks Per Subject = (Target Percentage × 500) ÷ 100 ÷ 5</p>
+                <p>Where 500 = Maximum total marks (5 subjects × 100 marks each)</p>
+            </div>
+
+            <h3>Understanding Your Results</h3>
+            <ul>
+                <li><strong>Average Marks:</strong> This is the score you need in each of your best 5 subjects</li>
+                <li><strong>Best of 5:</strong> CBSE picks your highest-scoring 5 subjects out of 6</li>
+                <li><strong>Flexibility:</strong> You can score higher in some subjects and lower in others, as long as the average matches</li>
+                <li><strong>Language Rule:</strong> One language subject (English/Hindi) must be included in your best 5</li>
+            </ul>
+
+            <h3>Smart Study Tips</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🎯 Set Realistic Goals</h4>
+                    <p>Choose a target percentage that challenges you but is achievable based on your current performance.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📊 Balance Your Subjects</h4>
+                    <p>Focus extra effort on subjects where you can improve the most. Some subjects may need more attention than others.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📝 Track Your Progress</h4>
+                    <p>Use pre-board exams and practice tests to monitor if you're on track to meet your target marks.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🚀 Use Your 6th Subject</h4>
+                    <p>Your 6th subject is a safety net. If you perform better in it than another subject, it will count instead.</p>
+                </div>
+            </div>
+
+            <h3>Common Target Percentages</h3>
+            <ul>
+                <li><strong>95-100%:</strong> Requires 95-100 marks per subject - Excellent performance needed</li>
+                <li><strong>90-95%:</strong> Requires 90-95 marks per subject - Very good performance needed</li>
+                <li><strong>85-90%:</strong> Requires 85-90 marks per subject - Good, achievable target</li>
+                <li><strong>75-85%:</strong> Requires 75-85 marks per subject - Moderate effort required</li>
+                <li><strong>60-75%:</strong> Requires 60-75 marks per subject - First class performance</li>
+            </ul>
+
+            <h3>Important Notes</h3>
+            <ul>
+                <li>✅ The calculator shows the <strong>average</strong> marks needed - you can vary across subjects</li>
+                <li>✅ Your actual marks can be distributed differently (e.g., 95, 92, 88, 85, 90 averages to 90)</li>
+                <li>✅ Focus on your stronger subjects while maintaining passing marks in all subjects</li>
+                <li>✅ Remember that passing all subjects is mandatory, regardless of your percentage goal</li>
+                <li>✅ This is a planning tool - consistent study and practice are key to success</li>
+            </ul>
+        </div>
+        <footer style="text-align:center; margin-top:40px; font-size:13px;          color:#777;">
+        Made for CBSE Class 10 students • Free & student-friendly
+        </footer>
+    </div>
+
+    <script>
+        /**
+         * Display error message to user
+         * @param {string} message - Error message to display
+         */
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = '⚠️ ' + message;
+            errorDiv.classList.add('show');
+            
+            // Auto-hide error after 5 seconds
+            setTimeout(() => {
+                errorDiv.classList.remove('show');
+            }, 5000);
+            
+            // Scroll to error message
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        /**
+         * Hide error message
+         */
+        function hideError() {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.classList.remove('show');
+        }
+
+        /**
+         * Real-time input validation with visual feedback
+         * @param {HTMLElement} input - The input element being validated
+         */
+        function validateInput(input) {
+            const value = parseFloat(input.value);
+            
+            // Remove previous validation classes
+            input.classList.remove('valid', 'invalid');
+            
+            // If empty, no validation styling
+            if (input.value === '') {
+                return;
+            }
+            
+            // Validate range
+            if (isNaN(value) || value < 0 || value > 100) {
+                input.classList.add('invalid');
+            } else {
+                input.classList.add('valid');
+            }
+        }
+
+        /**
+         * Fill form with example data (90% target)
+         */
+        function fillExampleData() {
+            document.getElementById('targetPercentage').value = '90';
+            document.getElementById('targetPercentage').classList.add('valid');
+            hideError();
+            
+            // Scroll to calculate button
+            document.getElementById('calculateBtn').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+
+        /**
+         * Main function to calculate required marks per subject
+         * Based on CBSE Best of 5 calculation (5 subjects out of 100 each = 500 total)
+         */
+        function calculateRequiredMarks() {
+            try {
+                // Hide any previous errors
+                hideError();
+                
+                // Get target percentage input
+                const targetPercentage = parseFloat(document.getElementById('targetPercentage').value);
+
+                // VALIDATION 1: Check if field is filled
+                if (isNaN(targetPercentage) || document.getElementById('targetPercentage').value === '') {
+                    showError('Please enter your target percentage.');
+                    return;
+                }
+
+                // VALIDATION 2: Check if percentage is within valid range (0-100)
+                if (targetPercentage < 0) {
+                    showError('Percentage cannot be negative. Please enter a value between 0 and 100.');
+                    return;
+                }
+
+                if (targetPercentage > 100) {
+                    showError('Percentage cannot exceed 100. Please enter a valid target percentage.');
+                    return;
+                }
+
+                // VALIDATION 3: Check for excessive decimal places
+                const decimalPlaces = (targetPercentage.toString().split('.')[1] || '').length;
+                if (decimalPlaces > 2) {
+                    showError('Please use maximum 2 decimal places for percentage.');
+                    return;
+                }
+
+                // Disable button to prevent double-clicking
+                const calculateBtn = document.getElementById('calculateBtn');
+                calculateBtn.disabled = true;
+                calculateBtn.textContent = 'Calculating...';
+
+                // CALCULATION LOGIC
+                // Total marks needed = (Target Percentage / 100) × 500
+                // 500 = Total marks for best 5 subjects (5 subjects × 100 marks each)
+                const totalMarksRequired = (targetPercentage / 100) * 500;
+
+                // Average marks needed per subject = Total marks required / 5 subjects
+                const averageMarksPerSubject = totalMarksRequired / 5;
+
+                // Display the results
+                displayResults(targetPercentage, totalMarksRequired, averageMarksPerSubject);
+
+                // Re-enable button after calculation
+                setTimeout(() => {
+                    calculateBtn.disabled = false;
+                    calculateBtn.textContent = 'Calculate Required Marks';
+                }, 500);
+
+            } catch (error) {
+                // Handle any unexpected errors gracefully
+                console.error('Calculation error:', error);
+                showError('An unexpected error occurred. Please check your input and try again.');
+                
+                // Re-enable button
+                const calculateBtn = document.getElementById('calculateBtn');
+                calculateBtn.disabled = false;
+                calculateBtn.textContent = 'Calculate Required Marks';
+            }
+        }
+
+        /**
+         * Function to display calculated results in the UI
+         * @param {number} targetPercentage - User's target percentage
+         * @param {number} totalMarksRequired - Total marks needed out of 500
+         * @param {number} averageMarksPerSubject - Average marks needed per subject
+         */
+        function displayResults(targetPercentage, totalMarksRequired, averageMarksPerSubject) {
+            try {
+                // Get result container element
+                const resultDiv = document.getElementById('result');
+                
+                // Update main marks display (average per subject)
+                document.getElementById('marksDisplay').textContent = averageMarksPerSubject.toFixed(2);
+                
+                // Update target percentage display
+                document.getElementById('targetDisplay').textContent = targetPercentage.toFixed(2);
+                
+                // Update total marks required
+                document.getElementById('totalRequired').textContent = totalMarksRequired.toFixed(2);
+                
+                // Update breakdown values
+                document.getElementById('best5Average').textContent = averageMarksPerSubject.toFixed(2);
+                document.getElementById('totalScore').textContent = totalMarksRequired.toFixed(2);
+
+                // Show the result container with animation
+                resultDiv.classList.add('show');
+
+                // Smooth scroll to results
+                setTimeout(() => {
+                    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+
+            } catch (error) {
+                console.error('Display error:', error);
+                showError('Error displaying results. Please try again.');
+            }
+        }
+
+        /**
+         * Function to reset the form and clear all inputs
+         */
+        function resetForm() {
+            try {
+                // Clear input field
+                const input = document.getElementById('targetPercentage');
+                input.value = '';
+                input.classList.remove('valid', 'invalid');
+
+                // Hide the result display
+                const resultDiv = document.getElementById('result');
+                resultDiv.classList.remove('show');
+
+                // Hide any error messages
+                hideError();
+
+                // Scroll back to top for better UX
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Reset error:', error);
+                // Last resort - reload the page
+                location.reload();
+            }
+        }
+
+        /**
+         * Initialize event listeners when DOM is loaded
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const input = document.getElementById('targetPercentage');
+                
+                // Enter key to calculate
+                input.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        calculateRequiredMarks();
+                    }
+                });
+
+                // Prevent invalid characters
+                input.addEventListener('keydown', function(event) {
+                    // Allow: backspace, delete, tab, escape, enter
+                    if ([46, 8, 9, 27, 13].indexOf(event.keyCode) !== -1 ||
+                        // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+                        (event.keyCode === 65 && event.ctrlKey === true) ||
+                        (event.keyCode === 67 && event.ctrlKey === true) ||
+                        (event.keyCode === 86 && event.ctrlKey === true) ||
+                        (event.keyCode === 88 && event.ctrlKey === true) ||
+                        // Allow: home, end, left, right
+                        (event.keyCode >= 35 && event.keyCode <= 39)) {
+                        return;
+                    }
+                    // Ensure that it is a number or decimal point
+                    if ((event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) &&
+                        (event.keyCode < 96 || event.keyCode > 105) &&
+                        event.keyCode !== 190 && event.keyCode !== 110) {
+                        event.preventDefault();
+                    }
+                });
+
+                console.log('CBSE Target Calculator initialized successfully!');
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
