@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CBSE Class 10 Stream Eligibility Calculator - Find out which stream (Science, Commerce, Arts) you're eligible for based on your percentage.">
+    <meta name="keywords" content="Check which stream you are eligible for after CBSE Class 10 based on your expected percentage. Science, Commerce and Arts guidance.">
+    <title>CBSE Class 10 Stream Eligibility Calculator – Science, Commerce, Arts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 750px;
+            width: 100%;
+            padding: 45px;
+            animation: fadeIn 0.5s ease-in;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        .percentage-input {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        input[type="number"] {
+            padding: 16px 50px 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .percentage-symbol {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        input[type="number"].valid {
+            border-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        input[type="number"].invalid {
+            border-color: #fc8181;
+            background: #fff5f5;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-calculate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-calculate:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        .btn-reset:hover {
+            background: #e0e0e0;
+        }
+
+        /* Error message styling */
+        .error-message {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: shake 0.3s ease;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        /* Result Section */
+        .result {
+            display: none;
+            animation: slideIn 0.5s ease;
+            margin-bottom: 30px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .percentage-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .percentage-badge h3 {
+            margin: 0;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .percentage-badge .big-percentage {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        /* Stream Cards */
+        .streams-grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .stream-card {
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 3px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stream-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        /* Eligible Stream - Green */
+        .stream-card.eligible {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+            border-color: #48bb78;
+        }
+
+        .stream-card.eligible::before {
+            background: #48bb78;
+        }
+
+        .stream-card.eligible .stream-icon {
+            color: #22543d;
+        }
+
+        .stream-card.eligible .stream-status {
+            background: #48bb78;
+            color: white;
+        }
+
+        /* Borderline Stream - Orange */
+        .stream-card.borderline {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-color: #ed8936;
+        }
+
+        .stream-card.borderline::before {
+            background: #ed8936;
+        }
+
+        .stream-card.borderline .stream-icon {
+            color: #7c2d12;
+        }
+
+        .stream-card.borderline .stream-status {
+            background: #ed8936;
+            color: white;
+        }
+
+        /* Not Recommended Stream - Gray */
+        .stream-card.not-recommended {
+            background: #f7fafc;
+            border-color: #cbd5e0;
+        }
+
+        .stream-card.not-recommended::before {
+            background: #cbd5e0;
+        }
+
+        .stream-card.not-recommended .stream-icon {
+            color: #718096;
+        }
+
+        .stream-card.not-recommended .stream-status {
+            background: #718096;
+            color: white;
+        }
+
+        .stream-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .stream-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stream-icon {
+            font-size: 28px;
+        }
+
+        .stream-title h4 {
+            margin: 0;
+            font-size: 22px;
+            color: #2d3748;
+        }
+
+        .stream-title .subtitle-text {
+            font-size: 13px;
+            color: #4a5568;
+            font-weight: normal;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .stream-status {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stream-content p {
+            color: #2d3748;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .cutoff-info {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #2d3748;
+        }
+
+        .cutoff-info strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .disclaimer h4 {
+            color: #c53030;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .disclaimer p {
+            color: #742a2a;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        /* Example Box */
+        .example-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #f6ad55;
+        }
+
+        .example-box h3 {
+            color: #744210;
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .example-box p {
+            color: #744210;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .example-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .try-example-btn {
+            background: #ed8936;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .try-example-btn:hover {
+            background: #dd6b20;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(237, 137, 54, 0.3);
+        }
+
+        /* Info Section */
+        .info-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-section ul {
+            color: #666;
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .info-section li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* Stream Details Grid */
+        .stream-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stream-detail-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .stream-detail-card h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .stream-detail-card ul {
+            margin-left: 15px;
+            color: #4a5568;
+            font-size: 14px;
+        }
+
+        .stream-detail-card li {
+            margin-bottom: 6px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .percentage-badge .big-percentage {
+                font-size: 36px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .example-box {
+                padding: 20px;
+            }
+
+            .example-buttons {
+                flex-direction: column;
+            }
+
+            .try-example-btn {
+                width: 100%;
+            }
+
+            .stream-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .stream-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <nav style="text-align:center; margin-bottom:20px;">
+            <a href="index.html">Best of 5 Calculator</a> |
+            <a href="target-marks.html">Target Marks Calculator</a>|
+            <a href="stream-eligibility.html">Stream Eligibility Calculator</a>
+        </nav>
+        <h1>🎓 CBSE Class 10 Stream Eligibility Calculator – Science, Commerce, Arts</h1>
+        <p style="text-align: center;color: #718096;font-size: 16px;">Based on common CBSE school cut-offs • Student guidance tool</p>
+        <p class="subtitle">Discover Which Stream Is Right For You - Science, Commerce, or Arts</p>
+
+        <!-- Error Message Display -->
+        <div class="error-message" id="errorMessage"></div>
+
+        <!-- Example Section -->
+        <div class="example-box">
+            <h3>📝 Try Quick Examples</h3>
+            <p>Not sure what percentage to enter? Try these examples to see different stream options:</p>
+            <div class="example-buttons">
+                <button class="try-example-btn" onclick="fillExampleData(85)">Try 85%</button>
+                <button class="try-example-btn" onclick="fillExampleData(75)">Try 75%</button>
+                <button class="try-example-btn" onclick="fillExampleData(60)">Try 60%</button>
+            </div>
+        </div>
+
+        <h2>Enter Your Expected Percentage</h2>
+
+        <div class="input-section">
+            <div class="percentage-input">
+                <label for="expectedPercentage">What percentage do you expect to score in Class 10?</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number" 
+                        id="expectedPercentage" 
+                        min="0" 
+                        max="100" 
+                        step="0.01"
+                        placeholder="Enter your expected percentage"
+                        oninput="validateInput(this)"
+                    >
+                    <span class="percentage-symbol">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-calculate" onclick="calculateEligibility()" id="calculateBtn">Check Stream Eligibility</button>
+            <button class="btn-reset" onclick="resetForm()">Reset</button>
+        </div>
+
+        <!-- Result Display -->
+        <div class="result" id="result">
+            <div class="percentage-badge">
+                <h3>Your Expected Percentage</h3>
+                <div class="big-percentage" id="displayPercentage">0%</div>
+            </div>
+
+            <h2 style="margin-top: 0;">Your Stream Options</h2>
+
+            <div class="streams-grid" id="streamsGrid">
+                <!-- Stream cards will be dynamically inserted here -->
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <h4>⚠️ Important Disclaimer</h4>
+                <p><strong>Please Note:</strong> Stream eligibility varies significantly between schools and regions. The cutoff percentages shown here are approximate and for general guidance only.</p>
+                <p><strong>Always verify with your specific school</strong> for their exact admission criteria. Some schools may have different cutoffs, entrance tests, or interview processes.</p>
+                <p><strong>Your interests and career goals</strong> should be the primary factor in choosing a stream, not just your percentage.</p>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>Understanding Stream Selection</h2>
+            <p>
+                Choosing the right stream after Class 10 is one of the most important decisions in your academic journey. 
+                While your percentage is a factor, it's equally important to consider your interests, strengths, and career goals.
+            </p>
+
+            <h3>Stream Overview</h3>
+            <div class="stream-details-grid">
+                <div class="stream-detail-card">
+                    <h4>🔬 Science Stream</h4>
+                    <p><strong>PCM (Physics, Chemistry, Math):</strong></p>
+                    <ul>
+                        <li>Engineering courses</li>
+                        <li>Computer Science</li>
+                        <li>Architecture</li>
+                        <li>Research & Technology</li>
+                    </ul>
+                    <p><strong>PCB (Physics, Chemistry, Biology):</strong></p>
+                    <ul>
+                        <li>Medical (MBBS, BDS, etc.)</li>
+                        <li>Pharmacy</li>
+                        <li>Biotechnology</li>
+                        <li>Life Sciences</li>
+                    </ul>
+                </div>
+
+                <div class="stream-detail-card">
+                    <h4>💼 Commerce Stream</h4>
+                    <p><strong>Career Paths:</strong></p>
+                    <ul>
+                        <li>Chartered Accountancy (CA)</li>
+                        <li>Company Secretary (CS)</li>
+                        <li>Business Management (BBA, MBA)</li>
+                        <li>Economics & Finance</li>
+                        <li>Banking & Insurance</li>
+                        <li>Stock Market & Investment</li>
+                    </ul>
+                </div>
+
+                <div class="stream-detail-card">
+                    <h4>🎨 Arts/Humanities Stream</h4>
+                    <p><strong>Career Paths:</strong></p>
+                    <ul>
+                        <li>Law (LLB, judiciary)</li>
+                        <li>Mass Communication & Journalism</li>
+                        <li>Psychology & Social Work</li>
+                        <li>Teaching & Education</li>
+                        <li>Creative Fields (Design, Writing)</li>
+                        <li>Civil Services (IAS, IPS)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>General Cutoff Ranges (Approximate)</h3>
+            <ul>
+                <li><strong>Science (PCM/PCB):</strong> Typically 75-80% and above in competitive schools; 60-70% in many schools</li>
+                <li><strong>Commerce:</strong> Usually 60-70% and above, though some prestigious institutions require 75%+</li>
+                <li><strong>Arts/Humanities:</strong> Generally 50-60% and above, very flexible in most schools</li>
+            </ul>
+
+            <h3>Factors Beyond Percentage</h3>
+            <ul>
+                <li><strong>Personal Interest:</strong> Choose based on what subjects you enjoy and want to pursue</li>
+                <li><strong>Career Goals:</strong> Align your stream with your long-term career aspirations</li>
+                <li><strong>Subject Strength:</strong> Consider which subjects you perform best in</li>
+                <li><strong>School Policy:</strong> Check your school's specific admission criteria and availability</li>
+                <li><strong>Future Flexibility:</strong> Some streams offer more career path flexibility than others</li>
+            </ul>
+
+            <h3>Important Tips</h3>
+            <ul>
+                <li>✅ Don't choose a stream solely based on peer pressure or parental expectations</li>
+                <li>✅ Research career options in each stream before deciding</li>
+                <li>✅ Talk to seniors, teachers, and career counselors for guidance</li>
+                <li>✅ Consider your strengths in specific subjects (Math, Biology, etc.)</li>
+                <li>✅ Remember: Success comes from passion and hard work, not just the stream you choose</li>
+                <li>✅ Many successful people have switched fields later - your choice isn't final forever</li>
+            </ul>
+
+            <h3>Common Myths Debunked</h3>
+            <ul>
+                <li><strong>Myth:</strong> "Only Science students can be successful" - <strong>False!</strong> Success exists in all streams</li>
+                <li><strong>Myth:</strong> "Arts is for weak students" - <strong>False!</strong> Arts requires strong analytical and creative skills</li>
+                <li><strong>Myth:</strong> "Commerce has limited options" - <strong>False!</strong> Commerce offers diverse, lucrative careers</li>
+                <li><strong>Myth:</strong> "You can't switch streams later" - <strong>False!</strong> Many students successfully change paths in college</li>
+            </ul>
+        </div>
+        <footer style="text-align:center; margin-top:40px; font-size:13px;          color:#777;">
+            Made for CBSE Class 10 students • Free & student-friendly
+        </footer>
+    </div>
+
+    <script>
+        /**
+         * Display error message to user
+         * @param {string} message - Error message to display
+         */
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = '⚠️ ' + message;
+            errorDiv.classList.add('show');
+            
+            // Auto-hide error after 5 seconds
+            setTimeout(() => {
+                errorDiv.classList.remove('show');
+            }, 5000);
+            
+            // Scroll to error message
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        /**
+         * Hide error message
+         */
+        function hideError() {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.classList.remove('show');
+        }
+
+        /**
+         * Real-time input validation with visual feedback
+         * @param {HTMLElement} input - The input element being validated
+         */
+        function validateInput(input) {
+            const value = parseFloat(input.value);
+            
+            // Remove previous validation classes
+            input.classList.remove('valid', 'invalid');
+            
+            // If empty, no validation styling
+            if (input.value === '') {
+                return;
+            }
+            
+            // Validate range
+            if (isNaN(value) || value < 0 || value > 100) {
+                input.classList.add('invalid');
+            } else {
+                input.classList.add('valid');
+            }
+        }
+
+        /**
+         * Fill form with example data
+         * @param {number} percentage - Example percentage to fill
+         */
+        function fillExampleData(percentage) {
+            document.getElementById('expectedPercentage').value = percentage;
+            document.getElementById('expectedPercentage').classList.add('valid');
+            hideError();
+            
+            // Auto-calculate
+            calculateEligibility();
+        }
+
+        /**
+         * Determine eligibility status for a stream based on percentage
+         * @param {number} percentage - Student's percentage
+         * @param {string} stream - Stream name (science, commerce, arts)
+         * @returns {object} - Status and details
+         */
+        function getStreamEligibility(percentage, stream) {
+            const eligibility = {
+                science: {
+                    excellent: 80,      // Highly eligible
+                    good: 70,           // Eligible
+                    borderline: 60,     // Borderline/competitive
+                    cutoff: "75-80%"
+                },
+                commerce: {
+                    excellent: 75,
+                    good: 65,
+                    borderline: 55,
+                    cutoff: "60-70%"
+                },
+                arts: {
+                    excellent: 60,
+                    good: 50,
+                    borderline: 40,
+                    cutoff: "50-60%"
+                }
+            };
+
+            const streamData = eligibility[stream];
+            
+            if (percentage >= streamData.excellent) {
+                return { status: 'eligible', level: 'excellent' };
+            } else if (percentage >= streamData.good) {
+                return { status: 'eligible', level: 'good' };
+            } else if (percentage >= streamData.borderline) {
+                return { status: 'borderline', level: 'borderline' };
+            } else {
+                return { status: 'not-recommended', level: 'below' };
+            }
+        }
+
+        /**
+         * Main function to calculate stream eligibility
+         */
+        function calculateEligibility() {
+            try {
+                // Hide any previous errors
+                hideError();
+                
+                // Get percentage input
+                const percentage = parseFloat(document.getElementById('expectedPercentage').value);
+
+                // VALIDATION 1: Check if field is filled
+                if (isNaN(percentage) || document.getElementById('expectedPercentage').value === '') {
+                    showError('Please enter your expected percentage.');
+                    return;
+                }
+
+                // VALIDATION 2: Check if percentage is within valid range
+                if (percentage < 0) {
+                    showError('Percentage cannot be negative. Please enter a value between 0 and 100.');
+                    return;
+                }
+
+                if (percentage > 100) {
+                    showError('Percentage cannot exceed 100. Please enter a valid percentage.');
+                    return;
+                }
+
+                // VALIDATION 3: Check for excessive decimal places
+                const decimalPlaces = (percentage.toString().split('.')[1] || '').length;
+                if (decimalPlaces > 2) {
+                    showError('Please use maximum 2 decimal places for percentage.');
+                    return;
+                }
+
+                // Disable button to prevent double-clicking
+                const calculateBtn = document.getElementById('calculateBtn');
+                calculateBtn.disabled = true;
+                calculateBtn.textContent = 'Calculating...';
+
+                // Calculate eligibility for each stream
+                const scienceEligibility = getStreamEligibility(percentage, 'science');
+                const commerceEligibility = getStreamEligibility(percentage, 'commerce');
+                const artsEligibility = getStreamEligibility(percentage, 'arts');
+
+                // Display results
+                displayResults(percentage, scienceEligibility, commerceEligibility, artsEligibility);
+
+                // Re-enable button
+                setTimeout(() => {
+                    calculateBtn.disabled = false;
+                    calculateBtn.textContent = 'Check Stream Eligibility';
+                }, 500);
+
+            } catch (error) {
+                console.error('Calculation error:', error);
+                showError('An unexpected error occurred. Please try again.');
+                
+                const calculateBtn = document.getElementById('calculateBtn');
+                calculateBtn.disabled = false;
+                calculateBtn.textContent = 'Check Stream Eligibility';
+            }
+        }
+
+        /**
+         * Generate stream card HTML
+         * @param {string} streamName - Name of the stream
+         * @param {string} icon - Emoji icon
+         * @param {string} subtitle - Stream subtitle
+         * @param {object} eligibility - Eligibility status
+         * @param {string} description - Stream description
+         * @param {string} cutoff - Cutoff information
+         * @returns {string} HTML string
+         */
+        function generateStreamCard(streamName, icon, subtitle, eligibility, description, cutoff) {
+            const statusText = {
+                'eligible': 'Eligible ✓',
+                'borderline': 'Possible',
+                'not-recommended': 'Check School'
+            };
+
+            const messages = {
+                'eligible': {
+                    'excellent': 'Great choice! Your percentage is well above the typical requirements. You have excellent chances of securing admission in this stream.',
+                    'good': 'Good fit! Your percentage meets the typical requirements for this stream. You should have strong chances of admission.'
+                },
+                'borderline': 'Worth considering! Your percentage is in the competitive range. Check with your school as admission may depend on seat availability and other factors.',
+                'not-recommended': 'May be challenging. Your percentage is below typical cutoffs for this stream. However, requirements vary by school - check with your institution.'
+            };
+
+            const message = eligibility.status === 'eligible' 
+                ? messages.eligible[eligibility.level]
+                : messages[eligibility.status];
+
+            return `
+                <div class="stream-card ${eligibility.status}">
+                    <div class="stream-header">
+                        <div class="stream-title">
+                            <span class="stream-icon">${icon}</span>
+                            <div>
+                                <h4>${streamName}</h4>
+                                <span class="subtitle-text">${subtitle}</span>
+                            </div>
+                        </div>
+                        <span class="stream-status">${statusText[eligibility.status]}</span>
+                    </div>
+                    <div class="stream-content">
+                        <p>${message}</p>
+                        <div class="cutoff-info">
+                            <strong>Typical Cutoff Range:</strong>
+                            ${cutoff}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * Display eligibility results
+         */
+        function displayResults(percentage, scienceEligibility, commerceEligibility, artsEligibility) {
+            try {
+                // Update percentage display
+                document.getElementById('displayPercentage').textContent = percentage.toFixed(2) + '%';
+
+                // Generate stream cards
+                const streamsHTML = 
+                    generateStreamCard(
+                        'Science Stream',
+                        '🔬',
+                        'PCM (Physics, Chemistry, Math) or PCB (Biology)',
+                        scienceEligibility,
+                        '',
+                        '75-80% in most schools, 60-70% in some schools'
+                    ) +
+                    generateStreamCard(
+                        'Commerce Stream',
+                        '💼',
+                        'Accounting, Business Studies, Economics',
+                        commerceEligibility,
+                        '',
+                        '60-70% in most schools, 75%+ in premier institutions'
+                    ) +
+                    generateStreamCard(
+                        'Arts/Humanities',
+                        '🎨',
+                        'History, Political Science, Psychology, etc.',
+                        artsEligibility,
+                        '',
+                        '50-60% in most schools, very flexible admission'
+                    );
+
+                // Insert cards into grid
+                document.getElementById('streamsGrid').innerHTML = streamsHTML;
+
+                // Show result section
+                const resultDiv = document.getElementById('result');
+                resultDiv.classList.add('show');
+
+                // Smooth scroll to results
+                setTimeout(() => {
+                    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+
+            } catch (error) {
+                console.error('Display error:', error);
+                showError('Error displaying results. Please try again.');
+            }
+        }
+
+        /**
+         * Reset form
+         */
+        function resetForm() {
+            try {
+                // Clear input
+                const input = document.getElementById('expectedPercentage');
+                input.value = '';
+                input.classList.remove('valid', 'invalid');
+
+                // Hide result
+                const resultDiv = document.getElementById('result');
+                resultDiv.classList.remove('show');
+
+                // Hide errors
+                hideError();
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Reset error:', error);
+                location.reload();
+            }
+        }
+
+        /**
+         * Initialize event listeners
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const input = document.getElementById('expectedPercentage');
+                
+                // Enter key to calculate
+                input.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        calculateEligibility();
+                    }
+                });
+
+                // Prevent invalid characters
+                input.addEventListener('keydown', function(event) {
+                    // Allow: backspace, delete, tab, escape, enter, navigation keys
+                    if ([46, 8, 9, 27, 13].indexOf(event.keyCode) !== -1 ||
+                        (event.keyCode === 65 && event.ctrlKey === true) ||
+                        (event.keyCode === 67 && event.ctrlKey === true) ||
+                        (event.keyCode === 86 && event.ctrlKey === true) ||
+                        (event.keyCode === 88 && event.ctrlKey === true) ||
+                        (event.keyCode >= 35 && event.keyCode <= 39)) {
+                        return;
+                    }
+                    // Ensure it's a number or decimal
+                    if ((event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) &&
+                        (event.keyCode < 96 || event.keyCode > 105) &&
+                        event.keyCode !== 190 && event.keyCode !== 110) {
+                        event.preventDefault();
+                    }
+                });
+
+                console.log('CBSE Stream Eligibility Calculator initialized successfully!');
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
