@@ -583,7 +583,7 @@
             height: 54px;
             position: relative;
             pointer-events: all;
-            background: rgba(255, 255, 255, 0.13);
+            background: rgba(102, 126, 234, 0.72);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             border: 1px solid rgba(255, 255, 255, 0.28);
@@ -592,7 +592,7 @@
             transition: background 0.3s ease, box-shadow 0.3s ease;
         }
         nav.site-nav.scrolled .nav-inner {
-            background: rgba(102, 90, 180, 0.82);
+            background: rgba(102, 90, 180, 0.92);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             box-shadow: 0 8px 32px rgba(60, 30, 120, 0.35), 0 1px 0 rgba(255,255,255,0.12) inset;
@@ -610,8 +610,11 @@
             gap: 7px;
             white-space: nowrap;
         }
-        .nav-logo::before { content: '🎓'; font-size: 1.15rem; }
-        .nav-logo .dot { color: #ffd700; }
+        .nav-logo::before {
+            content: '🎓';
+            font-size: 1.15rem;
+        }
+        .nav-logo .dot { color: var(--gold); }
         .nav-links-list {
             display: flex;
             gap: 2px;
@@ -621,7 +624,7 @@
             padding: 0;
         }
         .nav-links-list a {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
             font-size: 0.82rem;
             font-weight: 500;
@@ -634,20 +637,20 @@
             white-space: nowrap;
         }
         .nav-links-list a:hover {
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255,255,255,0.18);
             color: #fff;
             transform: translateY(-1px);
         }
         .nav-links-list a.active {
-            background: rgba(255, 255, 255, 0.22);
+            background: rgba(255,255,255,0.22);
             color: #fff;
             font-weight: 600;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
         }
         .nav-toggle {
             display: none;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
             border-radius: 9px;
             cursor: pointer;
             width: 38px;
@@ -659,7 +662,7 @@
             transition: background 0.2s;
             flex-shrink: 0;
         }
-        .nav-toggle:hover { background: rgba(255, 255, 255, 0.25); }
+        .nav-toggle:hover { background: rgba(255,255,255,0.25); }
         .nav-toggle span {
             display: block;
             width: 19px;
@@ -671,6 +674,7 @@
         .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .nav-toggle.open span:nth-child(2) { opacity: 0; }
         .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         @media (max-width: 700px) {
             nav.site-nav { padding: 8px 12px; }
             .nav-inner { border-radius: 14px; padding: 0 14px; height: 50px; }
@@ -683,17 +687,18 @@
                 flex-direction: column;
                 gap: 4px;
                 padding: 12px 12px 14px;
-                background: rgba(100, 75, 160, 0.92);
+                background: rgba(100, 75, 160, 0.95);
                 backdrop-filter: blur(24px);
                 -webkit-backdrop-filter: blur(24px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                border: 1px solid rgba(255,255,255,0.2);
                 border-radius: 14px;
-                box-shadow: 0 12px 32px rgba(60, 30, 120, 0.3);
+                box-shadow: 0 12px 32px rgba(60,30,120,0.3);
             }
             .nav-links-list.open { display: flex; }
             .nav-links-list a { padding: 10px 13px; border-radius: 10px; font-size: 0.88rem; }
             .nav-links-list a:hover { transform: none; }
         }
+
         /* legacy inline nav links */
         .nav-links {
             text-decoration: none;
@@ -707,21 +712,25 @@
 </head>
 <body>
     <!-- ═══ NAV ═══ -->
-    <nav class="site-nav">
-        <div class="nav-inner">
-            <a class="nav-logo" href="index.html">
-                CBSE Decision<span class="dot">.</span>Hub
-            </a>
-            <ul class="nav-links-list" id="navLinks">
-                <li><a href="index.html">🧮 Percentage Calculator</a></li>
-                <li><a href="target-marks.html">🎯 Target Calculator</a></li>
-                <li><a href="stream-eligibility.html" class="active">📊 Stream Eligibility</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">
+            CBSE Decision<span class="dot">.</span>Hub
+        </a>
+
+        <ul class="nav-links-list" id="navLinks">
+            <li><a href="index.html" class="active">🧮 % Calculator</a></li>
+            <li><a href="target-marks.html">🎯 Target Calculator</a></li>
+            <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+            <li><a href="maths-answer-key-2025.html">📝 Boards Answer Key</a></li>
+        </ul>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
 
     <div class="container">
         
