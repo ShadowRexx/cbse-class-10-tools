@@ -21,10 +21,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 0px 20px 20px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .container {
@@ -407,21 +408,199 @@
                 font-size: 28px;
             }
         }
-                    .nav-links {
-                text-decoration-line: none; 
-                font-weight: bolder;
-                color:#876aeed3}
-    </style>
-</head>
-<body>
-    <div class="container">
-        
-        <nav style="text-align:center; margin-bottom:20px;">
-            <a href="index.html" class="nav-links">Best of 5 Calculator</a> |
-            <a href="target-marks.html" class="nav-links">Target % Calculator</a>|
-            <a href="stream-eligibility.html" class="nav-links">Stream Eligibility Calculator</a>
-        </nav>
+        /* ── NAV ── */
+        nav.site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* Transparent layer so the floating pill sits on top */
+            background: transparent;
+            padding: 10px 20px;
+            pointer-events: none; /* let clicks pass through the gap area */
+        }
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 54px;
+            position: relative;
+            pointer-events: all;
+            /* Glassmorphism pill */
+            background: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(80, 50, 140, 0.22), 0 1px 0 rgba(255,255,255,0.18) inset;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* When scrolled over white content — darken the glass */
+        nav.site-nav.scrolled .nav-inner {
+            background: rgba(102, 90, 180, 0.82);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 8px 32px rgba(60, 30, 120, 0.35), 0 1px 0 rgba(255,255,255,0.12) inset;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .nav-logo {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+        }
+        .nav-logo::before {
+            content: '🎓';
+            font-size: 1.15rem;
+        }
+        .nav-logo .dot {
+            color: #ffd700;
+        }
+        .nav-links-list {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links-list a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 6px 11px;
+            border-radius: 10px;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        .nav-links-list a:hover {
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .nav-links-list a.active {
+            background: rgba(255, 255, 255, 0.22);
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
 
+        /* Hamburger toggle */
+        .nav-toggle {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 9px;
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .nav-toggle:hover { background: rgba(255, 255, 255, 0.25); }
+        .nav-toggle span {
+            display: block;
+            width: 19px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile nav */
+        @media (max-width: 700px) {
+            nav.site-nav {
+                padding: 8px 12px;
+            }
+            .nav-inner {
+                border-radius: 14px;
+                padding: 0 14px;
+                height: 50px;
+            }
+            .nav-toggle { display: flex; }
+            .nav-links-list {
+                display: none;
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 4px;
+                padding: 12px 12px 14px;
+                background: rgba(100, 75, 160, 0.92);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 14px;
+                box-shadow: 0 12px 32px rgba(60, 30, 120, 0.3);
+            }
+            .nav-links-list.open { display: flex; }
+            .nav-links-list a {
+                padding: 10px 13px;
+                border-radius: 10px;
+                font-size: 0.88rem;
+            }
+            .nav-links-list a:hover { transform: none; }
+        }
+
+        /* Inner nav links (legacy — keep but clean up) */
+        .nav-links {
+            text-decoration: none;
+            font-weight: 600;
+            color: #667eea;
+            transition: color 0.2s;
+        }
+        .nav-links:hover { color: #764ba2; }
+
+
+
+    </style>
+
+</head>
+
+
+<body>
+           <!-- ═══ NAV ═══ -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="nav-logo" href="index.html">
+            CBSE Decision<span class="dot">.</span>Hub
+            </a>
+
+            <ul class="nav-links-list" id="navLinks">
+            <li><a href="target-marks.html">🎯 Target Calculator</a></li>
+            <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+            <li><a href="maths-answer-key-2025.html" class="active">📝 Maths Answer Key</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+    
         <h1>CBSE Class 10 Percentage Calculator (Best of 5 Rule) – Free & Accurate
 </h1>
 
@@ -567,7 +746,9 @@
                 <h3>How is CBSE percentage calculated for Class 10?</h3>
                 <p>CBSE Class 10 percentage is calculated by taking the best five subject marks, adding them together, and dividing by 5. Schools may have slight variations.</p>
             </div>
-             <div class="faq-item">
+
+
+            <div class="faq-item">
                 <h3>Does CBSE consider all 6 subjects?</h3>
                 <p>No. Only the highest scoring 5 subjects are used for percentage calculation.</p>
             </div>
@@ -575,11 +756,6 @@
             <div class="faq-item">
                 <h3>Is Best of 5 rule official in CBSE?</h3>
                 <p>CBSE allows schools to use Best of 5 calculation for internal percentage display. However, official mark sheets show subject-wise marks.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>What is CBSE Best of 5 rule for Class 10?</h3>
-                <p>The CBSE Best of 5 rule means your Class 10 percentage is calculated using your highest-scoring 5 subjects out of 6. This helps students showcase their best academic performance and provides flexibility if one subject doesn't go as planned.</p>
             </div>
 
             <div class="faq-item">
@@ -917,6 +1093,35 @@
          */
         document.addEventListener('DOMContentLoaded', function() {
             try {
+                // Add scrolled class to nav for enhanced shadow
+                const siteNav = document.querySelector('nav.site-nav');
+                window.addEventListener('scroll', function() {
+                    // Switch to opaque glass once we're past the gradient hero area
+                    const threshold = window.innerHeight * 0.3;
+                    if (window.scrollY > threshold) {
+                        siteNav.classList.add('scrolled');
+                    } else {
+                        siteNav.classList.remove('scrolled');
+                    }
+                });
+
+                // Mobile nav toggle
+                const navToggle = document.getElementById('navToggle');
+                const navLinksList = document.getElementById('navLinks');
+                if (navToggle && navLinksList) {
+                    navToggle.addEventListener('click', function() {
+                        navLinksList.classList.toggle('open');
+                        navToggle.classList.toggle('open');
+                    });
+                    // Close nav on link click
+                    navLinksList.querySelectorAll('a').forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            navLinksList.classList.remove('open');
+                            navToggle.classList.remove('open');
+                        });
+                    });
+                }
+
                 // Get all number input fields
                 const inputs = document.querySelectorAll('input[type="number"]');
                 
