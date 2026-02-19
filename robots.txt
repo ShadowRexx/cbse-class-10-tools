@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shadowrexx.github.io/cbse-class-10-tools/sitemap.xml
