@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for CBSE Decision Hub – how we handle data, cookies, and third-party services for Class 10 students.">
+    <meta name="keywords" content="CBSE Decision Hub privacy policy, cookies, data protection, Class 10 tools">
+    <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/privacy-policy.html">
+    <title>Privacy Policy – CBSE Decision Hub</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary:      #667eea;
+            --primary-dark: #764ba2;
+            --text-dark:    #2d3748;
+            --text-mid:     #4a5568;
+            --text-light:   #718096;
+            --border:       #e2e8f0;
+            --bg-page:      #f0f2f8;
+            --bg-card:      #ffffff;
+            --gold:         #ffd700;
+            --radius-lg:    18px;
+            --radius-md:    12px;
+            --shadow-card:  0 2px 12px rgba(100, 80, 180, 0.09);
+            --shadow-hover: 0 8px 24px rgba(100, 80, 180, 0.16);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-page);
+            color: var(--text-dark);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ════════ NAV ════════ */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    padding: 10px 20px;
+    pointer-events: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    height: 54px;
+    position: relative;
+    pointer-events: all;
+    background: rgba(102, 126, 234, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(80, 50, 140, 0.22), 0 1px 0 rgba(255, 255, 255, 0.18) inset;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-nav.scrolled .nav-inner {
+    background: rgba(102, 90, 180, 0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 8px 32px rgba(60, 30, 120, 0.38), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.nav-logo {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-logo::before {
+    content: '🎓';
+    font-size: 1.15rem;
+    margin-right: 7px;
+}
+
+.nav-dot {
+    color: #ffd700;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list > li {
+    position: relative;
+}
+
+.nav-list > li > a,
+.nav-dropdown-btn {
+    color: rgba(255, 255, 255, 0.87);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 6px 11px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+}
+
+.nav-list > li > a:hover,
+.nav-dropdown-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.nav-list > li > a.active {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.nav-chevron {
+    width: 11px;
+    height: 7px;
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-dropdown:hover > .nav-dropdown-btn .nav-chevron,
+.nav-dropdown.open > .nav-dropdown-btn .nav-chevron {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.nav-submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    min-width: 215px;
+    list-style: none;
+    margin: 0;
+    padding: 7px;
+    background: rgba(55, 35, 108, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(40, 20, 90, 0.42), 0 1px 0 rgba(255, 255, 255, 0.07) inset;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+.nav-submenu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown.open .nav-submenu {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-submenu li {
+    list-style: none;
+}
+
+.nav-submenu li + li {
+    margin-top: 1px;
+}
+
+.nav-submenu li a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 12px;
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-radius: 9px;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.nav-submenu li a span {
+    font-size: 1rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.nav-submenu li a:hover {
+    background: rgba(255, 255, 255, 0.13);
+    color: #fff;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 19px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 760px) {
+    .site-nav {
+        padding: 8px 12px;
+    }
+
+    .nav-inner {
+        border-radius: 14px;
+        padding: 0 14px;
+        height: 50px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 2px;
+        padding: 10px 10px 12px;
+        background: rgba(68, 44, 136, 0.97);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 14px;
+        box-shadow: 0 14px 36px rgba(40, 20, 90, 0.36);
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-list > li {
+        width: 100%;
+    }
+
+    .nav-list > li > a,
+    .nav-dropdown-btn {
+        width: 100%;
+        padding: 10px 13px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        justify-content: space-between;
+    }
+
+    .nav-list > li > a:hover,
+    .nav-dropdown-btn:hover {
+        transform: none;
+    }
+
+    .nav-submenu {
+        position: static;
+        transform: none;
+        min-width: unset;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        border-radius: 10px;
+        box-shadow: none;
+        margin-top: 2px;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        pointer-events: none;
+        transition: max-height 0.28s ease, padding 0.22s ease;
+    }
+
+    .nav-submenu::before {
+        display: none;
+    }
+
+    .nav-dropdown.open .nav-submenu {
+        max-height: 280px;
+        pointer-events: all;
+        padding: 4px;
+        transform: none;
+    }
+
+    .nav-dropdown:hover .nav-submenu {
+        opacity: 1;
+        transform: none;
+        max-height: 0;
+        pointer-events: none;
+    }
+
+    .nav-dropdown.open:hover .nav-submenu {
+        max-height: 280px;
+        pointer-events: all;
+    }
+
+    .nav-submenu li a {
+        padding: 9px 12px;
+        font-size: 0.86rem;
+        border-radius: 8px;
+    }
+
+    .nav-chevron {
+        margin-left: auto;
+    }
+}
+
+        /* ════════ HERO ════════ */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 52px 20px 56px; text-align: center;
+            margin-top: -74px; padding-top: 114px;
+        }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.32);
+            color: #fff; font-size: 0.76rem; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            padding: 5px 16px; border-radius: 50px; margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(1.65rem, 4.5vw, 2.4rem); font-weight: 800;
+            color: #fff; line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.5px;
+        }
+        .hero-sub {
+            font-size: 0.95rem; color: rgba(255,255,255,0.78);
+            max-width: 460px; margin: 0 auto; line-height: 1.6;
+        }
+
+        /* ════════ PAGE BODY ════════ */
+        .page-body {
+            max-width: 800px; margin: 0 auto; padding: 48px 20px 0;
+        }
+
+        /* ════════ LAST UPDATED BADGE ════════ */
+        .meta-bar {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 36px; flex-wrap: wrap;
+        }
+        .meta-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 0.76rem; font-weight: 600; color: var(--text-light);
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 5px 13px; border-radius: 50px;
+        }
+
+        /* ════════ POLICY CARD ════════ */
+        .policy-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
+            padding: 36px 40px; margin-bottom: 20px;
+        }
+
+        .policy-section { margin-bottom: 36px; }
+        .policy-section:last-child { margin-bottom: 0; }
+
+        .section-num {
+            display: inline-block; font-size: 0.68rem; font-weight: 800;
+            letter-spacing: 1px; text-transform: uppercase; color: var(--primary);
+            background: #eef0fe; padding: 3px 10px; border-radius: 50px;
+            margin-bottom: 8px;
+        }
+        .policy-section h2 {
+            font-size: 1.15rem; font-weight: 800; color: var(--text-dark);
+            margin-bottom: 12px; letter-spacing: -0.2px;
+            padding-bottom: 10px; border-bottom: 2px solid var(--border);
+        }
+        .policy-section p {
+            font-size: 0.93rem; color: var(--text-mid);
+            line-height: 1.78; margin-bottom: 12px;
+        }
+        .policy-section p:last-child { margin-bottom: 0; }
+        .policy-section ul {
+            margin: 10px 0 12px 0; padding-left: 0; list-style: none;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .policy-section ul li {
+            font-size: 0.9rem; color: var(--text-mid);
+            line-height: 1.65; display: flex; align-items: flex-start; gap: 9px;
+        }
+        .policy-section ul li::before {
+            content: '→'; color: var(--primary); font-weight: 700;
+            flex-shrink: 0; margin-top: 1px;
+        }
+
+        /* highlight box */
+        .info-highlight {
+            background: linear-gradient(135deg, #f0f3ff 0%, #f8f0ff 100%);
+            border: 1px solid #c4b5fd; border-radius: 10px;
+            padding: 16px 20px; margin: 14px 0;
+        }
+        .info-highlight p {
+            font-size: 0.88rem; color: #4c1d95; margin: 0; line-height: 1.65;
+        }
+
+        /* adsense note */
+        .adsense-note {
+            background: #fffbeb; border: 1px solid #fde68a;
+            border-left: 4px solid #f59e0b; border-radius: 10px;
+            padding: 14px 18px; margin: 14px 0;
+        }
+        .adsense-note p { font-size: 0.88rem; color: #78350f; margin: 0; line-height: 1.65; }
+
+        /* contact box */
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius-md); padding: 20px 24px;
+            display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+        }
+        .contact-box p { font-size: 0.9rem; color: rgba(255,255,255,0.9); flex: 1; margin: 0; line-height: 1.6; }
+        .contact-box a {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.35);
+            color: #fff; font-size: 0.85rem; font-weight: 700;
+            padding: 8px 18px; border-radius: 50px; text-decoration: none;
+            white-space: nowrap; transition: background 0.2s;
+        }
+        .contact-box a:hover { background: rgba(255,255,255,0.3); }
+
+        /* ════════ FOOTER ════════ */
+        footer {
+            background: #1e1b38; color: rgba(255,255,255,0.7);
+            padding: 48px 20px 28px; margin-top: 64px;
+        }
+        .footer-inner { max-width: 860px; margin: 0 auto; }
+        .footer-top {
+            display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            gap: 32px; margin-bottom: 36px;
+        }
+        .footer-brand .footer-logo {
+            font-size: 1.05rem; font-weight: 800; color: #fff;
+            text-decoration: none; display: flex; align-items: center;
+            gap: 8px; margin-bottom: 12px;
+        }
+        .footer-brand .footer-logo::before { content: '🎓'; font-size: 1.1rem; }
+        .footer-brand .footer-logo .dot { color: var(--gold); }
+        .footer-brand p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
+        .footer-col h4 {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.9px;
+            text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px;
+        }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .footer-col ul li a {
+            font-size: 0.82rem; color: rgba(255,255,255,0.6);
+            text-decoration: none; transition: color 0.2s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .footer-col ul li a:hover { color: #fff; }
+        .footer-hr { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 20px; }
+        .footer-bottom {
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+        .footer-bottom-links { display: flex; gap: 16px; flex-wrap: wrap; }
+        .footer-bottom-links a {
+            font-size: 0.75rem; color: rgba(255,255,255,0.35);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 700px) {
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+        @media (max-width: 480px) {
+            .footer-top { grid-template-columns: 1fr; }
+            .policy-card { padding: 24px 18px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+            .page-body { padding: 32px 14px 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
+        <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Tools
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
+                    <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
+                    <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="maths-answer-key-2025.html" role="menuitem"><span>📝</span>Maths Answer Key</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+    <div class="hero-eyebrow">🔒 Legal &amp; Transparency</div>
+    <h1>Privacy Policy</h1>
+    <p class="hero-sub">How CBSE Decision Hub handles your information — clearly and honestly.</p>
+</section>
+
+<!-- ════════ PAGE BODY ════════ -->
+<main class="page-body">
+
+    <div class="meta-bar">
+        <span class="meta-badge">📅 Last Updated: June 2025</span>
+        <span class="meta-badge">🌐 Applies to: cbse-class-10-tools (GitHub Pages)</span>
+    </div>
+
+    <div class="policy-card">
+
+        <!-- 1. Introduction -->
+        <div class="policy-section">
+            <span class="section-num">Section 01</span>
+            <h2>Introduction</h2>
+            <p>Welcome to CBSE Decision Hub. This Privacy Policy explains how this website collects, uses, and protects any information that you provide or that is automatically collected when you visit this site.</p>
+            <p>CBSE Decision Hub is a free educational resource designed to help CBSE Class 10 students make better academic decisions. We take your privacy seriously, and this policy is written in plain language so you can understand exactly what happens when you use our tools.</p>
+            <p>By using this website, you agree to the terms described in this policy. If you do not agree, please discontinue use of the site.</p>
+        </div>
+
+        <!-- 2. Information We Collect -->
+        <div class="policy-section">
+            <span class="section-num">Section 02</span>
+            <h2>Information We Collect</h2>
+            <p>CBSE Decision Hub does not require any account registration, login, or sign-up. We do not actively collect personal information. However, some information may be collected automatically:</p>
+            <ul>
+                <li><strong>Usage Data:</strong> Standard server logs and analytics tools may record your IP address, browser type, pages visited, and time spent on the site. This data is anonymised and used only to understand site performance.</li>
+                <li><strong>Calculator Inputs:</strong> All mark values and inputs you enter into our calculators are processed entirely in your browser. None of this data is sent to or stored on any server.</li>
+                <li><strong>Contact Form:</strong> If you use the contact form, the information you submit (name, email, and message) is handled as described in the contact form itself. We use this only to respond to your query.</li>
+            </ul>
+            <div class="info-highlight">
+                <p>✅ <strong>No account. No sign-up. No personal data stored.</strong> All calculator computations happen locally on your device and are never transmitted to us.</p>
+            </div>
+        </div>
+
+        <!-- 3. Cookies -->
+        <div class="policy-section">
+            <span class="section-num">Section 03</span>
+            <h2>Use of Cookies</h2>
+            <p>Cookies are small text files stored by your browser when you visit a website. CBSE Decision Hub may use cookies in the following ways:</p>
+            <ul>
+                <li><strong>Analytics Cookies:</strong> We may use tools like Google Analytics to understand visitor behaviour — such as which tools are used most, how long users stay, and which pages are visited. This data is aggregated and anonymous.</li>
+                <li><strong>Preference Cookies:</strong> Cookies may be used in the future to remember user preferences such as selected options or display settings.</li>
+                <li><strong>Advertising Cookies:</strong> If Google AdSense is enabled on this site, Google may use cookies to serve personalised advertisements based on your browsing history. See Section 04 for more details.</li>
+            </ul>
+            <p>You can disable or manage cookies through your browser settings at any time. Note that disabling certain cookies may affect the functionality of some features.</p>
+        </div>
+
+        <!-- 4. Google AdSense -->
+        <div class="policy-section">
+            <span class="section-num">Section 04</span>
+            <h2>Google AdSense &amp; Future Monetisation</h2>
+            <p>CBSE Decision Hub may use Google AdSense to display advertisements on this site in the future. Google AdSense is a third-party advertising service operated by Google LLC.</p>
+            <div class="adsense-note">
+                <p>⚠️ <strong>Please note:</strong> If AdSense is active, Google may use cookies and similar tracking technologies to show you personalised ads based on your interests and browsing activity across websites. This is managed entirely by Google and is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:#92400e;">Google's Privacy Policy</a>.</p>
+            </div>
+            <p>You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--primary);">Google's Ad Settings</a> or by using the <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener" style="color:var(--primary);">NAI opt-out tool</a>.</p>
+            <p>We will update this policy clearly if and when AdSense or any other advertising service is enabled on this site.</p>
+        </div>
+
+        <!-- 5. Third-Party Links -->
+        <div class="policy-section">
+            <span class="section-num">Section 05</span>
+            <h2>Third-Party Links</h2>
+            <p>This website may contain links to external websites — such as official CBSE resources, Google, or other educational platforms. These links are provided purely for reference and convenience.</p>
+            <p>CBSE Decision Hub is not responsible for the privacy practices or content of any third-party websites. We encourage you to read the privacy policies of any external sites you visit.</p>
+        </div>
+
+        <!-- 6. Data Protection -->
+        <div class="policy-section">
+            <span class="section-num">Section 06</span>
+            <h2>Data Protection</h2>
+            <p>We are committed to ensuring that any information processed in connection with this site is handled securely. Since this site is hosted on GitHub Pages and does not maintain user accounts or a database, the risk of data breach is minimal.</p>
+            <ul>
+                <li>The site is served over HTTPS for secure data transmission.</li>
+                <li>No user passwords or financial information are collected or stored at any point.</li>
+                <li>Calculator inputs remain on your device and are never transmitted externally.</li>
+            </ul>
+        </div>
+
+        <!-- 7. Children's Privacy -->
+        <div class="policy-section">
+            <span class="section-num">Section 07</span>
+            <h2>Children's Privacy</h2>
+            <p>CBSE Decision Hub is designed primarily for CBSE Class 10 students, which includes users under the age of 18. We are mindful of this and take the following steps to protect younger users:</p>
+            <ul>
+                <li>We do not knowingly collect any personally identifiable information from students.</li>
+                <li>No account registration is required to use any tool on this website.</li>
+                <li>All calculator data is processed locally and never stored or shared.</li>
+                <li>If a parent or guardian believes their child has submitted personal information through the contact form, they may reach out to us at <strong>cbsedecisionhub@gmail.com</strong> and we will address the concern promptly.</li>
+            </ul>
+            <div class="info-highlight">
+                <p>👨‍👩‍👧We design our tools to minimise data collection and protect student privacy.</p>
+            </div>
+        </div>
+
+        <!-- 8. Changes to Policy -->
+        <div class="policy-section">
+            <span class="section-num">Section 08</span>
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in the site's features, applicable laws, or our practices. When changes are made, the "Last Updated" date at the top of this page will be revised accordingly.</p>
+            <p>We encourage you to review this page periodically. Continued use of the website after any changes are posted constitutes your acceptance of the updated policy.</p>
+        </div>
+
+        <!-- 9. Contact -->
+        <div class="policy-section">
+            <span class="section-num">Section 09</span>
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or how your information is handled, please contact us:</p>
+            <div class="contact-box">
+                <p>📧 For privacy concerns, data queries, or requests, reach out to us directly by email.</p>
+                <a href="mailto:cbsedecisionhub@gmail.com">cbsedecisionhub@gmail.com</a>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">CBSE Decision<span class="dot">.</span>Hub</a>
+                <p>CBSE Decision Hub provides smart academic tools for Class 10 students including calculators, stream guidance, and answer discussions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">🧮 % Calculator</a></li>
+                    <li><a href="target-marks.html">🎯 Target Marks</a></li>
+                    <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+                    <li><a href="maths-answer-key-2025.html">📝 Answer Key</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="contact.html">✉️ Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-hr"></div>
+        <div class="footer-bottom">
+            <p>© 2026 CBSE Decision Hub. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const siteNav   = document.getElementById('siteNav');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks  = document.getElementById('navLinks');
+        window.addEventListener('scroll', function () {
+            siteNav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('open');
+                navToggle.classList.toggle('open');
+            });
+            navLinks.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    navLinks.classList.remove('open');
+                    navToggle.classList.remove('open');
+                });
+            });
+        }
+    });
+
+    (function () {
+    var nav      = document.getElementById('siteNav');
+    var toggle   = document.getElementById('navToggle');
+    var list     = document.getElementById('navList');
+    var dropdown = document.querySelector('.nav-dropdown');
+    var dropBtn  = dropdown ? dropdown.querySelector('.nav-dropdown-btn') : null;
+
+    function isMobile() {
+        return window.innerWidth <= 760;
+    }
+
+    window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    toggle.addEventListener('click', function () {
+        var isOpen = list.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        if (!isOpen && dropdown) {
+            dropdown.classList.remove('open');
+            if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    if (dropBtn) {
+        dropBtn.addEventListener('click', function (e) {
+            if (!isMobile()) return;
+            e.stopPropagation();
+            var isOpen = dropdown.classList.toggle('open');
+            dropBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+        if (!nav.contains(e.target)) {
+            list.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            if (dropdown) {
+                dropdown.classList.remove('open');
+                if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+
+    list.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (isMobile()) {
+                list.classList.remove('open');
+                toggle.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}());
+</script>
+</body>
+</html>
