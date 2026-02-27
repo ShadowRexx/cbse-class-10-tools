@@ -7,8 +7,19 @@
     <meta name="keywords" content="Check which stream you are eligible for after CBSE Class 10 based on your expected percentage. Science, Commerce and Arts guidance.">
     <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/stream-eligibility.html">
 
+
+
+
+        <!-- ══ Shared styles: Navbar, Footer, Body ══ -->
+    <link rel="stylesheet" href="main.css">
+        <!-- ══ Nav logic (hamburger + dropdown) — external ══ -->
+
+
+
     <title>CBSE Class 10 Stream Eligibility Calculator – Science, Commerce, Arts</title>
 
+    <!-- Page-specific styles only; shared Nav/Footer/Body styles come from style.css -->
+    <link rel="stylesheet" href="style.css">
     <style>
 
         /* ════════ PAGE LAYOUT ════════ */
@@ -47,395 +58,6 @@
         @media (max-width: 480px) {
             .page-main { padding: 24px 12px 48px; }
             .container { padding: 25px 18px; }
-        }
-
-
-        /* ════════ NAV ════════ */
-.site-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    padding: 10px 20px;
-    pointer-events: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.nav-inner {
-    max-width: 1060px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 22px;
-    height: 54px;
-    position: relative;
-    pointer-events: all;
-    background: rgba(102, 126, 234, 0.72);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(80, 50, 140, 0.22), 0 1px 0 rgba(255, 255, 255, 0.18) inset;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.site-nav.scrolled .nav-inner {
-    background: rgba(102, 90, 180, 0.94);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 8px 32px rgba(60, 30, 120, 0.38), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
-    border-color: rgba(255, 255, 255, 0.18);
-}
-
-.nav-logo {
-    font-size: 1.08rem;
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.3px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.nav-logo::before {
-    content: '🎓';
-    font-size: 1.15rem;
-    margin-right: 7px;
-}
-
-.nav-dot {
-    color: #ffd700;
-}
-
-.nav-list {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list > li {
-    position: relative;
-}
-
-.nav-list > li > a,
-.nav-dropdown-btn {
-    color: rgba(255, 255, 255, 0.87);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 6px 11px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    font-family: inherit;
-    transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
-}
-
-.nav-list > li > a:hover,
-.nav-dropdown-btn:hover {
-    background: rgba(255, 255, 255, 0.18);
-    color: #fff;
-    transform: translateY(-1px);
-}
-
-.nav-list > li > a.active {
-    background: rgba(255, 255, 255, 0.22);
-    color: #fff;
-    font-weight: 700;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
-}
-
-.nav-chevron {
-    width: 11px;
-    height: 7px;
-    flex-shrink: 0;
-    opacity: 0.75;
-    transition: transform 0.25s ease, opacity 0.2s ease;
-}
-
-.nav-dropdown:hover > .nav-dropdown-btn .nav-chevron,
-.nav-dropdown.open > .nav-dropdown-btn .nav-chevron {
-    transform: rotate(180deg);
-    opacity: 1;
-}
-
-.nav-submenu {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%) translateY(-6px);
-    min-width: 215px;
-    list-style: none;
-    margin: 0;
-    padding: 7px;
-    background: rgba(55, 35, 108, 0.97);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-    box-shadow: 0 18px 44px rgba(40, 20, 90, 0.42), 0 1px 0 rgba(255, 255, 255, 0.07) inset;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 100;
-}
-
-.nav-submenu::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid rgba(255, 255, 255, 0.15);
-}
-
-.nav-dropdown:hover .nav-submenu,
-.nav-dropdown.open .nav-submenu {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateX(-50%) translateY(0);
-}
-
-.nav-submenu li {
-    list-style: none;
-}
-
-.nav-submenu li + li {
-    margin-top: 1px;
-}
-
-.nav-submenu li a {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 9px 12px;
-    color: rgba(255, 255, 255, 0.82);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    border-radius: 9px;
-    transition: background 0.15s ease, color 0.15s ease;
-    white-space: nowrap;
-}
-
-.nav-submenu li a span {
-    font-size: 1rem;
-    flex-shrink: 0;
-    line-height: 1;
-}
-
-.nav-submenu li a:hover {
-    background: rgba(255, 255, 255, 0.13);
-    color: #fff;
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 38px;
-    height: 38px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 9px;
-    background: rgba(255, 255, 255, 0.12);
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background 0.2s ease;
-}
-
-.nav-toggle:hover {
-    background: rgba(255, 255, 255, 0.22);
-}
-
-.nav-toggle span {
-    display: block;
-    width: 19px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transition: transform 0.28s ease, opacity 0.28s ease;
-}
-
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-@media (max-width: 760px) {
-    .site-nav {
-        padding: 8px 12px;
-    }
-
-    .nav-inner {
-        border-radius: 14px;
-        padding: 0 14px;
-        height: 50px;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .nav-list {
-        display: none;
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 2px;
-        padding: 10px 10px 12px;
-        background: rgba(68, 44, 136, 0.97);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 14px;
-        box-shadow: 0 14px 36px rgba(40, 20, 90, 0.36);
-    }
-
-    .nav-list.open {
-        display: flex;
-    }
-
-    .nav-list > li {
-        width: 100%;
-    }
-
-    .nav-list > li > a,
-    .nav-dropdown-btn {
-        width: 100%;
-        padding: 10px 13px;
-        font-size: 0.9rem;
-        border-radius: 10px;
-        justify-content: space-between;
-    }
-
-    .nav-list > li > a:hover,
-    .nav-dropdown-btn:hover {
-        transform: none;
-    }
-
-    .nav-submenu {
-        position: static;
-        transform: none;
-        min-width: unset;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border: none;
-        border-radius: 10px;
-        box-shadow: none;
-        margin-top: 2px;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 1;
-        pointer-events: none;
-        transition: max-height 0.28s ease, padding 0.22s ease;
-    }
-
-    .nav-submenu::before {
-        display: none;
-    }
-
-    .nav-dropdown.open .nav-submenu {
-        max-height: 280px;
-        pointer-events: all;
-        padding: 4px;
-        transform: none;
-    }
-
-    .nav-dropdown:hover .nav-submenu {
-        opacity: 1;
-        transform: none;
-        max-height: 0;
-        pointer-events: none;
-    }
-
-    .nav-dropdown.open:hover .nav-submenu {
-        max-height: 280px;
-        pointer-events: all;
-    }
-
-    .nav-submenu li a {
-        padding: 9px 12px;
-        font-size: 0.86rem;
-        border-radius: 8px;
-    }
-
-    .nav-chevron {
-        margin-left: auto;
-    }
-}
-
-
-        /* ════════ FOOTER ════════ */
-        footer.site-footer {
-            background: #1e1b38;
-            color: rgba(255,255,255,0.7);
-            padding: 48px 20px 28px;
-            margin-top: 0;
-        }
-        .footer-inner { max-width: 1060px; margin: 0 auto; }
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 36px;
-        }
-        .footer-brand .footer-logo {
-            font-size: 1.05rem; font-weight: 800; color: #fff;
-            text-decoration: none; display: flex; align-items: center;
-            gap: 8px; margin-bottom: 12px;
-        }
-        .footer-brand .footer-logo::before { content: '🎓'; font-size: 1.1rem; }
-        .footer-brand .footer-logo .dot { color: #ffd700; }
-        .footer-brand p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
-        .footer-col h4 {
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.9px;
-            text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px;
-        }
-        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .footer-col ul li a {
-            font-size: 0.82rem; color: rgba(255,255,255,0.6);
-            text-decoration: none; transition: color 0.2s;
-            display: flex; align-items: center; gap: 6px;
-        }
-        .footer-col ul li a:hover { color: #fff; }
-        .footer-divider { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 20px; }
-        .footer-bottom {
-            display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap; gap: 10px;
-        }
-        .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-        .footer-bottom-links { display: flex; gap: 16px; flex-wrap: wrap; }
-        .footer-bottom-links a {
-            font-size: 0.75rem; color: rgba(255,255,255,0.35);
-            text-decoration: none; transition: color 0.2s;
-        }
-        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
-        @media (max-width: 700px) {
-            .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
-            .footer-brand { grid-column: 1 / -1; }
-        }
-        @media (max-width: 480px) {
-            .footer-top { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; align-items: flex-start; }
         }
 
 
@@ -1003,6 +625,8 @@
         <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
         <ul class="nav-list" id="navList">
             <li><a href="index.html">Home</a></li>
+
+            <!-- Tools dropdown -->
             <li class="nav-dropdown">
                 <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
                     Tools
@@ -1014,15 +638,33 @@
                     <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
                     <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
                     <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
-                    <li><a href="maths-answer-key-2025.html" role="menuitem"><span>📝</span>Maths Answer Key</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
                 </ul>
             </li>
+
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                </ul>
+            </li>
+
+            <li><a href="maths-answer-key-2025.html">Maths Answer Key</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <a class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>
-        </button>
+        </a>
     </div>
 </nav>
 
@@ -1290,6 +932,10 @@
             – Calculate your total percentage of Best of 5 subjects.
             </span>
             </li>
+        <li>
+            <a href="cbse-grade-predictor.html" class="nav-links"><strong>CBSE Grade Predictor</strong></a>
+            <span style="font-size:14px;color:#666;"> – Find your predicted A1, A2, B1 grades per subject.</span>
+            </li>
         </ul>
 
         </div>
@@ -1310,6 +956,7 @@
                     <li><a href="target-marks.html">🎯 Target Marks</a></li>
                     <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
                     <li><a href="maths-answer-key-2025.html">📝 Answer Key</a></li>
+                    <li><a href="cbse-grade-predictor.html">🎓 Grade Predictor</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1339,6 +986,9 @@
         </div>
     </div>
 </footer>
+    <!-- ══ Nav logic (hamburger + dropdown) — external ══ -->
+
+    <!-- ══ Calculator logic — kept local so onclick attributes work ══ -->
     <script>
         /**
          * Display error message to user
@@ -1372,16 +1022,8 @@
          */
         function validateInput(input) {
             const value = parseFloat(input.value);
-            
-            // Remove previous validation classes
             input.classList.remove('valid', 'invalid');
-            
-            // If empty, no validation styling
-            if (input.value === '') {
-                return;
-            }
-            
-            // Validate range
+            if (input.value === '') { return; }
             if (isNaN(value) || value < 0 || value > 100) {
                 input.classList.add('invalid');
             } else {
@@ -1397,50 +1039,23 @@
             document.getElementById('expectedPercentage').value = percentage;
             document.getElementById('expectedPercentage').classList.add('valid');
             hideError();
-            
-            // Auto-calculate
             calculateEligibility();
         }
 
         /**
          * Determine eligibility status for a stream based on percentage
-         * @param {number} percentage - Student's percentage
-         * @param {string} stream - Stream name (science, commerce, arts)
-         * @returns {object} - Status and details
          */
         function getStreamEligibility(percentage, stream) {
             const eligibility = {
-                science: {
-                    excellent: 80,      // Highly eligible
-                    good: 70,           // Eligible
-                    borderline: 60,     // Borderline/competitive
-                    cutoff: "75-80%"
-                },
-                commerce: {
-                    excellent: 75,
-                    good: 65,
-                    borderline: 55,
-                    cutoff: "60-70%"
-                },
-                arts: {
-                    excellent: 60,
-                    good: 50,
-                    borderline: 40,
-                    cutoff: "50-60%"
-                }
+                science:  { excellent: 80, good: 70, borderline: 60, cutoff: "75-80%" },
+                commerce: { excellent: 75, good: 65, borderline: 55, cutoff: "60-70%" },
+                arts:     { excellent: 60, good: 50, borderline: 40, cutoff: "50-60%" }
             };
-
             const streamData = eligibility[stream];
-            
-            if (percentage >= streamData.excellent) {
-                return { status: 'eligible', level: 'excellent' };
-            } else if (percentage >= streamData.good) {
-                return { status: 'eligible', level: 'good' };
-            } else if (percentage >= streamData.borderline) {
-                return { status: 'borderline', level: 'borderline' };
-            } else {
-                return { status: 'not-recommended', level: 'below' };
-            }
+            if (percentage >= streamData.excellent) { return { status: 'eligible', level: 'excellent' }; }
+            else if (percentage >= streamData.good)  { return { status: 'eligible', level: 'good' }; }
+            else if (percentage >= streamData.borderline) { return { status: 'borderline', level: 'borderline' }; }
+            else { return { status: 'not-recommended', level: 'below' }; }
         }
 
         /**
@@ -1448,50 +1063,37 @@
          */
         function calculateEligibility() {
             try {
-                // Hide any previous errors
                 hideError();
-                
-                // Get percentage input
                 const percentage = parseFloat(document.getElementById('expectedPercentage').value);
 
-                // VALIDATION 1: Check if field is filled
                 if (isNaN(percentage) || document.getElementById('expectedPercentage').value === '') {
                     showError('Please enter your expected percentage.');
                     return;
                 }
-
-                // VALIDATION 2: Check if percentage is within valid range
                 if (percentage < 0) {
                     showError('Percentage cannot be negative. Please enter a value between 0 and 100.');
                     return;
                 }
-
                 if (percentage > 100) {
                     showError('Percentage cannot exceed 100. Please enter a valid percentage.');
                     return;
                 }
-
-                // VALIDATION 3: Check for excessive decimal places
                 const decimalPlaces = (percentage.toString().split('.')[1] || '').length;
                 if (decimalPlaces > 2) {
                     showError('Please use maximum 2 decimal places for percentage.');
                     return;
                 }
 
-                // Disable button to prevent double-clicking
                 const calculateBtn = document.getElementById('calculateBtn');
                 calculateBtn.disabled = true;
                 calculateBtn.textContent = 'Calculating...';
 
-                // Calculate eligibility for each stream
-                const scienceEligibility = getStreamEligibility(percentage, 'science');
+                const scienceEligibility  = getStreamEligibility(percentage, 'science');
                 const commerceEligibility = getStreamEligibility(percentage, 'commerce');
-                const artsEligibility = getStreamEligibility(percentage, 'arts');
+                const artsEligibility     = getStreamEligibility(percentage, 'arts');
 
-                // Display results
                 displayResults(percentage, scienceEligibility, commerceEligibility, artsEligibility);
 
-                // Re-enable button
                 setTimeout(() => {
                     calculateBtn.disabled = false;
                     calculateBtn.textContent = 'Check Stream Eligibility';
@@ -1500,7 +1102,6 @@
             } catch (error) {
                 console.error('Calculation error:', error);
                 showError('An unexpected error occurred. Please try again.');
-                
                 const calculateBtn = document.getElementById('calculateBtn');
                 calculateBtn.disabled = false;
                 calculateBtn.textContent = 'Check Stream Eligibility';
@@ -1509,13 +1110,6 @@
 
         /**
          * Generate stream card HTML
-         * @param {string} streamName - Name of the stream
-         * @param {string} icon - Emoji icon
-         * @param {string} subtitle - Stream subtitle
-         * @param {object} eligibility - Eligibility status
-         * @param {string} description - Stream description
-         * @param {string} cutoff - Cutoff information
-         * @returns {string} HTML string
          */
         function generateStreamCard(streamName, icon, subtitle, eligibility, description, cutoff) {
             const statusText = {
@@ -1523,7 +1117,6 @@
                 'borderline': 'Possible',
                 'not-recommended': 'Check School'
             };
-
             const messages = {
                 'eligible': {
                     'excellent': 'Great choice! Your percentage is well above the typical requirements. You have excellent chances of securing admission in this stream.',
@@ -1532,8 +1125,7 @@
                 'borderline': 'Worth considering! Your percentage is in the competitive range. Check with your school as admission may depend on seat availability and other factors.',
                 'not-recommended': 'May be challenging. Your percentage is below typical cutoffs for this stream. However, requirements vary by school - check with your institution.'
             };
-
-            const message = eligibility.status === 'eligible' 
+            const message = eligibility.status === 'eligible'
                 ? messages.eligible[eligibility.level]
                 : messages[eligibility.status];
 
@@ -1565,44 +1157,18 @@
          */
         function displayResults(percentage, scienceEligibility, commerceEligibility, artsEligibility) {
             try {
-                // Update percentage display
                 document.getElementById('displayPercentage').textContent = percentage.toFixed(2) + '%';
 
-                // Generate stream cards
-                const streamsHTML = 
-                    generateStreamCard(
-                        'Science Stream',
-                        '🔬',
-                        'PCM (Physics, Chemistry, Math) or PCB (Biology)',
-                        scienceEligibility,
-                        '',
-                        '75-80% in most schools, 60-70% in some schools'
-                    ) +
-                    generateStreamCard(
-                        'Commerce Stream',
-                        '💼',
-                        'Accounting, Business Studies, Economics',
-                        commerceEligibility,
-                        '',
-                        '60-70% in most schools, 75%+ in premier institutions'
-                    ) +
-                    generateStreamCard(
-                        'Arts/Humanities',
-                        '🎨',
-                        'History, Political Science, Psychology, etc.',
-                        artsEligibility,
-                        '',
-                        '50-60% in most schools, very flexible admission'
-                    );
+                const streamsHTML =
+                    generateStreamCard('Science Stream', '🔬', 'PCM (Physics, Chemistry, Math) or PCB (Biology)', scienceEligibility, '', '75-80% in most schools, 60-70% in some schools') +
+                    generateStreamCard('Commerce Stream', '💼', 'Accounting, Business Studies, Economics', commerceEligibility, '', '60-70% in most schools, 75%+ in premier institutions') +
+                    generateStreamCard('Arts/Humanities', '🎨', 'History, Political Science, Psychology, etc.', artsEligibility, '', '50-60% in most schools, very flexible admission');
 
-                // Insert cards into grid
                 document.getElementById('streamsGrid').innerHTML = streamsHTML;
 
-                // Show result section
                 const resultDiv = document.getElementById('result');
                 resultDiv.classList.add('show');
 
-                // Smooth scroll to results
                 setTimeout(() => {
                     resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
@@ -1618,21 +1184,12 @@
          */
         function resetForm() {
             try {
-                // Clear input
                 const input = document.getElementById('expectedPercentage');
                 input.value = '';
                 input.classList.remove('valid', 'invalid');
-
-                // Hide result
-                const resultDiv = document.getElementById('result');
-                resultDiv.classList.remove('show');
-
-                // Hide errors
+                document.getElementById('result').classList.remove('show');
                 hideError();
-
-                // Scroll to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-
             } catch (error) {
                 console.error('Reset error:', error);
                 location.reload();
@@ -1640,36 +1197,12 @@
         }
 
         /**
-         * Initialize event listeners
+         * Keyboard UX for the input
          */
         document.addEventListener('DOMContentLoaded', function() {
             try {
-                // Nav scroll effect
-                const siteNav = document.querySelector('nav.site-nav');
-                window.addEventListener('scroll', function() {
-                    const threshold = window.innerHeight * 0.3;
-                    if (window.scrollY > threshold) { siteNav.classList.add('scrolled'); }
-                    else { siteNav.classList.remove('scrolled'); }
-                });
-                // Mobile hamburger toggle
-                const navToggle = document.getElementById('navToggle');
-                const navLinksList = document.getElementById('navLinks');
-                if (navToggle && navLinksList) {
-                    navToggle.addEventListener('click', function() {
-                        navLinksList.classList.toggle('open');
-                        navToggle.classList.toggle('open');
-                    });
-                    navLinksList.querySelectorAll('a').forEach(function(link) {
-                        link.addEventListener('click', function() {
-                            navLinksList.classList.remove('open');
-                            navToggle.classList.remove('open');
-                        });
-                    });
-                }
-
                 const input = document.getElementById('expectedPercentage');
-                
-                // Enter key to calculate
+
                 input.addEventListener('keypress', function(event) {
                     if (event.key === 'Enter') {
                         event.preventDefault();
@@ -1677,18 +1210,13 @@
                     }
                 });
 
-                // Prevent invalid characters
                 input.addEventListener('keydown', function(event) {
-                    // Allow: backspace, delete, tab, escape, enter, navigation keys
                     if ([46, 8, 9, 27, 13].indexOf(event.keyCode) !== -1 ||
                         (event.keyCode === 65 && event.ctrlKey === true) ||
                         (event.keyCode === 67 && event.ctrlKey === true) ||
                         (event.keyCode === 86 && event.ctrlKey === true) ||
                         (event.keyCode === 88 && event.ctrlKey === true) ||
-                        (event.keyCode >= 35 && event.keyCode <= 39)) {
-                        return;
-                    }
-                    // Ensure it's a number or decimal
+                        (event.keyCode >= 35 && event.keyCode <= 39)) { return; }
                     if ((event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) &&
                         (event.keyCode < 96 || event.keyCode > 105) &&
                         event.keyCode !== 190 && event.keyCode !== 110) {
@@ -1702,5 +1230,9 @@
             }
         });
     </script>
+
+<!-- ══ Nav logic ══ -->
+<script src="navigation.js"></script>
+
 </body>
 </html>
