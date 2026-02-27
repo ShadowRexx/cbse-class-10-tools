@@ -4,236 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn what the Best of 5 rule in CBSE Class 10 means, whether it is official in 2026, which subjects are included, and how to calculate your percentage step by step.">
-    <meta name="description" content="    Learn what the CBSE Best of 5 rule means in 2026, how to calculate top 5 subject percentage, whether CBSE officially supports it, and use our free calculator to check your score instantly.">
     <meta name="keywords" content="best of 5 rule cbse, kya cbse me best of 5 hota hai, top 5 subjects percentage class 10, is best of 5 allowed in cbse, cbse class 10 percentage calculation">
     <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/best-of-5-rule-cbse-class-10.html">
     <title>What is Best of 5 Rule in CBSE Class 10? (2026 Guide) | CBSE Decision Hub</title>
-
+        <link rel="stylesheet" href="main.css">
     <style>
-
-        /* ════════ RESET & BASE ════════ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f8;
-            min-height: 100vh;
-            color: #2d3748;
-            line-height: 1.7;
-        }
-
-        /* ════════ NAV ════════ */
-        .site-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: transparent;
-            padding: 10px 20px;
-            pointer-events: none;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .nav-inner {
-            max-width: 1060px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 22px;
-            height: 54px;
-            position: relative;
-            pointer-events: all;
-            background: rgba(102, 126, 234, 0.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(80, 50, 140, 0.22), 0 1px 0 rgba(255, 255, 255, 0.18) inset;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-        }
-        .site-nav.scrolled .nav-inner {
-            background: rgba(102, 90, 180, 0.94);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            box-shadow: 0 8px 32px rgba(60, 30, 120, 0.38), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
-            border-color: rgba(255, 255, 255, 0.18);
-        }
-        .nav-logo {
-            font-size: 1.08rem;
-            font-weight: 800;
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: -0.3px;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        .nav-logo::before { content: '🎓'; font-size: 1.15rem; margin-right: 7px; }
-        .nav-dot { color: #ffd700; }
-        .nav-list {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            list-style: none;
-        }
-        .nav-list > li { position: relative; }
-        .nav-list > li > a,
-        .nav-dropdown-btn {
-            color: rgba(255, 255, 255, 0.87);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 500;
-            padding: 6px 11px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            white-space: nowrap;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            font-family: inherit;
-            transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
-        }
-        .nav-list > li > a:hover,
-        .nav-dropdown-btn:hover {
-            background: rgba(255, 255, 255, 0.18);
-            color: #fff;
-            transform: translateY(-1px);
-        }
-        .nav-list > li > a.active {
-            background: rgba(255, 255, 255, 0.22);
-            color: #fff;
-            font-weight: 700;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
-        }
-        .nav-chevron {
-            width: 11px; height: 7px; flex-shrink: 0;
-            opacity: 0.75;
-            transition: transform 0.25s ease, opacity 0.2s ease;
-        }
-        .nav-dropdown:hover > .nav-dropdown-btn .nav-chevron,
-        .nav-dropdown.open > .nav-dropdown-btn .nav-chevron {
-            transform: rotate(180deg); opacity: 1;
-        }
-        .nav-submenu {
-            position: absolute;
-            top: calc(100% + 10px);
-            left: 50%;
-            transform: translateX(-50%) translateY(-6px);
-            min-width: 215px;
-            list-style: none;
-            padding: 7px;
-            background: rgba(55, 35, 108, 0.97);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 14px;
-            box-shadow: 0 18px 44px rgba(40, 20, 90, 0.42);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            z-index: 100;
-        }
-        .nav-submenu::before {
-            content: '';
-            position: absolute;
-            top: -6px; left: 50%;
-            transform: translateX(-50%);
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 7px solid rgba(255, 255, 255, 0.15);
-        }
-        .nav-dropdown:hover .nav-submenu,
-        .nav-dropdown.open .nav-submenu {
-            opacity: 1; pointer-events: all;
-            transform: translateX(-50%) translateY(0);
-        }
-        .nav-submenu li + li { margin-top: 1px; }
-        .nav-submenu li a {
-            display: flex; align-items: center; gap: 9px;
-            padding: 9px 12px;
-            color: rgba(255, 255, 255, 0.82);
-            text-decoration: none;
-            font-size: 0.82rem; font-weight: 500;
-            border-radius: 9px;
-            transition: background 0.15s ease, color 0.15s ease;
-            white-space: nowrap;
-        }
-        .nav-submenu li a span { font-size: 1rem; flex-shrink: 0; line-height: 1; }
-        .nav-submenu li a:hover { background: rgba(255, 255, 255, 0.13); color: #fff; }
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 38px; height: 38px;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 9px;
-            background: rgba(255, 255, 255, 0.12);
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: background 0.2s ease;
-        }
-        .nav-toggle:hover { background: rgba(255, 255, 255, 0.22); }
-        .nav-toggle span {
-            display: block; width: 19px; height: 2px;
-            background: #fff; border-radius: 2px;
-            transition: transform 0.28s ease, opacity 0.28s ease;
-        }
-        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .nav-toggle.open span:nth-child(2) { opacity: 0; }
-        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-        @media (max-width: 760px) {
-            .site-nav { padding: 8px 12px; }
-            .nav-inner { border-radius: 14px; padding: 0 14px; height: 50px; }
-            .nav-toggle { display: flex; }
-            .nav-list {
-                display: none;
-                position: absolute;
-                top: calc(100% + 8px); left: 0; right: 0;
-                flex-direction: column;
-                gap: 2px;
-                padding: 10px 10px 12px;
-                background: rgba(68, 44, 136, 0.97);
-                backdrop-filter: blur(24px);
-                -webkit-backdrop-filter: blur(24px);
-                border: 1px solid rgba(255, 255, 255, 0.18);
-                border-radius: 14px;
-                box-shadow: 0 14px 36px rgba(40, 20, 90, 0.36);
-            }
-            .nav-list.open { display: flex; }
-            .nav-list > li { width: 100%; }
-            .nav-list > li > a, .nav-dropdown-btn {
-                width: 100%; padding: 10px 13px; font-size: 0.9rem;
-                border-radius: 10px; justify-content: space-between;
-            }
-            .nav-list > li > a:hover, .nav-dropdown-btn:hover { transform: none; }
-            .nav-submenu {
-                position: static; transform: none; min-width: unset; width: 100%;
-                background: rgba(255, 255, 255, 0.06);
-                backdrop-filter: none; -webkit-backdrop-filter: none;
-                border: none; border-radius: 10px; box-shadow: none;
-                margin-top: 2px; padding: 0;
-                max-height: 0; overflow: hidden;
-                opacity: 1; pointer-events: none;
-                transition: max-height 0.28s ease, padding 0.22s ease;
-            }
-            .nav-submenu::before { display: none; }
-            .nav-dropdown.open .nav-submenu {
-                max-height: 280px; pointer-events: all;
-                padding: 4px; transform: none;
-            }
-            .nav-dropdown:hover .nav-submenu {
-                opacity: 1; transform: none; max-height: 0; pointer-events: none;
-            }
-            .nav-dropdown.open:hover .nav-submenu { max-height: 280px; pointer-events: all; }
-            .nav-submenu li a { padding: 9px 12px; font-size: 0.86rem; border-radius: 8px; }
-            .nav-chevron { margin-left: auto; }
-        }
-
         /* ════════ HERO ════════ */
         .page-hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -556,61 +331,6 @@
             padding-left: 32px;
         }
 
-        /* ════════ FOOTER ════════ */
-        footer.site-footer {
-            background: #1e1b38;
-            color: rgba(255,255,255,0.7);
-            padding: 48px 20px 28px;
-            margin-top: 0;
-        }
-        .footer-inner { max-width: 1060px; margin: 0 auto; }
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 36px;
-        }
-        .footer-brand .footer-logo {
-            font-size: 1.05rem; font-weight: 800; color: #fff;
-            text-decoration: none; display: flex; align-items: center;
-            gap: 8px; margin-bottom: 12px;
-        }
-        .footer-brand .footer-logo::before { content: '🎓'; font-size: 1.1rem; }
-        .footer-brand .footer-logo .dot { color: #ffd700; }
-        .footer-brand p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
-        .footer-col h4 {
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.9px;
-            text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px;
-        }
-        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .footer-col ul li a {
-            font-size: 0.82rem; color: rgba(255,255,255,0.6);
-            text-decoration: none; transition: color 0.2s;
-            display: flex; align-items: center; gap: 6px;
-        }
-        .footer-col ul li a:hover { color: #fff; }
-        .footer-divider { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 20px; }
-        .footer-bottom {
-            display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap; gap: 10px;
-        }
-        .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-        .footer-bottom-links { display: flex; gap: 16px; flex-wrap: wrap; }
-        .footer-bottom-links a {
-            font-size: 0.75rem; color: rgba(255,255,255,0.35);
-            text-decoration: none; transition: color 0.2s;
-        }
-        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
-        @media (max-width: 700px) {
-            .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
-            .footer-brand { grid-column: 1 / -1; }
-        }
-        @media (max-width: 480px) {
-            .footer-top { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; align-items: flex-start; }
-            .calc-cta { flex-direction: column; gap: 12px; }
-        }
-
         .cta-box {
         background: #f4f7ff;
         padding: 25px;
@@ -628,6 +348,14 @@
         border-radius: 5px;
         font-weight: 600;
         }
+
+                .nav-links {
+            text-decoration: none;
+            font-weight: 600;
+            color: #667eea;
+            transition: color 0.2s;
+        }
+        .nav-links:hover { color: #764ba2; }
 
     </style>
 </head>
@@ -651,10 +379,25 @@
                     <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
                     <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
                     <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
+                </ul>
+            </li>
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
                 </ul>
             </li>
             <li><a href="maths-answer-key-2025.html" >Maths Answer Key</a></li>
-            <li><a href="best-of-5-rule-cbse-class-10.html">Best of 5 Rule Guide</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -802,6 +545,16 @@
                 </div>
             </div>
 
+            <!-- Results Day Guide inline CTA -->
+            <div class="calc-cta" style="background:linear-gradient(135deg,#f0f4ff 0%,#e8edff 100%);border-color:#c3dafe;margin-top:28px;">
+                <div class="calc-cta-icon">📋</div>
+                <div class="calc-cta-text">
+                    <h3 style="color:#3730a3;">Results are out? Here's your complete action plan</h3>
+                    <p style="color:#4a5568;">Beyond calculating your percentage, you need to check your grades, pick the right stream, and plan for improvement — all in the right order.</p>
+                    <a href="cbse-class-10-results-day-guide.html" class="calc-cta-btn">Read the Results Day Guide →</a>
+                </div>
+            </div>
+
             <!-- ── SECTION 5 ── -->
             <h2>Common Mistakes Students Make</h2>
 
@@ -829,15 +582,12 @@
                 </div>
             </div>
 
-             Is Top 5 Subject Percentage Calculator Accurate?
-
-        Many students search whether a top 5 subject percentage calculator gives correct results. The answer depends on whether the calculator correctly includes English as compulsory and replaces the lowest scoring subject only if an additional subject score is higher.
-
-        Manual calculation errors are common. A properly designed calculator applies the correct CBSE subject logic automatically.
-
-        To avoid mistakes, use a reliable calculator that follows official subject inclusion rules.
-
-        <a href="index.html" style="text-decoration: none;font-weight: bolder;">Check your percentage using our CBSE Best of 5 calculator</a>    
+            
+            <h2>Is a Top 5 Subject Percentage Calculator Accurate?</h2>
+            <p>Many students search whether a top 5 subject percentage calculator gives correct results. The answer depends on whether the calculator correctly includes English as compulsory and replaces the lowest-scoring subject only if an additional subject score is higher.</p>
+            <p>Manual calculation errors are common. A properly designed calculator applies the correct CBSE subject logic automatically.</p>
+            <p>To avoid mistakes, use a reliable calculator that follows official subject inclusion rules. <a href="index.html" style="color:#667eea;font-weight:700;">Check your percentage using our CBSE Best of 5 calculator →</a></p>
+            
 
             <!-- ── FAQ ── -->
             <section class="faq-section">
@@ -874,12 +624,42 @@
                 </div>
             </section>
 
+                            <!-- More Tools -->
+                <h2>More CBSE Class 10 Tools</h2>
+                <p style="font-size: 14px; color: #555;">Along with this Grade Predictor, you can also use:</p>
+                <ul>
+                    <li>
+                        <a href="index.html" class="nav-links"><strong  style="color: #667eea;">Best of 5 Percentage Calculator</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Calculate your overall CBSE Class 10 percentage instantly.</span>
+                    </li>
+                    <li>
+                        <a href="target-marks.html" class="nav-links"><strong style="color: #667eea;">Target Marks Calculator</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Find out how many marks you need to hit your percentage goal.</span>
+                    </li>
+                    <li>
+                        <a href="stream-eligibility.html" class="nav-links"><strong  style="color: #667eea;">Stream Eligibility Calculator</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Check if you qualify for Science, Commerce or Arts streams.</span>
+                    </li>
+                    <li>
+                        <a href="cbse-grade-predictor.html" class="nav-links">
+                            <strong style="color: #667eea;">CBSE Grade Predictor</strong>
+                        </a>    
+                        <span style="font-size: 14px;color: #666;"> – Find your predicted A1, A2, B1 grade for each subject.</span>
+                    </li>
+                    <li>
+                        <a href="cbse-class-10-results-day-guide.html" class="nav-links"><strong style="color: #667eea;">Results Day Complete Guide</strong></a>
+                        <span style="font-size: 14px; color: #666;"> – Step-by-step action plan for after your CBSE Class 10 results.</span>
+                    </li>
+                </ul>
+
+            </div><!-- /.container -->
+
         </article>
     </main>
 </div>
 
 <!-- ════════ FOOTER ════════ -->
-<footer class="site-footer">
+<footer>
     <div class="footer-inner">
         <div class="footer-top">
             <div class="footer-brand">
@@ -893,6 +673,15 @@
                     <li><a href="target-marks.html">🎯 Target Marks</a></li>
                     <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
                     <li><a href="maths-answer-key-2025.html">📝 Answer Key</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="cbse-class-10-results-day-guide.html">📋 Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html">📚 Best of 5 Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html">📝 English Rule Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html">✅ Passing Criteria 2026</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -923,62 +712,7 @@
     </div>
 </footer>
 
-<script>
-(function () {
-    var nav      = document.getElementById('siteNav');
-    var toggle   = document.getElementById('navToggle');
-    var list     = document.getElementById('navList');
-    var dropdown = document.querySelector('.nav-dropdown');
-    var dropBtn  = dropdown ? dropdown.querySelector('.nav-dropdown-btn') : null;
-
-    function isMobile() { return window.innerWidth <= 760; }
-
-    window.addEventListener('scroll', function () {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
-    toggle.addEventListener('click', function () {
-        var isOpen = list.classList.toggle('open');
-        toggle.classList.toggle('open', isOpen);
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        if (!isOpen && dropdown) {
-            dropdown.classList.remove('open');
-            if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    if (dropBtn) {
-        dropBtn.addEventListener('click', function (e) {
-            if (!isMobile()) return;
-            e.stopPropagation();
-            var isOpen = dropdown.classList.toggle('open');
-            dropBtn.setAttribute('aria-expanded', String(isOpen));
-        });
-    }
-
-    document.addEventListener('click', function (e) {
-        if (!nav.contains(e.target)) {
-            list.classList.remove('open');
-            toggle.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            if (dropdown) {
-                dropdown.classList.remove('open');
-                if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
-
-    list.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (isMobile()) {
-                list.classList.remove('open');
-                toggle.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-}());
-</script>
+<script src="navigation.js"></script>
 
 <script type="application/ld+json">
 {

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free CBSE Grade Predictor tool for Class 10. Enter your expected marks to find out your CBSE grades (A1, A2, B1, etc.) and understand the 1/8th grading rule.">
+    <meta name="keywords" content="CBSE grade predictor, class 10 grades, A1 A2 grade CBSE, CBSE grading system, class 10 grade calculator, CBSE 1/8 grading rule">
+    <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/cbse-grade-predictor.html">
+
+    <title>CBSE Class 10 Grade Predictor 2026 | Calculate A1, A2 Grades</title>
+
+    <!-- ══ Shared styles: Navbar, Footer, Body ══ -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* ════════ PAGE LAYOUT ════════ */
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .page-main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 36px 20px 60px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 45px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 480px) {
+            .page-main { padding: 24px 12px 48px; }
+            .container { padding: 25px 18px; }
+        }
+
+        /* ════════ TYPOGRAPHY ════════ */
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #2d3748;
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 26px; }
+            h2 { font-size: 20px; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+        }
+
+        /* ════════ SUBJECTS GRID ════════ */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .subject-input {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        label {
+            color: #555;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        input[type="number"] {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        input[type="number"].valid   { border-color: #48bb78; background: #f0fff4; }
+        input[type="number"].invalid { border-color: #fc8181; background: #fff5f5; }
+
+        /* ════════ BUTTONS ════════ */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-calculate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        .btn-calculate:disabled { opacity: 0.6; cursor: not-allowed; }
+        .btn-reset { background: #f0f0f0; color: #555; }
+        .btn-reset:hover { background: #e0e0e0; }
+        @media (max-width: 480px) {
+            .button-group { flex-direction: column; }
+        }
+
+        /* ════════ ERROR ════════ */
+        .error-message {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: shake 0.3s ease;
+        }
+        .error-message.show { display: block; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25%       { transform: translateX(-10px); }
+            75%       { transform: translateX(10px); }
+        }
+
+        /* ════════ GRADE RESULTS ════════ */
+        .grade-results {
+            display: none;
+            animation: slideIn 0.5s ease;
+            margin-bottom: 10px;
+        }
+        .grade-results.show { display: block; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        .grade-results-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            padding: 20px 25px;
+            text-align: center;
+        }
+        .grade-results-header h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin: 0 0 4px 0;
+            font-size: 20px;
+        }
+        .grade-results-header p {
+            color: rgba(255,255,255,0.82);
+            font-size: 13px;
+            margin: 0;
+        }
+        .grade-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+            padding: 20px;
+        }
+        @media (max-width: 480px) {
+            .grade-cards-grid { grid-template-columns: 1fr; }
+        }
+        .grade-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+        .grade-card:hover { transform: translateY(-2px); }
+        .grade-badge {
+            min-width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+        .grade-A1 { background: linear-gradient(135deg, #38a169, #276749); color: #fff; }
+        .grade-A2 { background: linear-gradient(135deg, #48bb78, #38a169); color: #fff; }
+        .grade-B1 { background: linear-gradient(135deg, #4299e1, #2b6cb0); color: #fff; }
+        .grade-B2 { background: linear-gradient(135deg, #63b3ed, #4299e1); color: #fff; }
+        .grade-C1 { background: linear-gradient(135deg, #ed8936, #c05621); color: #fff; }
+        .grade-C2 { background: linear-gradient(135deg, #f6ad55, #ed8936); color: #fff; }
+        .grade-D  { background: linear-gradient(135deg, #a0aec0, #718096); color: #fff; }
+        .grade-E  { background: linear-gradient(135deg, #fc8181, #e53e3e); color: #fff; }
+        .grade-card-info { flex: 1; min-width: 0; }
+        .grade-card-subject {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .grade-card-marks { font-size: 1.1rem; font-weight: 800; color: #2d3748; line-height: 1.2; }
+        .grade-card-range { font-size: 0.75rem; color: #a0aec0; margin-top: 2px; }
+
+        /* ════════ GRADE SCALE TABLE ════════ */
+        .grade-scale-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin: 16px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(80,50,140,0.09);
+        }
+        .grade-scale-table thead tr {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        .grade-scale-table th {
+            padding: 11px 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.4px;
+        }
+        .grade-scale-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #e8eaf0;
+            color: #4a5568;
+        }
+        .grade-scale-table tbody tr:nth-child(even) { background: #f7f9fc; }
+        .grade-scale-table tbody tr:last-child td { border-bottom: none; }
+        .gs-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+
+        /* ════════ EXAMPLE BOX ════════ */
+        .example-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #f6ad55;
+        }
+        .example-box h3 { color: #744210; margin-top: 0; font-size: 18px; margin-bottom: 15px; }
+        .example-box p  { color: #744210; line-height: 1.8; margin-bottom: 10px; }
+        .example-box .example-calc {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+        .try-example-btn {
+            background: #ed8936;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .try-example-btn:hover {
+            background: #dd6b20;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(237, 137, 54, 0.3);
+        }
+        @media (max-width: 480px) { .example-box { padding: 20px; } }
+
+        /* ════════ INFO / HIGHLIGHT / FAQ ════════ */
+        .info-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .info-section h3  { color: #333; font-size: 20px; margin-bottom: 15px; }
+        .info-section p   { color: #666; line-height: 1.8; margin-bottom: 12px; font-size: 14px; }
+        .info-section ul  { color: #666; margin-left: 20px; line-height: 1.8; }
+        .info-section li  { margin-bottom: 8px; font-size: 14px; }
+
+        .highlight-box {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .highlight-box p { color: #2c5282; margin-bottom: 10px; }
+
+        .warn-box {
+            background: #fffbeb;
+            border-left: 4px solid #f6ad55;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .warn-box p { color: #744210; margin-bottom: 8px; font-size: 14px; }
+
+        .seo-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .seo-section h2 { margin-bottom: 20px; }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+        }
+        .faq-item h3 { color: #2d3748; font-size: 16px; margin-bottom: 10px; margin-top: 0; }
+        .faq-item p  { color: #4a5568; font-size: 14px; line-height: 1.7; margin: 0; }
+
+        /* ════════ MISC ════════ */
+        .learn-section {
+            background: #f9fafc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .secondary-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #667eea;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .secondary-btn:hover { background: #764ba2; }
+        .nav-links {
+            text-decoration: none;
+            font-weight: 600;
+            color: #667eea;
+            transition: color 0.2s;
+        }
+        .nav-links:hover { color: #764ba2; }
+    </style>
+</head>
+
+<body>
+    <!-- ════════ NAV ════════ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
+        <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Tools dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Tools
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
+                    <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
+                    <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
+                </ul>
+            </li>
+
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                </ul>
+            </li>
+
+            <li><a href="maths-answer-key-2025.html">Maths Answer Key</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </a>
+    </div>
+</nav>
+
+    <div class="page-wrapper">
+        <!-- ════════ HERO ════════ -->
+        <section style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:52px 20px 48px;text-align:center;margin-top:-74px;padding-top:110px;">
+            <div style="display:inline-block;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);color:#fff;font-size:0.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:18px;">🎓 Free Tool · 2025–26</div>
+            <h1 style="font-size:clamp(1.4rem,4vw,2.2rem);font-weight:800;color:#fff;line-height:1.25;margin-bottom:12px;max-width:720px;margin-left:auto;margin-right:auto;">CBSE Class 10 Grade Predictor</h1>
+            <p style="font-size:1rem;color:rgba(255,255,255,0.82);max-width:520px;margin:0 auto;line-height:1.6;">Enter your expected marks and instantly find your predicted CBSE grade (A1, A2, B1…) for each subject.</p>
+        </section>
+
+        <main class="page-main">
+            <div class="container">
+
+                <h1>CBSE Class 10 Grade Predictor – Find Your A1, A2, B1 Grades</h1>
+                <p style="text-align:center; font-size:14px; color:#555;">✅ Based on the standard CBSE Grade Scale | Updated for 2025–26</p>
+                <p class="subtitle">Enter your expected marks below and click Predict Grades</p>
+
+                <h2>What Grade Will You Get?</h2>
+                <p style="text-align:center; font-size:15px; color:#555;">
+                    CBSE uses a grade system alongside marks in Class 10. Enter your expected marks
+                    (out of 100) for each subject below and the predictor will show your likely grade
+                    based on the standard CBSE proxy scale.
+                </p>
+                <p style="color: #777; font-weight: 600; padding-top: 10px; margin-bottom: 24px;">
+                    Want to know your overall percentage first? <a href="index.html" class="nav-links">Use the Best of 5 Calculator.</a>
+                </p>
+
+                <!-- Error Message Display -->
+                <div class="error-message" id="errorMessage"></div>
+
+                <!-- Example Calculation -->
+                <div class="example-box">
+                    <h3>📝 Example Grade Prediction</h3>
+                    <p><strong>Sample Student Marks:</strong> English: 87, Maths: 93, Science: 75, Social Science: 62, Hindi: 45</p>
+                    <div class="example-calc">
+                        English         87  →  <strong>A2</strong>  (81–90 · Excellent)<br>
+                        Mathematics     93  →  <strong>A1</strong>  (91–100 · Outstanding)<br>
+                        Science         75  →  <strong>B1</strong>  (71–80 · Very Good)<br>
+                        Social Science  62  →  <strong>B2</strong>  (61–70 · Good)<br>
+                        Hindi           45  →  <strong>C2</strong>  (41–50 · Average)
+                    </div>
+                    <button class="try-example-btn" onclick="fillExampleData()">Try This Example</button>
+                </div>
+
+                <!-- Grade Scale Reference -->
+                <h2>CBSE Grade Scale (Standard Proxy)</h2>
+                <div style="overflow-x:auto; margin-bottom:28px;">
+                    <table class="grade-scale-table">
+                        <thead>
+                            <tr>
+                                <th>Marks Range</th>
+                                <th>Grade</th>
+                                <th>Performance Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>91 – 100</td><td><span class="gs-badge grade-A1">A1</span></td><td>Outstanding</td></tr>
+                            <tr><td>81 – 90</td><td><span class="gs-badge grade-A2">A2</span></td><td>Excellent</td></tr>
+                            <tr><td>71 – 80</td><td><span class="gs-badge grade-B1">B1</span></td><td>Very Good</td></tr>
+                            <tr><td>61 – 70</td><td><span class="gs-badge grade-B2">B2</span></td><td>Good</td></tr>
+                            <tr><td>51 – 60</td><td><span class="gs-badge grade-C1">C1</span></td><td>Satisfactory</td></tr>
+                            <tr><td>41 – 50</td><td><span class="gs-badge grade-C2">C2</span></td><td>Average</td></tr>
+                            <tr><td>33 – 40</td><td><span class="gs-badge grade-D">D</span></td><td>Passing</td></tr>
+                            <tr><td>Below 33</td><td><span class="gs-badge grade-E">E</span></td><td>Essential Repeat (Fail)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Enter Your Expected Marks</h2>
+
+                <div class="subjects-grid" id="subjectsGrid">
+                    <div class="subject-input">
+                        <label for="s1">Subject 1 – English / Hindi (Compulsory Language)</label>
+                        <input type="number" id="s1" min="0" max="100" placeholder="Marks out of 100" oninput="validateInput(this)">
+                    </div>
+                    <div class="subject-input">
+                        <label for="s2">Subject 2 – Mathematics</label>
+                        <input type="number" id="s2" min="0" max="100" placeholder="Marks out of 100" oninput="validateInput(this)">
+                    </div>
+                    <div class="subject-input">
+                        <label for="s3">Subject 3 – Science</label>
+                        <input type="number" id="s3" min="0" max="100" placeholder="Marks out of 100" oninput="validateInput(this)">
+                    </div>
+                    <div class="subject-input">
+                        <label for="s4">Subject 4 – Social Science</label>
+                        <input type="number" id="s4" min="0" max="100" placeholder="Marks out of 100" oninput="validateInput(this)">
+                    </div>
+                    <div class="subject-input">
+                        <label for="s5">Subject 5 – Additional / 5th Subject</label>
+                        <input type="number" id="s5" min="0" max="100" placeholder="Marks out of 100" oninput="validateInput(this)">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-calculate" onclick="predictGrades()" id="predictBtn">Predict Grades</button>
+                    <button class="btn-reset" onclick="resetForm()">Reset All</button>
+                </div>
+
+                <!-- Results -->
+                <div class="grade-results" id="gradeResults">
+                    <div class="grade-results-header">
+                        <h2>Your Predicted CBSE Grades</h2>
+                        <p>Based on the standard proxy scale — actual grades may vary due to CBSE's relative 1/8th grading system.</p>
+                    </div>
+                    <div class="grade-cards-grid" id="gradeCardsGrid">
+                        <!-- filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Cross-tool CTA -->
+                <section class="learn-section">
+                    <h2>Know Your Percentage Too?</h2>
+                    <p style="color:#888; font-weight:400;">Use our Best of 5 Percentage Calculator to find your overall CBSE Class 10 percentage alongside these grade predictions.</p>
+                    <a href="index.html" class="secondary-btn">Calculate My Percentage →</a>
+                </section>
+
+                <!-- About CBSE Grading System -->
+                <div class="info-section">
+                    <h2>About the CBSE Grading System</h2>
+                    <p>CBSE officially uses a <strong>Positional Grading System</strong> based on relative performance — not fixed cut-off marks. After all candidates' marks are tallied, they are divided into eight equal groups (each representing 1/8th of the total passed candidates) and assigned grades accordingly.</p>
+
+                    <div class="highlight-box">
+                        <p><strong>How the 1/8th Grading Rule Works:</strong></p>
+                        <p>The top 1/8th of all passed candidates in a subject receive <strong>A1</strong>. The next 1/8th receive <strong>A2</strong>, and so on down to <strong>D</strong> for the bottom 1/8th. Students who score below 33 receive an <strong>E</strong> (Essential Repeat) grade.</p>
+                        <p>This means the exact marks required for A1 or A2 <em>change every year</em> depending on how all candidates performed in that specific exam.</p>
+                    </div>
+
+                    <p>The grade predictor above uses the <strong>standard proxy scale</strong> (91–100 = A1, 81–90 = A2, etc.) widely used for planning and estimation. Your official grade on the CBSE marksheet is determined by the 1/8th relative system applied after results are compiled.</p>
+
+                    <div class="warn-box">
+                        <p>⚠️ <strong>Important:</strong> This tool gives a proxy/estimated grade only. Your official grade on the CBSE marksheet is determined by relative performance across all candidates.</p>
+                        <p>For a tough paper where scores are lower across the board, your actual grade could be better than this predictor shows.</p>
+                    </div>
+
+                    <h3>Why Do Grades Matter for Class 10?</h3>
+                    <ul>
+                        <li>Grades appear alongside marks on your official CBSE marksheet and are used by many schools for Class 11 stream allocation.</li>
+                        <li>Some schools require a minimum grade (e.g., A2 or B1 in Science/Maths) for Science stream admission.</li>
+                        <li>Grades enable fair comparison between students even when subject difficulty varies year to year.</li>
+                        <li>Certain competitive scholarships and institutions use grades as part of their eligibility criteria.</li>
+                    </ul>
+
+                    <h3>Important CBSE Class 10 Grading Rules</h3>
+                    <ul>
+                        <li><strong>Both marks and grades reported:</strong> CBSE gives you subject-wise marks AND a grade for each subject on the marksheet.</li>
+                        <li><strong>E grade means compartment exam:</strong> Scoring below 33 in any subject results in an E grade and requires sitting the compartment examination.</li>
+                        <li><strong>No single overall grade:</strong> CBSE does not assign one overall grade — grades are per subject only.</li>
+                        <li><strong>Internal assessment included:</strong> Final marks (on which grades are based) already include both theory exam and internal assessment components.</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="seo-section">
+                    <h2>Frequently Asked Questions (FAQs)</h2>
+
+                    <div class="faq-item">
+                        <h3>Is 90% an A1 or A2 in CBSE?</h3>
+                        <p>On the standard proxy scale, 90 marks is an A2 (81–90 range), while 91 and above is A1. However, because CBSE uses a relative 1/8th grading system, if a paper is extremely tough, even an 89 could theoretically be enough for an A1 grade on the official marksheet.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does CBSE give marks or grades?</h3>
+                        <p>CBSE provides <strong>both</strong> — subject-wise marks and positional grades are included in the final Class 10 marksheet. The marks are your raw score, while the grade reflects your relative standing among all candidates who appeared for that subject.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What happens if I get an 'E' grade?</h3>
+                        <p>An <strong>E grade</strong> means Essential Repeat — failure in that subject (marks below 33). You will need to appear for the CBSE compartment exam for that subject. Passing the compartment exam allows you to move forward; not passing means repeating that year.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How accurate is this grade predictor?</h3>
+                        <p>This predictor uses the standard proxy scale as a planning guide — it is useful for study goal-setting and stream planning. Your official CBSE grade will be assigned by the board using relative 1/8th positioning after all results for that year are compiled.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is a D grade a pass in CBSE Class 10?</h3>
+                        <p>Yes. A D grade (33–40 marks) is a pass in CBSE. However, most Science stream schools require higher grades such as B1 or above in Science and Mathematics for Class 11 admission, so a D alone may not secure your preferred stream.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I improve my grade after results?</h3>
+                        <p>Yes. CBSE offers a compartment exam for students who failed (E grade) and an improvement exam in subsequent sessions for those who want higher marks and a better grade. Always check the official CBSE website for current dates and eligibility.</p>
+                    </div>
+                </div>
+
+                <!-- More Tools -->
+                <h2>More CBSE Class 10 Tools</h2>
+                <p style="font-size: 14px; color: #555;">Along with this Grade Predictor, you can also use:</p>
+                <ul>
+                    <li>
+                        <a href="index.html" class="nav-links"><strong>Best of 5 Percentage Calculator</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Calculate your overall CBSE Class 10 percentage instantly.</span>
+                    </li>
+                    <li>
+                        <a href="target-marks.html" class="nav-links"><strong>Target Marks Calculator</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Find out how many marks you need to hit your percentage goal.</span>
+                    </li>
+                    <li>
+                        <a href="stream-eligibility.html" class="nav-links"><strong>Stream Eligibility Calculator</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Check if you qualify for Science, Commerce or Arts streams.</span>
+                    </li>
+                    <li>
+                        <a href="best-of-5-rule-cbse-class-10.html" class="nav-links"><strong>Best of 5 Rule – Complete Guide</strong></a>
+                        <span style="font-size:14px; color:#666;"> – Understand how CBSE calculates your percentage in detail.</span>
+                    </li>
+                </ul>
+
+            </div><!-- /.container -->
+        </main>
+    </div><!-- /.page-wrapper -->
+
+    <!-- ════════ FOOTER ════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">CBSE Decision<span class="dot">.</span>Hub</a>
+                    <p>CBSE Decision Hub provides smart academic tools for Class 10 students including calculators, stream guidance, and answer discussions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="index.html">🧮 % Calculator</a></li>
+                        <li><a href="target-marks.html">🎯 Target Marks</a></li>
+                        <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+                        <li><a href="cbse-grade-predictor.html">🎓 Grade Predictor</a></li>
+                        <li><a href="maths-answer-key-2025.html">📝 Answer Key</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="about.html">ℹ️ About</a></li>
+                        <li><a href="contact.html">✉️ Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>© 2026 CBSE Decision Hub. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ Nav logic ══ -->
+
+    <!-- ══ Grade Predictor Logic — kept inline so onclick handlers can reach these functions ══ -->
+    <script>
+        /*
+         * CBSE Grade Predictor — Calculator Logic
+         * Uses the standard proxy scale for estimation.
+         * Actual CBSE grades are determined by the 1/8th relative positional system.
+         */
+
+        const SUBJECTS = [
+            { id: 's1', name: 'English / Hindi' },
+            { id: 's2', name: 'Mathematics' },
+            { id: 's3', name: 'Science' },
+            { id: 's4', name: 'Social Science' },
+            { id: 's5', name: 'Additional Subject' }
+        ];
+
+        const GRADE_SCALE = [
+            { min: 91, max: 100, grade: 'A1', label: 'Outstanding',      cls: 'grade-A1' },
+            { min: 81, max: 90,  grade: 'A2', label: 'Excellent',        cls: 'grade-A2' },
+            { min: 71, max: 80,  grade: 'B1', label: 'Very Good',        cls: 'grade-B1' },
+            { min: 61, max: 70,  grade: 'B2', label: 'Good',             cls: 'grade-B2' },
+            { min: 51, max: 60,  grade: 'C1', label: 'Satisfactory',     cls: 'grade-C1' },
+            { min: 41, max: 50,  grade: 'C2', label: 'Average',          cls: 'grade-C2' },
+            { min: 33, max: 40,  grade: 'D',  label: 'Passing',          cls: 'grade-D'  },
+            { min: 0,  max: 32,  grade: 'E',  label: 'Essential Repeat', cls: 'grade-E'  }
+        ];
+
+        function getGrade(marks) {
+            return GRADE_SCALE.find(g => marks >= g.min && marks <= g.max)
+                || GRADE_SCALE[GRADE_SCALE.length - 1];
+        }
+
+        /** Validate a single number input and apply valid/invalid CSS classes */
+        function validateInput(input) {
+            const value = parseFloat(input.value);
+            if (input.value === '') {
+                input.classList.remove('valid', 'invalid');
+            } else if (isNaN(value) || value < 0 || value > 100) {
+                input.classList.add('invalid');
+                input.classList.remove('valid');
+            } else {
+                input.classList.add('valid');
+                input.classList.remove('invalid');
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = '⚠️ ' + message;
+            errorDiv.classList.add('show');
+            setTimeout(() => errorDiv.classList.remove('show'), 5000);
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function hideError() {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.classList.remove('show');
+            errorDiv.textContent = '';
+        }
+
+        /** Fill inputs with sample data to demonstrate the tool */
+        function fillExampleData() {
+            const example = { s1: 87, s2: 93, s3: 75, s4: 62, s5: 45 };
+            Object.entries(example).forEach(([id, val]) => {
+                const input = document.getElementById(id);
+                if (input) { input.value = val; validateInput(input); }
+            });
+            document.getElementById('subjectsGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        /** Main prediction function */
+        function predictGrades() {
+            hideError();
+
+            const btn = document.getElementById('predictBtn');
+            const results = [];
+
+            for (const subj of SUBJECTS) {
+                const input = document.getElementById(subj.id);
+                const raw = input ? input.value.trim() : '';
+                if (raw === '') { continue; }
+                const marks = parseFloat(raw);
+                if (isNaN(marks) || marks < 0 || marks > 100) {
+                    showError(`Please enter a valid mark (0–100) for ${subj.name}.`);
+                    return;
+                }
+                results.push({ ...subj, marks });
+            }
+
+            if (results.length < 5) {
+                showError('Please enter marks for all 5 subjects to predict grades.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Predicting…';
+
+            setTimeout(() => {
+                const grid = document.getElementById('gradeCardsGrid');
+                grid.innerHTML = '';
+
+                results.forEach(subj => {
+                    const gradeInfo = getGrade(subj.marks);
+                    const card = document.createElement('div');
+                    card.className = 'grade-card';
+                    card.innerHTML = `
+                        <div class="grade-badge ${gradeInfo.cls}">${gradeInfo.grade}</div>
+                        <div class="grade-card-info">
+                            <div class="grade-card-subject">${subj.name}</div>
+                            <div class="grade-card-marks">${subj.marks} / 100</div>
+                            <div class="grade-card-range">${gradeInfo.label} &middot; ${gradeInfo.min}–${gradeInfo.max}</div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                const resultsDiv = document.getElementById('gradeResults');
+                resultsDiv.classList.add('show');
+                setTimeout(() => resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+
+                btn.disabled = false;
+                btn.textContent = 'Predict Grades';
+            }, 400);
+        }
+
+        /** Reset all inputs and clear results */
+        function resetForm() {
+            document.querySelectorAll('input[type="number"]').forEach(input => {
+                input.value = '';
+                input.classList.remove('valid', 'invalid');
+            });
+            document.getElementById('gradeResults').classList.remove('show');
+            document.getElementById('gradeCardsGrid').innerHTML = '';
+            hideError();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ── Keyboard UX: Enter moves to next field, blocks non-numeric keys ── */
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach((input, index) => {
+                input.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (index === inputs.length - 1) {
+                            predictGrades();
+                        } else {
+                            inputs[index + 1].focus();
+                        }
+                    }
+                });
+                input.addEventListener('keydown', function (e) {
+                    const allowed = [46, 8, 9, 27, 13];
+                    if (allowed.includes(e.keyCode) ||
+                        ((e.keyCode === 65 || e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 88) && e.ctrlKey) ||
+                        (e.keyCode >= 35 && e.keyCode <= 39)) return;
+                    if ((e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
+                        (e.keyCode < 96 || e.keyCode > 105) &&
+                        e.keyCode !== 190 && e.keyCode !== 110) {
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- ════════ Structured Data: FAQ Schema ════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is 90% an A1 or A2 in CBSE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On the standard proxy scale, 90 marks is an A2 (81–90 range) while 91 and above is A1. However, because CBSE uses a relative 1/8th grading system, if a paper is extremely tough, even an 89 could theoretically be enough for an A1 grade on the official marksheet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does CBSE give marks or grades?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CBSE provides both subject-wise marks and positional grades in the final Class 10 marksheet. The marks are the raw score, while the grade reflects relative standing among all candidates who appeared for that subject."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I get an E grade in CBSE Class 10?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An E grade means Essential Repeat — failure in that subject (marks below 33). You will need to appear for the CBSE compartment exam for that subject to pass and continue your studies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the CBSE grade predictor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This predictor uses the standard proxy scale for estimation and study planning purposes. Official CBSE grades are assigned using the 1/8th positional system after all results for the year are compiled."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a D grade a pass in CBSE Class 10?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A D grade (33–40 marks) is a pass in CBSE. However, most Science stream schools require higher grades such as B1 or above in Science and Mathematics for Class 11 admission."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+        { "@type": "ListItem", "position": 2, "name": "CBSE Grade Predictor", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-grade-predictor.html" }
+      ]
+    }
+    </script>
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CBSE Class 10 Grade Predictor",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-grade-predictor.html",
+      "description": "Free tool to predict CBSE Class 10 grades (A1, A2, B1, etc.) based on expected marks, with explanations of the 1/8th grading rule.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+    }
+    </script>
+
+
+<!-- ══ Nav logic ══ -->
+<script src="navigation.js"></script>
+
+</body>
+</html>
