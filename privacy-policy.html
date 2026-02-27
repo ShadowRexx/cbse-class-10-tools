@@ -7,369 +7,9 @@
     <meta name="keywords" content="CBSE Decision Hub privacy policy, cookies, data protection, Class 10 tools">
     <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/privacy-policy.html">
     <title>Privacy Policy – CBSE Decision Hub</title>
-
+        <link rel="stylesheet" href="main.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --primary:      #667eea;
-            --primary-dark: #764ba2;
-            --text-dark:    #2d3748;
-            --text-mid:     #4a5568;
-            --text-light:   #718096;
-            --border:       #e2e8f0;
-            --bg-page:      #f0f2f8;
-            --bg-card:      #ffffff;
-            --gold:         #ffd700;
-            --radius-lg:    18px;
-            --radius-md:    12px;
-            --shadow-card:  0 2px 12px rgba(100, 80, 180, 0.09);
-            --shadow-hover: 0 8px 24px rgba(100, 80, 180, 0.16);
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg-page);
-            color: var(--text-dark);
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ════════ NAV ════════ */
-.site-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    padding: 10px 20px;
-    pointer-events: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.nav-inner {
-    max-width: 1060px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 22px;
-    height: 54px;
-    position: relative;
-    pointer-events: all;
-    background: rgba(102, 126, 234, 0.72);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(80, 50, 140, 0.22), 0 1px 0 rgba(255, 255, 255, 0.18) inset;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.site-nav.scrolled .nav-inner {
-    background: rgba(102, 90, 180, 0.94);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 8px 32px rgba(60, 30, 120, 0.38), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
-    border-color: rgba(255, 255, 255, 0.18);
-}
-
-.nav-logo {
-    font-size: 1.08rem;
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.3px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.nav-logo::before {
-    content: '🎓';
-    font-size: 1.15rem;
-    margin-right: 7px;
-}
-
-.nav-dot {
-    color: #ffd700;
-}
-
-.nav-list {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list > li {
-    position: relative;
-}
-
-.nav-list > li > a,
-.nav-dropdown-btn {
-    color: rgba(255, 255, 255, 0.87);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 6px 11px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    font-family: inherit;
-    transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
-}
-
-.nav-list > li > a:hover,
-.nav-dropdown-btn:hover {
-    background: rgba(255, 255, 255, 0.18);
-    color: #fff;
-    transform: translateY(-1px);
-}
-
-.nav-list > li > a.active {
-    background: rgba(255, 255, 255, 0.22);
-    color: #fff;
-    font-weight: 700;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
-}
-
-.nav-chevron {
-    width: 11px;
-    height: 7px;
-    flex-shrink: 0;
-    opacity: 0.75;
-    transition: transform 0.25s ease, opacity 0.2s ease;
-}
-
-.nav-dropdown:hover > .nav-dropdown-btn .nav-chevron,
-.nav-dropdown.open > .nav-dropdown-btn .nav-chevron {
-    transform: rotate(180deg);
-    opacity: 1;
-}
-
-.nav-submenu {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%) translateY(-6px);
-    min-width: 215px;
-    list-style: none;
-    margin: 0;
-    padding: 7px;
-    background: rgba(55, 35, 108, 0.97);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-    box-shadow: 0 18px 44px rgba(40, 20, 90, 0.42), 0 1px 0 rgba(255, 255, 255, 0.07) inset;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 100;
-}
-
-.nav-submenu::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid rgba(255, 255, 255, 0.15);
-}
-
-.nav-dropdown:hover .nav-submenu,
-.nav-dropdown.open .nav-submenu {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateX(-50%) translateY(0);
-}
-
-.nav-submenu li {
-    list-style: none;
-}
-
-.nav-submenu li + li {
-    margin-top: 1px;
-}
-
-.nav-submenu li a {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 9px 12px;
-    color: rgba(255, 255, 255, 0.82);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    border-radius: 9px;
-    transition: background 0.15s ease, color 0.15s ease;
-    white-space: nowrap;
-}
-
-.nav-submenu li a span {
-    font-size: 1rem;
-    flex-shrink: 0;
-    line-height: 1;
-}
-
-.nav-submenu li a:hover {
-    background: rgba(255, 255, 255, 0.13);
-    color: #fff;
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 38px;
-    height: 38px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 9px;
-    background: rgba(255, 255, 255, 0.12);
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background 0.2s ease;
-}
-
-.nav-toggle:hover {
-    background: rgba(255, 255, 255, 0.22);
-}
-
-.nav-toggle span {
-    display: block;
-    width: 19px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transition: transform 0.28s ease, opacity 0.28s ease;
-}
-
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-@media (max-width: 760px) {
-    .site-nav {
-        padding: 8px 12px;
-    }
-
-    .nav-inner {
-        border-radius: 14px;
-        padding: 0 14px;
-        height: 50px;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .nav-list {
-        display: none;
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 2px;
-        padding: 10px 10px 12px;
-        background: rgba(68, 44, 136, 0.97);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 14px;
-        box-shadow: 0 14px 36px rgba(40, 20, 90, 0.36);
-    }
-
-    .nav-list.open {
-        display: flex;
-    }
-
-    .nav-list > li {
-        width: 100%;
-    }
-
-    .nav-list > li > a,
-    .nav-dropdown-btn {
-        width: 100%;
-        padding: 10px 13px;
-        font-size: 0.9rem;
-        border-radius: 10px;
-        justify-content: space-between;
-    }
-
-    .nav-list > li > a:hover,
-    .nav-dropdown-btn:hover {
-        transform: none;
-    }
-
-    .nav-submenu {
-        position: static;
-        transform: none;
-        min-width: unset;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border: none;
-        border-radius: 10px;
-        box-shadow: none;
-        margin-top: 2px;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 1;
-        pointer-events: none;
-        transition: max-height 0.28s ease, padding 0.22s ease;
-    }
-
-    .nav-submenu::before {
-        display: none;
-    }
-
-    .nav-dropdown.open .nav-submenu {
-        max-height: 280px;
-        pointer-events: all;
-        padding: 4px;
-        transform: none;
-    }
-
-    .nav-dropdown:hover .nav-submenu {
-        opacity: 1;
-        transform: none;
-        max-height: 0;
-        pointer-events: none;
-    }
-
-    .nav-dropdown.open:hover .nav-submenu {
-        max-height: 280px;
-        pointer-events: all;
-    }
-
-    .nav-submenu li a {
-        padding: 9px 12px;
-        font-size: 0.86rem;
-        border-radius: 8px;
-    }
-
-    .nav-chevron {
-        margin-left: auto;
-    }
-}
-
-        /* ════════ HERO ════════ */
-        .hero {
+.hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 52px 20px 56px; text-align: center;
             margin-top: -74px; padding-top: 114px;
@@ -479,66 +119,13 @@
             white-space: nowrap; transition: background 0.2s;
         }
         .contact-box a:hover { background: rgba(255,255,255,0.3); }
-
-        /* ════════ FOOTER ════════ */
-        footer {
-            background: #1e1b38; color: rgba(255,255,255,0.7);
-            padding: 48px 20px 28px; margin-top: 64px;
-        }
-        .footer-inner { max-width: 860px; margin: 0 auto; }
-        .footer-top {
-            display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
-            gap: 32px; margin-bottom: 36px;
-        }
-        .footer-brand .footer-logo {
-            font-size: 1.05rem; font-weight: 800; color: #fff;
-            text-decoration: none; display: flex; align-items: center;
-            gap: 8px; margin-bottom: 12px;
-        }
-        .footer-brand .footer-logo::before { content: '🎓'; font-size: 1.1rem; }
-        .footer-brand .footer-logo .dot { color: var(--gold); }
-        .footer-brand p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
-        .footer-col h4 {
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.9px;
-            text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px;
-        }
-        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .footer-col ul li a {
-            font-size: 0.82rem; color: rgba(255,255,255,0.6);
-            text-decoration: none; transition: color 0.2s;
-            display: flex; align-items: center; gap: 6px;
-        }
-        .footer-col ul li a:hover { color: #fff; }
-        .footer-hr { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 20px; }
-        .footer-bottom {
-            display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap; gap: 10px;
-        }
-        .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-        .footer-bottom-links { display: flex; gap: 16px; flex-wrap: wrap; }
-        .footer-bottom-links a {
-            font-size: 0.75rem; color: rgba(255,255,255,0.35);
-            text-decoration: none; transition: color 0.2s;
-        }
-        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
-
-        @media (max-width: 700px) {
-            .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
-            .footer-brand { grid-column: 1 / -1; }
-        }
-        @media (max-width: 480px) {
-            .footer-top { grid-template-columns: 1fr; }
-            .policy-card { padding: 24px 18px; }
-            .footer-bottom { flex-direction: column; align-items: flex-start; }
-            .page-body { padding: 32px 14px 0; }
-        }
     </style>
 </head>
 
 <body>
 
 <!-- ════════ NAV ════════ -->
-<nav class="site-nav" id="siteNav">
+ <nav class="site-nav" id="siteNav">
     <div class="nav-inner">
         <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
         <ul class="nav-list" id="navList">
@@ -554,9 +141,25 @@
                     <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
                     <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
                     <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
-                    <li><a href="maths-answer-key-2025.html" role="menuitem"><span>📝</span>Maths Answer Key</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
                 </ul>
             </li>
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                </ul>
+            </li>
+            <li><a href="maths-answer-key-2025.html" >Maths Answer Key</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -661,7 +264,7 @@
                 <li>We do not knowingly collect any personally identifiable information from students.</li>
                 <li>No account registration is required to use any tool on this website.</li>
                 <li>All calculator data is processed locally and never stored or shared.</li>
-                <li>If a parent or guardian believes their child has submitted personal information through the contact form, they may reach out to us at <strong>cbsedecisionhub@gmail.com</strong> and we will address the concern promptly.</li>
+                <li>If a parent or guardian believes their child has submitted personal information through the contact form, they may reach out to us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b7879687e7f7e787268727475736e795b7c767a727735787476">[email&#160;protected]</a></strong> and we will address the concern promptly.</li>
             </ul>
             <div class="info-highlight">
                 <p>👨‍👩‍👧We design our tools to minimise data collection and protect student privacy.</p>
@@ -683,7 +286,7 @@
             <p>If you have any questions about this Privacy Policy or how your information is handled, please contact us:</p>
             <div class="contact-box">
                 <p>📧 For privacy concerns, data queries, or requests, reach out to us directly by email.</p>
-                <a href="mailto:cbsedecisionhub@gmail.com">cbsedecisionhub@gmail.com</a>
+                <a href="/cdn-cgi/l/email-protection#b3d0d1c0d6d7d6d0dac0dadcdddbc6d1f3d4ded2dadf9dd0dcde"><span class="__cf_email__" data-cfemail="23404150464746404a504a4c4d4b564163444e424a4f0d404c4e">[email&#160;protected]</span></a>
             </div>
         </div>
 
@@ -736,84 +339,7 @@
     </div>
 </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const siteNav   = document.getElementById('siteNav');
-        const navToggle = document.getElementById('navToggle');
-        const navLinks  = document.getElementById('navLinks');
-        window.addEventListener('scroll', function () {
-            siteNav.classList.toggle('scrolled', window.scrollY > 60);
-        });
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', function () {
-                navLinks.classList.toggle('open');
-                navToggle.classList.toggle('open');
-            });
-            navLinks.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    navLinks.classList.remove('open');
-                    navToggle.classList.remove('open');
-                });
-            });
-        }
-    });
+<script src="navigation.js"></script>
 
-    (function () {
-    var nav      = document.getElementById('siteNav');
-    var toggle   = document.getElementById('navToggle');
-    var list     = document.getElementById('navList');
-    var dropdown = document.querySelector('.nav-dropdown');
-    var dropBtn  = dropdown ? dropdown.querySelector('.nav-dropdown-btn') : null;
-
-    function isMobile() {
-        return window.innerWidth <= 760;
-    }
-
-    window.addEventListener('scroll', function () {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
-    toggle.addEventListener('click', function () {
-        var isOpen = list.classList.toggle('open');
-        toggle.classList.toggle('open', isOpen);
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        if (!isOpen && dropdown) {
-            dropdown.classList.remove('open');
-            if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    if (dropBtn) {
-        dropBtn.addEventListener('click', function (e) {
-            if (!isMobile()) return;
-            e.stopPropagation();
-            var isOpen = dropdown.classList.toggle('open');
-            dropBtn.setAttribute('aria-expanded', String(isOpen));
-        });
-    }
-
-    document.addEventListener('click', function (e) {
-        if (!nav.contains(e.target)) {
-            list.classList.remove('open');
-            toggle.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            if (dropdown) {
-                dropdown.classList.remove('open');
-                if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
-
-    list.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (isMobile()) {
-                list.classList.remove('open');
-                toggle.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-}());
-</script>
 </body>
 </html>
