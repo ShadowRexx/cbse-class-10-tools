@@ -1,50 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/</loc>
+    <loc>https://shadowrexx.github.io/cbse-class-10-tools/index.html</loc>
     <priority>1.0</priority>
   </url>
-
+  <url>
+    <loc>https://shadowrexx.github.io/cbse-class-10-tools/cbse-grade-predictor.html</loc>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://shadowrexx.github.io/cbse-class-10-tools/target-marks.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://shadowrexx.github.io/cbse-class-10-tools/stream-eligibility.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-10-results-day-guide.html</loc>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/best-of-5-rule-cbse-class-10.html</loc>
+    <loc>https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-10-passing-criteria-2026.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shadowrexx.github.io/cbse-class-10-tools/cbse-english-compulsory-rule.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html</loc>
     <priority>0.9</priority>
   </url>
-  
-  <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/maths-answer-key-2025.html</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/about.html</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/contact.html</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/privacy-policy.html</loc>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://shadowrexx.github.io/cbse-class-10-tools/disclaimer.html</loc>
-    <priority>0.4</priority>
-  </url>
-
 </urlset>
-
