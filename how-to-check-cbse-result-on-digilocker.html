@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step-by-step guide for CBSE Class 10 students to download their official marksheet and passing certificate via DigiLocker using the 6-digit security PIN.">
+    <meta name="keywords" content="how to check cbse result on digilocker, digilocker cbse class 10 marksheet 2026, cbse digilocker 6 digit pin, download cbse marksheet digilocker, cbse result digilocker login, digilocker cbse class 10 result 2026">
+    <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html">
+    <title>How to Check CBSE Class 10 Result on DigiLocker (2026) | Download Marksheet</title>
+
+    <!-- ══ Shared styles: Navbar, Footer, Body ══ -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* ══════════════════════════════════════════
+           PAGE-SPECIFIC STYLES
+           Built on top of main.css — same variables
+        ══════════════════════════════════════════ */
+
+        /* ── Step cards ── */
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 28px;
+            position: relative;
+        }
+
+        /* Vertical connector line */
+        .steps-list::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 44px;
+            bottom: 44px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+            opacity: 0.18;
+            border-radius: 2px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 0 0 28px;
+        }
+        .step-item:last-child { padding-bottom: 0; }
+
+        .step-number {
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.32);
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .step-body {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 24px;
+            flex: 1;
+            transition: box-shadow 0.18s ease, transform 0.18s ease;
+        }
+        .step-body:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .step-body h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .step-body p {
+            font-size: 0.91rem;
+            color: var(--text-mid);
+            line-height: 1.74;
+            margin-bottom: 0;
+        }
+
+        .step-body p + p { margin-top: 8px; }
+
+        .step-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: #eef0fe;
+            border-radius: 9px;
+            padding: 10px 13px;
+            margin-top: 12px;
+            font-size: 0.83rem;
+            color: var(--primary-dark);
+            line-height: 1.55;
+            font-weight: 500;
+        }
+        .step-tip::before {
+            content: '💡';
+            font-size: 0.95rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-warn {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 9px;
+            padding: 10px 13px;
+            margin-top: 12px;
+            font-size: 0.83rem;
+            color: #92400e;
+            line-height: 1.55;
+            font-weight: 500;
+        }
+        .step-warn::before {
+            content: '⚠️';
+            font-size: 0.95rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        @media (max-width: 500px) {
+            .steps-list::before { left: 19px; }
+            .step-number { width: 40px; height: 40px; min-width: 40px; font-size: 0.88rem; }
+            .step-body { padding: 16px 16px; }
+        }
+
+        /* ── Prerequisites grid ── */
+        .prereq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .prereq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .prereq-icon {
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+
+        .prereq-card h3 {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .prereq-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── PIN FAQ accordion-style cards ── */
+        .faq-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 24px;
+        }
+
+        .faq-card-q {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .faq-card-q::before {
+            content: 'Q';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            border-radius: 7px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .faq-card-a {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.74;
+            padding-left: 36px;
+        }
+
+        .faq-card-a p { margin-bottom: 10px; }
+        .faq-card-a p:last-child { margin-bottom: 0; }
+
+        .faq-card-a ul {
+            list-style: none;
+            margin: 8px 0 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .faq-card-a ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            line-height: 1.55;
+        }
+
+        .faq-card-a ul li::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── Why DigiLocker banner ── */
+        .why-band {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius-lg);
+            padding: 36px 36px;
+            margin-top: 24px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .why-band { padding: 24px 20px; grid-template-columns: 1fr; }
+        }
+
+        .why-point {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .why-point-icon {
+            font-size: 1.55rem;
+        }
+
+        .why-point h3 {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .why-point p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── CTA boxes ── */
+        .cta-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 560px) {
+            .cta-pair { grid-template-columns: 1fr; }
+        }
+
+        .cta-box-primary,
+        .cta-box-secondary {
+            border-radius: var(--radius-lg);
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cta-box-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 8px 24px rgba(102,126,234,0.28);
+        }
+
+        .cta-box-secondary {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+
+        .cta-box-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        .cta-box-primary .cta-box-eyebrow { color: rgba(255,255,255,0.7); }
+        .cta-box-secondary .cta-box-eyebrow { color: var(--primary); }
+
+        .cta-box-title {
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .cta-box-primary .cta-box-title { color: #fff; }
+        .cta-box-secondary .cta-box-title { color: var(--text-dark); }
+
+        .cta-box-body {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .cta-box-primary .cta-box-body { color: rgba(255,255,255,0.82); }
+        .cta-box-secondary .cta-box-body { color: var(--text-light); }
+
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 9px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            align-self: flex-start;
+            margin-top: 4px;
+        }
+
+        .cta-box-primary .cta-link {
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.32);
+        }
+        .cta-box-primary .cta-link:hover {
+            background: rgba(255,255,255,0.28);
+            transform: translateY(-2px);
+        }
+
+        .cta-box-secondary .cta-link {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.28);
+        }
+        .cta-box-secondary .cta-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.38);
+        }
+
+        /* ── Important notice box ── */
+        .notice-box {
+            background: #f0f7ff;
+            border: 1px solid #bee3f8;
+            border-left: 4px solid #4299e1;
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin-top: 20px;
+        }
+
+        .notice-box p {
+            font-size: 0.9rem;
+            color: #2b6cb0;
+            line-height: 1.72;
+            margin-bottom: 8px;
+        }
+
+        .notice-box p:last-child { margin-bottom: 0; }
+
+        /* ── Highlight number stat ── */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 500px) {
+            .stat-row { grid-template-columns: 1fr; }
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 1.85rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        /* ── Quick-access app badges row ── */
+        .app-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            box-shadow: var(--shadow-card);
+            transition: box-shadow 0.18s ease, transform 0.18s ease;
+        }
+
+        .app-badge:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .app-badge-icon { font-size: 1.1rem; }
+    </style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
+        <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Tools dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Tools
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
+                    <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
+                    <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
+                </ul>
+            </li>
+
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                </ul>
+            </li>
+
+            <li><a href="maths-answer-key-2025.html">Maths Answer Key</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+    <div class="hero-eyebrow">📱 Step-by-Step Guide · 2026</div>
+    <h1>How to Check CBSE Class 10 Result on DigiLocker</h1>
+    <p class="hero-sub">Download your official marksheet and passing certificate in minutes — using the 6-digit PIN your school provided.</p>
+</section>
+
+<!-- ════════ PAGE BODY ════════ -->
+<main class="page-body">
+
+    <!-- ══ SECTION 1: WHY DIGILOCKER ══ -->
+    <section class="content-section">
+        <div class="section-label">Why DigiLocker</div>
+        <h2>Your Official Marksheet — Even Before the Physical Copy Arrives</h2>
+
+        <div class="highlight-card">
+            <p>Every year, thousands of CBSE Class 10 students face the same problem: results are declared online, but the physical marksheet takes weeks — sometimes months — to reach them through their school. In the meantime, Class 11 admissions open, colleges ask for proof of marks, and students are left waiting.</p>
+            <p><strong>DigiLocker solves this entirely.</strong> The CBSE marksheet available on DigiLocker is not a photocopy or a screenshot — it is a legally valid, government-issued digital document, issued directly by CBSE. It carries the same weight as the original physical marksheet for all official purposes under the Information Technology Act, 2000.</p>
+            <p>Whether you need it for Class 11 admission documents, scholarship applications, or simply to share your marks with a coaching centre, the DigiLocker marksheet is accepted everywhere a physical document is.</p>
+        </div>
+
+        <div class="why-band">
+            <div class="why-point">
+                <div class="why-point-icon">⚡</div>
+                <h3>Available Instantly</h3>
+                <p>Accessible on the same day CBSE declares results — no waiting for postal delivery.</p>
+            </div>
+            <div class="why-point">
+                <div class="why-point-icon">🏛️</div>
+                <h3>Legally Valid</h3>
+                <p>Recognised under the IT Act 2000. Accepted by colleges, scholarship boards, and government offices.</p>
+            </div>
+            <div class="why-point">
+                <div class="why-point-icon">🔒</div>
+                <h3>Tamper-Proof</h3>
+                <p>Issued directly by CBSE with a digital signature. Cannot be forged or altered.</p>
+            </div>
+            <div class="why-point">
+                <div class="why-point-icon">📄</div>
+                <h3>Multiple Documents</h3>
+                <p>Get your marksheet, passing certificate, and migration certificate all in one place.</p>
+            </div>
+        </div>
+
+        <div class="stat-row">
+            <div class="stat-card">
+                <div class="stat-num">2B+</div>
+                <div class="stat-label">Documents stored on DigiLocker</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">300M+</div>
+                <div class="stat-label">Registered DigiLocker users in India</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">0 ₹</div>
+                <div class="stat-label">Cost to access your marksheet</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 2: PREREQUISITES ══ -->
+    <section class="content-section">
+        <div class="section-label">Before You Begin</div>
+        <h2>What You Need to Access DigiLocker</h2>
+
+        <p>Before you open DigiLocker, make sure you have all three of these ready. Missing any one of them will stop you at a different step of the process.</p>
+
+        <div class="prereq-grid">
+            <div class="prereq-card">
+                <div class="prereq-icon">🪪</div>
+                <h3>Aadhaar Number</h3>
+                <p>Your 12-digit Aadhaar number is used to verify your identity when creating or logging into your DigiLocker account. Keep your Aadhaar card nearby.</p>
+            </div>
+            <div class="prereq-card">
+                <div class="prereq-icon">📱</div>
+                <h3>Registered Mobile Number</h3>
+                <p>The mobile number linked to your Aadhaar. DigiLocker sends a one-time OTP to this number for verification. Make sure you have access to this SIM.</p>
+            </div>
+            <div class="prereq-card">
+                <div class="prereq-icon">🔢</div>
+                <h3>6-Digit Security PIN</h3>
+                <p>A unique PIN provided by your school on behalf of CBSE. This is specifically for first-time DigiLocker access for result documents. <strong>Not to be confused with your Aadhaar OTP.</strong></p>
+            </div>
+            <div class="prereq-card">
+                <div class="prereq-icon">📋</div>
+                <h3>CBSE Roll Number</h3>
+                <p>Printed on your admit card. You will need this when searching for your specific marksheet inside DigiLocker after logging in.</p>
+            </div>
+        </div>
+
+        <div class="notice-box">
+            <p><strong>About the 6-digit PIN:</strong> This PIN is distributed by schools to their students shortly before or on the day results are declared. If you have not received yours, <a href="#pin-faq" style="color:#2b6cb0;font-weight:700;">scroll to the PIN FAQ section below</a> for what to do. Without this PIN, you cannot complete DigiLocker registration for CBSE documents for the first time.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 3: STEP-BY-STEP GUIDE ══ -->
+    <section class="content-section">
+        <div class="section-label">Step-by-Step Guide</div>
+        <h2>How to Download Your CBSE Class 10 Marksheet from DigiLocker</h2>
+
+        <p>Follow each step in order. The entire process takes approximately 5–8 minutes for first-time users, and under 2 minutes if you already have a DigiLocker account.</p>
+
+        <div class="app-row">
+            <a href="https://digilocker.gov.in" target="_blank" rel="noopener" class="app-badge">
+                <span class="app-badge-icon">🌐</span>
+                digilocker.gov.in
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.digilocker.android" target="_blank" rel="noopener" class="app-badge">
+                <span class="app-badge-icon">📱</span>
+                Android App (Play Store)
+            </a>
+            <a href="https://apps.apple.com/in/app/digilocker/id1428469721" target="_blank" rel="noopener" class="app-badge">
+                <span class="app-badge-icon">🍎</span>
+                iOS App (App Store)
+            </a>
+        </div>
+
+        <div class="steps-list">
+
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-body">
+                    <h3>Visit DigiLocker — Website or App</h3>
+                    <p>Open your browser and go to <strong>digilocker.gov.in</strong>, or download the official DigiLocker app from the Google Play Store or Apple App Store. Both routes lead to the same process — use whichever is more convenient. Avoid third-party websites claiming to be DigiLocker; always use the official URL or app.</p>
+                    <div class="step-tip">On mobile, the app is generally faster and more stable during high-traffic periods like results day when the website may be slow.</div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-body">
+                    <h3>Click "Sign Up" (New Users) or "Sign In" (Returning Users)</h3>
+                    <p><strong>If this is your first time:</strong> Click "Sign Up". You will be asked to enter your mobile number linked to Aadhaar. An OTP will be sent to that number. Enter the OTP to verify, then set a 6-character username and a password for your DigiLocker account.</p>
+                    <p><strong>If you already have an account:</strong> Click "Sign In" and log in with your existing username and password, or authenticate using your Aadhaar OTP directly.</p>
+                    <div class="step-tip">Keep the username and password you create now in a safe place — you will need them every time you log into DigiLocker in the future.</div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-body">
+                    <h3>Enter the 6-Digit Security PIN When Prompted</h3>
+                    <p>After basic account verification, DigiLocker will ask for a <strong>6-digit Security PIN</strong> to link your account to CBSE records. This PIN is <strong>not your Aadhaar OTP</strong> and is not generated by DigiLocker itself — it is a unique code that CBSE issues to schools, which schools then distribute to their students.</p>
+                    <p>Enter the exact 6-digit PIN your school gave you. This step links your DigiLocker account to your CBSE examination records so that your marksheet can be fetched correctly.</p>
+                    <div class="step-warn">This PIN is used only once for the initial linking. If you enter it incorrectly multiple times, your access may be temporarily blocked. If you have not received your PIN, see the FAQ section below before attempting this step.</div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-body">
+                    <h3>Go to "Issued Documents" and Search for CBSE</h3>
+                    <p>Once logged in and verified, you will land on your DigiLocker dashboard. Look for the <strong>"Issued Documents"</strong> section in the main menu or navigation bar. This section contains all documents that government bodies have directly issued to your account.</p>
+                    <p>In the search bar within Issued Documents, type <strong>"CBSE"</strong>. This will show you all CBSE documents associated with your account, including your Class 10 marksheet, passing certificate, and migration certificate.</p>
+                    <div class="step-tip">If no documents appear immediately after the search, wait a few minutes and refresh. On results day, CBSE's servers can take a short time to sync all documents to DigiLocker.</div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">5</div>
+                <div class="step-body">
+                    <h3>Select "Class X Marksheet" and Enter Your Roll Number and Year</h3>
+                    <p>From the list of CBSE documents, select <strong>"Secondary School Examination Marksheet"</strong> (Class X). You will be prompted to enter your <strong>CBSE Roll Number</strong> (from your admit card) and the <strong>year of examination</strong> (2026).</p>
+                    <p>After submitting, your official marksheet will appear as a PDF. You can view it directly in the app or browser, share it, or download it to your device for offline use.</p>
+                    <div class="step-tip">Download the PDF immediately and save it in multiple places — your phone, email, and a cloud folder. This is your legally valid marksheet and you will need it repeatedly over the coming weeks for admission applications.</div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">6</div>
+                <div class="step-body">
+                    <h3>Download Your Passing Certificate Too</h3>
+                    <p>While you're in the Issued Documents section, also look for and download your <strong>CBSE Secondary School Passing Certificate</strong>. This is a separate document from the marksheet and is often required by colleges, coaching institutes, and certain scholarship applications.</p>
+                    <p>Students who qualify for a <strong>Migration Certificate</strong> can also download it from the same section — useful if you are changing boards or states for Class 11.</p>
+                    <div class="step-tip">Both the marksheet and the passing certificate have CBSE's digital signature embedded. They are immediately valid without any additional stamp or attestation.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 4: 6-DIGIT PIN FAQ ══ -->
+    <section class="content-section" id="pin-faq">
+        <div class="section-label">The 6-Digit PIN — FAQ</div>
+        <h2>Everything You Need to Know About the DigiLocker Security PIN</h2>
+
+        <p>The 6-digit Security PIN is the single most confusing part of the DigiLocker process for CBSE students. Here are the most common questions answered clearly.</p>
+
+        <div class="faq-stack">
+
+            <div class="faq-card">
+                <div class="faq-card-q">What exactly is the 6-digit Security PIN and where does it come from?</div>
+                <div class="faq-card-a">
+                    <p>The 6-digit Security PIN is a unique code generated by CBSE for each student appearing in the Class 10 board examinations. CBSE sends these PINs to affiliated schools, and schools are responsible for distributing them to their students — either in person, via a notice on the school portal, or through the class teacher.</p>
+                    <p>This PIN is separate from anything you create yourself. It is not your Aadhaar OTP, not your DigiLocker password, and not related to your roll number. It is purely a one-time authentication code to link your CBSE records to your DigiLocker account.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-card-q">I haven't received my PIN from school. What should I do?</div>
+                <div class="faq-card-a">
+                    <p>This is the most common problem students face. Here is exactly what to do, in order:</p>
+                    <ul>
+                        <li>Contact your <strong>class teacher or school office</strong> directly and ask for your 6-digit DigiLocker PIN. Schools receive a list of PINs from CBSE before results day.</li>
+                        <li>Check your <strong>school's official notice board, WhatsApp group, or student portal</strong> — many schools post the PINs there or distribute them digitally.</li>
+                        <li>If your school is unavailable, visit the <strong>CBSE DigiLocker portal</strong> at <strong>cbseservices.digilocker.gov.in</strong> — CBSE sometimes provides an alternative authentication path using your roll number and date of birth directly.</li>
+                        <li>As a last resort, contact <strong>CBSE's helpline at 1800-11-8004</strong> (toll-free) with your roll number, school name, and examination year.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-card-q">Can I access my marksheet without the 6-digit PIN?</div>
+                <div class="faq-card-a">
+                    <p>There is an alternate route. CBSE also allows students to access their DigiLocker documents using their <strong>roll number and date of birth</strong> through the CBSE-specific DigiLocker portal at <strong>cbseservices.digilocker.gov.in</strong>. This route does not require the 6-digit PIN.</p>
+                    <p>Additionally, your marks are also visible on the <strong>CBSE official results website (cbseresults.nic.in)</strong> using your roll number and date of birth — though the display there is not an officially downloadable document the way DigiLocker is.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-card-q">I entered my PIN incorrectly and my account got locked. What now?</div>
+                <div class="faq-card-a">
+                    <p>If your account is locked due to multiple incorrect PIN attempts, do not keep trying. Wait for the lockout period to expire (usually 24 hours) and then try again with the correct PIN once you have confirmed it with your school.</p>
+                    <p>If the problem persists, contact DigiLocker support via the Help section within the app, or reach CBSE directly at <strong>cbse.gov.in</strong> for PIN reissuance. Do not create a duplicate account — DigiLocker accounts are linked to Aadhaar and creating duplicates causes further complications.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-card-q">Does the 6-digit PIN expire? Can I use it again later?</div>
+                <div class="faq-card-a">
+                    <p>The PIN is used only once for the initial linking of your CBSE records to your DigiLocker account. Once you have successfully authenticated, the PIN is consumed and you do not need it again. All future logins to DigiLocker use your username and password (or Aadhaar OTP) — not the CBSE PIN.</p>
+                    <p>CBSE PINs do have an expiry window — typically a few weeks after results are declared. If you wait too long to use it, the PIN may no longer work and you will need to use the alternate roll number + date of birth route instead.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-card-q">Is the DigiLocker marksheet the same as the original CBSE marksheet?</div>
+                <div class="faq-card-a">
+                    <p>Yes, for all practical and legal purposes. The DigiLocker marksheet is <strong>issued directly by CBSE</strong> with an embedded digital signature under the Information Technology Act 2000. It is legally equivalent to the physical marksheet issued by your school.</p>
+                    <p>Most universities, coaching institutes, and government offices in India accept the DigiLocker version. The physical marksheet your school eventually hands you is essentially a printed version of the same document.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 5: WHAT TO DO AFTER ══ -->
+    <section class="content-section">
+        <div class="section-label">After You Have Your Marksheet</div>
+        <h2>Next Steps Once You've Downloaded Your Result</h2>
+
+        <div class="accent-box">
+            <p>Downloading your marksheet is step one. Here is what most students need to do in the hours and days that follow:</p>
+            <ul class="confusion-list">
+                <li>Calculate your Best of 5 percentage — this is what most Class 11 schools use for admission, not your simple average</li>
+                <li>Check which stream (Science / Commerce / Arts) your marks make you eligible for</li>
+                <li>Understand your subject grades (A1 through E) and what they mean for stream cutoffs</li>
+                <li>If you received a compartment, plan your compartment exam strategy immediately</li>
+                <li>Begin Class 11 admission applications — most open within days of the CBSE result</li>
+            </ul>
+            <p>Our tools below are designed specifically for each of these next steps.</p>
+        </div>
+
+        <!-- CTA PAIR -->
+        <div class="cta-pair">
+            <div class="cta-box-primary">
+                <div class="cta-box-eyebrow">🧮 Free Calculator</div>
+                <p class="cta-box-title">Got your marks? Calculate your Best of 5 Percentage</p>
+                <p class="cta-box-body">Enter your subject marks and get your official Best of 5 percentage instantly — the number schools use for Class 11 admission, not a simple average.</p>
+                <a href="index.html" class="cta-link">Calculate My Percentage →</a>
+            </div>
+            <div class="cta-box-secondary">
+                <div class="cta-box-eyebrow">📋 Complete Guide</div>
+                <p class="cta-box-title">Confused about your result? Read the Results Day Survival Guide</p>
+                <p class="cta-box-body">A step-by-step walkthrough of everything to do from the moment results are declared — streams, grades, compartment, and admission planning.</p>
+                <a href="cbse-class-10-results-day-guide.html" class="cta-link">Read the Guide →</a>
+            </div>
+        </div>
+
+        <!-- Related guides -->
+        <div class="tools-grid" style="margin-top:32px;">
+            <a href="cbse-class-10-passing-criteria-2026.html" class="tool-card">
+                <span class="tool-card-icon">✅</span>
+                <h3>Passing Criteria 2026</h3>
+                <p>Understand the 33% rule, compartment triggers, and how Skill Subjects affect your result.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="stream-eligibility.html" class="tool-card">
+                <span class="tool-card-icon">📊</span>
+                <h3>Stream Eligibility</h3>
+                <p>Check whether your marks qualify you for Science, Commerce, or Arts in Class 11.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="cbse-grade-predictor.html" class="tool-card">
+                <span class="tool-card-icon">🎓</span>
+                <h3>Grade Predictor</h3>
+                <p>Find your A1, A2, B1 grade for each subject based on your marksheet scores.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">CBSE Decision<span class="dot">.</span>Hub</a>
+                <p>CBSE Decision Hub provides smart academic tools for Class 10 students including calculators, stream guidance, and answer discussions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">🧮 % Calculator</a></li>
+                    <li><a href="target-marks.html">🎯 Target Marks</a></li>
+                    <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html">🎓 Grade Predictor</a></li>
+                    <li><a href="maths-answer-key-2025.html">📝 Answer Key</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="cbse-class-10-results-day-guide.html">📋 Results Day Guide</a></li>
+                    <li><a href="best-of-5-rule-cbse-class-10.html">📚 Best of 5 Guide</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html">📝 English Rule</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html">✅ Passing Criteria</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html">📱 DigiLocker Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="contact.html">✉️ Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>© 2026 CBSE Decision Hub. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══ Nav logic ══ -->
+<script src="navigation.js"></script>
+
+<!-- ════════ HowTo Schema ════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Check CBSE Class 10 Result on DigiLocker (2026)",
+  "description": "Step-by-step guide for CBSE Class 10 students to download their official marksheet and passing certificate via DigiLocker using the 6-digit security PIN.",
+  "totalTime": "PT8M",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "INR", "value": "0" },
+  "tool": [
+    { "@type": "HowToTool", "name": "DigiLocker App or Website (digilocker.gov.in)" },
+    { "@type": "HowToTool", "name": "Aadhaar Card" },
+    { "@type": "HowToTool", "name": "Mobile Phone with registered SIM" }
+  ],
+  "supply": [
+    { "@type": "HowToSupply", "name": "Aadhaar Number (12 digits)" },
+    { "@type": "HowToSupply", "name": "Registered Mobile Number (linked to Aadhaar)" },
+    { "@type": "HowToSupply", "name": "6-Digit Security PIN (provided by school)" },
+    { "@type": "HowToSupply", "name": "CBSE Roll Number (from admit card)" }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Visit DigiLocker",
+      "text": "Open digilocker.gov.in in your browser or download the official DigiLocker app from the Play Store or App Store.",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html#step1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Sign Up or Sign In",
+      "text": "New users: click Sign Up, enter your Aadhaar-linked mobile number, verify with OTP, and set a username and password. Returning users: click Sign In.",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html#step2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Enter the 6-Digit Security PIN",
+      "text": "When prompted, enter the 6-digit Security PIN provided by your school. This is a one-time code issued by CBSE to schools for distributing to students.",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html#step3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Go to Issued Documents and Search for CBSE",
+      "text": "On your DigiLocker dashboard, navigate to Issued Documents and type CBSE in the search bar to view all CBSE documents linked to your account.",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html#step4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Select Class X Marksheet and Enter Roll Number",
+      "text": "Select Secondary School Examination Marksheet (Class X), enter your CBSE Roll Number and year 2026. Your official marksheet will appear as a downloadable PDF.",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html#step5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Download Your Passing Certificate",
+      "text": "Also download your CBSE Secondary School Passing Certificate and Migration Certificate from the same Issued Documents section.",
+      "url": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html#step6"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 6-digit Security PIN for DigiLocker CBSE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 6-digit Security PIN is a unique code generated by CBSE for each Class 10 student. CBSE sends these to affiliated schools, which distribute them to students. It is used once to link your DigiLocker account to your CBSE examination records."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I haven't received my 6-digit PIN from school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contact your class teacher or school office to request your PIN. Alternatively, use the CBSE DigiLocker portal at cbseservices.digilocker.gov.in where you can authenticate using your roll number and date of birth instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the DigiLocker marksheet legally valid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The DigiLocker CBSE marksheet is issued directly by CBSE with a digital signature under the Information Technology Act 2000. It is legally equivalent to the physical marksheet for all official purposes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I access my CBSE result on DigiLocker without the 6-digit PIN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can use the alternate route at cbseservices.digilocker.gov.in and authenticate using your CBSE roll number and date of birth, which does not require the 6-digit PIN."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-10-results-day-guide.html" },
+    { "@type": "ListItem", "position": 3, "name": "How to Check CBSE Result on DigiLocker", "item": "https://shadowrexx.github.io/cbse-class-10-tools/how-to-check-cbse-result-on-digilocker.html" }
+  ]
+}
+</script>
+
+</body>
+</html>
