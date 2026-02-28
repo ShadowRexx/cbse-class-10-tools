@@ -615,8 +615,36 @@
         }
         .nav-links:hover { color: #764ba2; }
 
+        /* ════════ FAQ ════════ */
+
+                .seo-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .seo-section h2 { margin-bottom: 20px; }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #dae3fe63;
+            border-radius: 10px;
+        }
+        .faq-item h3 
+        { color: #2d3748; 
+          font-size: 16px;
+          margin-bottom: 10px;
+          margin-top: 0; 
+        }
+        
+        .faq-item p  {
+            color: #4a5568;
+            font-size: 14px; 
+            line-height: 1.7; 
+            margin: 0;
+        }
     
-        </style>
+    </style>
 </head>
 <body>
     <!-- ════════ NAV ════════ -->
@@ -906,6 +934,45 @@
         </p>
 
         </div>
+
+        <div class="human-context-box">
+            <div class="hc-header">
+                <span class="hc-icon">💡</span>
+                <h3>Why I Built This Tool</h3>
+            </div>
+            <div class="hc-content">
+                <p>When I was in Class 10, I spent hours manually calculating my percentage, constantly worrying if <strong>Information Technology</strong> could actually replace my <strong>Maths</strong> marks. The official rules were hidden in long PDF circulars that were hard to understand.</p>
+                <p>I built this <strong>CBSE Decision Hub</strong> tool to give you instant clarity. Unlike generic calculators, this one is hard-coded with the 2026 "Best of 5" logic and the specific "Skill Subject" replacement rules. I update this tool every time CBSE releases a new circular so you don't have to guess your future.</p>
+                <div class="hc-badge">Updated for 2025-26 Session</div>
+            </div>
+        </div>
+                <!-- SEO-Friendly FAQ Section -->
+        <div class="seo-section">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+
+            <div class="faq-item">
+                    <h3>How do schools determine stream eligibility?</h3>
+                    <p>While CBSE only provides the marksheet, individual schools set their own cut-offs. Usually, Science (PCM/PCB) requires the highest percentage, followed by Commerce and Humanities. Many schools use a "Best of 5" calculation to decide the final eligibility.</p>
+            </div>
+
+            <div class="faq-item">
+                    <h3>Can I change my stream after the session starts?</h3>
+                    <p>Yes, CBSE allows stream changes within Class 11, provided the student meets the school's criteria and the request is made before the registration deadline. However, once the Class 11 registration is completed with CBSE, changing subjects becomes significantly harder.</p>
+            </div>
+
+            <div class="faq-item">
+                    <h3>Is Mathematics compulsory for Commerce?</h3>
+                    <p>No, CBSE offers 'Commerce with Maths' and 'Commerce without Maths'. However, taking Applied Mathematics or Core Mathematics is highly recommended for students planning to pursue CA, Economics (Hons), or MBA in the future.</p>
+            </div>
+
+            <div class="faq-item">
+                    <h3>What is the "Best of 5" rule for stream selection?</h3>
+                    <p>The Best of 5 rule involves taking English as a compulsory subject and adding the marks of the next 4 highest-scoring subjects. If a student has a 6th Skill Subject (like IT or AI) and scores higher in it than a core subject like Science or Maths, the Skill Subject can be used for percentage calculation.</p>
+            </div>
+        </div>
+
+
+   
         <h2>More CBSE Class 10 Tools</h2>
 
         <p style="font-size: 14px;color: #555;">
@@ -1228,6 +1295,13 @@
             } catch (error) {
                 console.error('Initialization error:', error);
             }
+        });
+
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+            });
         });
     </script>
 
