@@ -319,7 +319,8 @@ body {
     }
 
     .nav-dropdown.open .nav-submenu {
-        max-height: 280px;
+        max-height: 70vh;
+        overflow-y: auto;
         pointer-events: all;
         padding: 4px;
         transform: none;
@@ -333,7 +334,8 @@ body {
     }
 
     .nav-dropdown.open:hover .nav-submenu {
-        max-height: 280px;
+        max-height: 70vh;
+        overflow-y: auto;
         pointer-events: all;
     }
 
@@ -1293,4 +1295,3 @@ body {
     border-radius: 50px;
     text-transform: uppercase;
 }
-
