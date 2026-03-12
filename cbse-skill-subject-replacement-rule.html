@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Can a skill subject like IT or AI replace Math or Science in CBSE Class 10? Read the official 2026 rules on subject replacement and how to calculate your best 5 percentage with a 6th subject.">
+    <meta name="keywords" content="CBSE skill subject replacement rule class 10, IT 402 replacement rule, AI 417 replacing marks, how to boost percentage with skill subjects, CBSE 6th subject rule 2026, skill subject best of 5 calculation, IT replace maths cbse class 10">
+    <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/cbse-skill-subject-replacement-rule.html">
+    <title>CBSE Skill Subject Replacement Rule Class 10 (2026): IT, AI & the 6th Subject Advantage</title>
+
+    <!-- ══ Shared styles ══ -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* ═══════════════════════════════════════════════
+           PAGE-SPECIFIC STYLES
+           All colours via main.css :root variables only
+        ═══════════════════════════════════════════════ */
+
+        /* ── Subject badge chips ── */
+        .subj-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .subj-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 13px;
+            border-radius: 50px;
+            border: 1.5px solid;
+            line-height: 1;
+        }
+        .subj-chip.compulsory {
+            background: #eef2ff;
+            border-color: #a3bffa;
+            color: #3730a3;
+        }
+        .subj-chip.language {
+            background: #fff5f5;
+            border-color: #feb2b2;
+            color: #742a2a;
+        }
+        .subj-chip.skill {
+            background: #f0fff4;
+            border-color: #9ae6b4;
+            color: #276749;
+        }
+        .subj-chip-icon { font-size: 0.9rem; }
+
+        /* ── Skill subject showcase grid ── */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 18px;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        .skill-card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+        .skill-card-code {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: #eef0fe;
+            padding: 2px 8px;
+            border-radius: 50px;
+            margin-bottom: 6px;
+        }
+        .skill-card h3 {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        .skill-card p {
+            font-size: 0.79rem;
+            color: var(--text-light);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── Replacement logic split ── */
+        .logic-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 22px;
+        }
+        @media (max-width: 540px) { .logic-split { grid-template-columns: 1fr; } }
+
+        .logic-card {
+            border-radius: var(--radius-md);
+            padding: 22px 20px;
+            border: 1.5px solid;
+        }
+        .logic-card.safety {
+            background: #f0fff4;
+            border-color: #9ae6b4;
+        }
+        .logic-card.boost {
+            background: #eef2ff;
+            border-color: #a3bffa;
+        }
+        .logic-card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+        .logic-card h3 {
+            font-size: 0.97rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .logic-card.safety h3 { color: #276749; }
+        .logic-card.boost  h3 { color: #3730a3; }
+        .logic-card p {
+            font-size: 0.88rem;
+            line-height: 1.68;
+            margin-bottom: 8px;
+        }
+        .logic-card.safety p { color: #2f5c40; }
+        .logic-card.boost  p { color: #312e81; }
+        .logic-card p:last-child { margin-bottom: 0; }
+
+        /* ── Replacement rule: can / cannot table ── */
+        .rule-table-wrap { overflow-x: auto; margin-top: 22px; }
+        table.rule-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        table.rule-table thead tr {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        table.rule-table th {
+            padding: 12px 16px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+        table.rule-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-mid);
+            font-size: 0.87rem;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+        table.rule-table tbody tr:nth-child(even) { background: #f7f9fc; }
+        table.rule-table tbody tr:last-child td   { border-bottom: none; }
+        .can  { color: #276749; font-weight: 700; }
+        .cant { color: #742a2a; font-weight: 700; }
+        .subj-cell { font-weight: 700; color: var(--text-dark); }
+
+        /* ── Before / After replacement table ── */
+        .bvsa-wrap { overflow-x: auto; margin-top: 22px; }
+        table.bvsa {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.89rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        table.bvsa thead tr {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        table.bvsa th {
+            padding: 12px 16px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+        table.bvsa td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-mid);
+            vertical-align: middle;
+            line-height: 1.45;
+        }
+        table.bvsa tbody tr:nth-child(even) { background: #f7f9fc; }
+        table.bvsa tbody tr:last-child td   { border-bottom: none; }
+        .bvsa-subj { font-weight: 700; color: var(--text-dark); }
+        .bvsa-low  { color: #c05621; font-weight: 700; } /* low score highlight */
+        .bvsa-high { color: #276749; font-weight: 700; } /* skill/replacement highlight */
+        .bvsa-total-row td {
+            background: #f0f2fe !important;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-top: 2px solid var(--primary);
+        }
+        .bvsa-pct-before { color: #c05621; font-weight: 800; }
+        .bvsa-pct-after  { color: #276749; font-weight: 800; }
+        .bvsa-arrow { color: var(--primary); font-weight: 800; }
+
+        /* ── Scenario cards ── */
+        .scenario-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 22px;
+        }
+        .scenario-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            border-bottom: 1px solid var(--border);
+        }
+        .scenario-header.a { background: #eef2ff; }
+        .scenario-header.b { background: #f0fff4; }
+        .scenario-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+        .scenario-header.a .scenario-label { background: #c3dafe; color: #2b4c7e; }
+        .scenario-header.b .scenario-label { background: #c6f6d5; color: #276749; }
+        .scenario-header h3 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.3;
+        }
+        .scenario-header.a h3 { color: #2b4c7e; }
+        .scenario-header.b h3 { color: #276749; }
+        .scenario-body { padding: 18px 22px; }
+        .scenario-body p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.72;
+            margin-bottom: 10px;
+        }
+        .scenario-body p:last-child { margin-bottom: 0; }
+        .scenario-calc {
+            background: #f7f9fc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 12px 0;
+            font-size: 0.87rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        .scenario-calc strong { color: var(--primary); }
+        .scenario-result {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 9px;
+            padding: 9px 14px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #276749;
+            margin-top: 4px;
+        }
+
+        /* ── Exception banner ── */
+        .exception-banner {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: #fff5f5;
+            border: 2px solid #fc8181;
+            border-radius: var(--radius-lg);
+            padding: 22px 26px;
+            margin-top: 22px;
+        }
+        .exception-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+        .exception-body h3 {
+            font-size: 0.97rem;
+            font-weight: 800;
+            color: #742a2a;
+            margin-bottom: 8px;
+        }
+        .exception-body p {
+            font-size: 0.88rem;
+            color: #7b341e;
+            line-height: 1.72;
+            margin-bottom: 6px;
+        }
+        .exception-body p:last-child { margin-bottom: 0; }
+
+        /* ── Stat row (reused pattern, unique class names) ── */
+        .sk-stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .sk-stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 18px 14px;
+            text-align: center;
+        }
+        .sk-stat-num {
+            font-size: 1.65rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+        .sk-stat-label {
+            font-size: 0.76rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        /* ── CTA pair (same pattern as Basic vs Standard guide) ── */
+        .cta-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        @media (max-width: 560px) { .cta-pair { grid-template-columns: 1fr; } }
+
+        .cta-box {
+            border-radius: var(--radius-lg);
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .cta-box.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 8px 24px rgba(102,126,234,0.28);
+        }
+        .cta-box.secondary {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+        .cta-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+        .cta-box.primary   .cta-eyebrow { color: rgba(255,255,255,0.7); }
+        .cta-box.secondary .cta-eyebrow { color: var(--primary); }
+
+        .cta-box h3 { font-size: 1rem; font-weight: 800; line-height: 1.35; margin: 0; }
+        .cta-box.primary   h3 { color: #fff; }
+        .cta-box.secondary h3 { color: var(--text-dark); }
+
+        .cta-box p { font-size: 0.82rem; line-height: 1.6; margin: 0; }
+        .cta-box.primary   p { color: rgba(255,255,255,0.82); }
+        .cta-box.secondary p { color: var(--text-light); }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 9px;
+            align-self: flex-start;
+            margin-top: 4px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+        .cta-box.primary .cta-btn {
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.32);
+        }
+        .cta-box.primary .cta-btn:hover {
+            background: rgba(255,255,255,0.28);
+            transform: translateY(-2px);
+        }
+        .cta-box.secondary .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.28);
+        }
+        .cta-box.secondary .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.38);
+        }
+
+        /* ── FAQ cards ── */
+        .faq-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 24px;
+        }
+        .faq-q {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .faq-q::before {
+            content: 'Q';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            border-radius: 7px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.74;
+            padding-left: 36px;
+        }
+        .faq-a p { margin-bottom: 8px; }
+        .faq-a p:last-child { margin-bottom: 0; }
+
+        /* ── Callout boxes ── */
+        .callout-green {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-left: 4px solid #48bb78;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-green p {
+            font-size: 0.88rem;
+            color: #276749;
+            line-height: 1.68;
+            margin-bottom: 6px;
+        }
+        .callout-green p:last-child { margin-bottom: 0; }
+
+        .callout-blue {
+            background: #f0f7ff;
+            border: 1px solid #bee3f8;
+            border-left: 4px solid #4299e1;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-blue p {
+            font-size: 0.88rem;
+            color: #2b6cb0;
+            line-height: 1.68;
+            margin-bottom: 6px;
+        }
+        .callout-blue p:last-child { margin-bottom: 0; }
+
+        @media (max-width: 500px) {
+            .exception-banner { flex-direction: column; gap: 10px; padding: 18px 18px; }
+            .scenario-header { flex-wrap: wrap; }
+            .scenario-body { padding: 16px 16px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
+        <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Tools dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Tools
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
+                    <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
+                    <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
+                </ul>
+            </li>
+
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-internal-assessment-marks.html" role="menuitem"><span>🏫</span>Internal Assessment</a></li>
+                    <li><a href="cbse-skill-subject-replacement-rule.html" role="menuitem"><span>💡</span>Skill Subject Rule</a></li>
+                    <li><a href="cbse-basic-vs-standard-maths-rules.html" role="menuitem"><span>📐</span>Basic vs Standard Maths</a></li>
+                    <li><a href="cbse-class-11-stream-selection-guide.html" role="menuitem"><span>🎯</span>Stream Selection Guide</a></li>
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="cbse-class-10-re-evaluation-process.html" role="menuitem"><span>🔁</span>Re-Evaluation Process</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html" role="menuitem"><span>📱</span>DigiLocker Guide</a></li>
+                </ul>
+            </li>
+
+            <li><a href="maths-answer-key-2025.html">Answer Key</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+    <div class="hero-eyebrow">🎯 Official Rule Explained · 2026</div>
+    <h1>CBSE Skill Subject Replacement Rule — Class 10</h1>
+    <p class="hero-sub">How IT, AI, and other Skill Subjects can replace a weak compulsory score, save a failed result, and quietly boost your Best of 5 percentage.</p>
+</section>
+
+<!-- ════════ PAGE BODY ════════ -->
+<main class="page-body">
+
+    <!-- ══ SECTION 1: THE 6TH SUBJECT ADVANTAGE ══ -->
+    <section class="content-section">
+        <div class="section-label">The 6th Subject Advantage</div>
+        <h2>Your Built-In Safety Net — The Skill Subject</h2>
+
+        <div class="highlight-card">
+            <p>Most CBSE Class 10 students study five compulsory subjects: English, a Second Language (Hindi or Sanskrit), Mathematics, Science, and Social Science. But a large and growing number of students also take a <strong>sixth subject</strong> — a Skill Subject like Information Technology (IT 402) or Artificial Intelligence (AI 417).</p>
+            <p>This sixth subject is not just an extra class. CBSE has a formal rule — sometimes called the <strong>Skill Subject Replacement Rule</strong> or the <strong>6th Subject Rule</strong> — that allows a Skill Subject to step in and replace a weak or failed compulsory subject when your final result is being calculated. Used correctly, it can be the difference between passing and failing, or between a 68% and a 76% in your Best of 5 percentage.</p>
+            <p>This guide explains exactly how the rule works, which subjects it applies to, which ones it does not, and how to calculate your actual benefit before results day.</p>
+        </div>
+
+        <div class="sk-stat-row">
+            <div class="sk-stat-card">
+                <div class="sk-stat-num">5+1</div>
+                <div class="sk-stat-label">Subjects studied — 5 compulsory + 1 Skill Subject</div>
+            </div>
+            <div class="sk-stat-card">
+                <div class="sk-stat-num">3</div>
+                <div class="sk-stat-label">Compulsory subjects the Skill Subject can replace (Maths, Science, SST)</div>
+            </div>
+            <div class="sk-stat-card">
+                <div class="sk-stat-num">0</div>
+                <div class="sk-stat-label">Languages the Skill Subject can ever replace (English, Hindi, Sanskrit)</div>
+            </div>
+            <div class="sk-stat-card">
+                <div class="sk-stat-num">Auto</div>
+                <div class="sk-stat-label">Replacement is applied automatically by CBSE — you do not need to request it</div>
+            </div>
+        </div>
+
+        <h3>Your Five Core Subjects — and Where the Skill Subject Fits</h3>
+
+        <p>Here is how the standard CBSE Class 10 subject structure looks for a student with a Skill Subject:</p>
+
+        <div class="subj-chips">
+            <span class="subj-chip language"><span class="subj-chip-icon">📝</span> English (Compulsory Language)</span>
+            <span class="subj-chip language"><span class="subj-chip-icon">📖</span> Hindi / Sanskrit (2nd Language)</span>
+            <span class="subj-chip compulsory"><span class="subj-chip-icon">🔢</span> Mathematics</span>
+            <span class="subj-chip compulsory"><span class="subj-chip-icon">🔬</span> Science</span>
+            <span class="subj-chip compulsory"><span class="subj-chip-icon">🌍</span> Social Science</span>
+            <span class="subj-chip skill"><span class="subj-chip-icon">💻</span> IT 402 / AI 417 (6th Skill Subject)</span>
+        </div>
+
+        <div class="callout-blue" style="margin-top:20px;">
+            <p><strong>Red = languages. Blue = compulsory. Green = Skill Subject.</strong> The Skill Subject can interact with and potentially replace any of the three blue subjects. It can never touch the red language subjects. Keep this colour-coding in mind throughout this guide.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 2: POPULAR SKILL SUBJECTS ══ -->
+    <section class="content-section">
+        <div class="section-label">Popular Skill Subjects</div>
+        <h2>Which Skill Subjects Are Available?</h2>
+
+        <p>CBSE offers a wide range of Skill Subjects under the Vocational Education stream. These are the most commonly offered and taken by CBSE Class 10 students across India:</p>
+
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-card-icon">💻</div>
+                <span class="skill-card-code">Code 402</span>
+                <h3>Information Technology</h3>
+                <p>The most popular Skill Subject by far. Covers digital documentation, spreadsheets, databases, and internet applications.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">🤖</div>
+                <span class="skill-card-code">Code 417</span>
+                <h3>Artificial Intelligence</h3>
+                <p>Covers AI concepts, data literacy, machine learning basics, and Python programming. Rapidly growing in popularity.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">📈</div>
+                <span class="skill-card-code">Code 404</span>
+                <h3>Marketing</h3>
+                <p>Introduces marketing principles, consumer behaviour, advertising, and basic business communication skills.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">💰</div>
+                <span class="skill-card-code">Code 405</span>
+                <h3>Financial Literacy</h3>
+                <p>Covers personal finance, banking, savings, insurance, and the basics of financial planning for everyday life.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">🏥</div>
+                <span class="skill-card-code">Code 401</span>
+                <h3>Health Care</h3>
+                <p>Covers first aid, hygiene, nutrition, and basic healthcare management. Popular in schools with medical or science focus.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">🎨</div>
+                <span class="skill-card-code">Code 408</span>
+                <h3>Design Thinking</h3>
+                <p>Problem-solving through the design process, prototyping, and creative thinking frameworks.</p>
+            </div>
+        </div>
+
+        <div class="callout-green">
+            <p><strong>Which one should you choose?</strong> IT (402) is the most widely taught, easiest to score highly in, and the most valuable in terms of percentage-boosting potential. AI (417) is an excellent second choice, particularly for students interested in technology. Check what your school actually offers — most schools offer only 1–2 Skill Subjects depending on their facilities.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 3: THE REPLACEMENT LOGIC ══ -->
+    <section class="content-section">
+        <div class="section-label">How the Rule Works</div>
+        <h2>The Two Ways a Skill Subject Helps You</h2>
+
+        <p>The CBSE Skill Subject Replacement Rule operates in two distinct situations. Understanding which one applies to you is the key to calculating your actual benefit.</p>
+
+        <div class="logic-split">
+            <div class="logic-card safety">
+                <div class="logic-card-icon">🛡️</div>
+                <h3>Situation 1: You Failed a Compulsory Subject</h3>
+                <p>If you fail Mathematics, Science, or Social Science — but you passed your Skill Subject — CBSE automatically replaces the failed subject with the Skill Subject when computing your result.</p>
+                <p>This means you can still pass the year without appearing for a compartment exam. The Skill Subject essentially rescues your annual result.</p>
+                <p><strong>Condition:</strong> You must have passed the Skill Subject (scored at least 33/100). The replacement applies to only one failed compulsory subject at a time.</p>
+            </div>
+            <div class="logic-card boost">
+                <div class="logic-card-icon">📈</div>
+                <h3>Situation 2: You Passed All Subjects</h3>
+                <p>Even if you passed every subject, CBSE checks whether including your Skill Subject in place of your lowest-scoring compulsory subject (Maths, Science, or SST) would improve your Best of 5 percentage.</p>
+                <p>If your IT or AI marks are higher than your weakest compulsory subject, CBSE uses the higher value — automatically. Your percentage goes up without you doing anything.</p>
+                <p><strong>Condition:</strong> The replacement only improves your percentage if the Skill Subject score is actually higher than the weakest compulsory subject score.</p>
+            </div>
+        </div>
+
+        <h3>The Replacement Rules — Exactly What Can and Cannot Be Replaced</h3>
+
+        <div class="rule-table-wrap">
+            <table class="rule-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Can Skill Subject Replace It?</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="subj-cell">Mathematics</span></td>
+                        <td><span class="can">✓ Yes</span></td>
+                        <td>Compulsory subject — eligible for replacement</td>
+                    </tr>
+                    <tr>
+                        <td><span class="subj-cell">Science</span></td>
+                        <td><span class="can">✓ Yes</span></td>
+                        <td>Compulsory subject — eligible for replacement</td>
+                    </tr>
+                    <tr>
+                        <td><span class="subj-cell">Social Science</span></td>
+                        <td><span class="can">✓ Yes</span></td>
+                        <td>Compulsory subject — eligible for replacement</td>
+                    </tr>
+                    <tr>
+                        <td><span class="subj-cell">English (Language 1)</span></td>
+                        <td><span class="cant">✗ Never</span></td>
+                        <td>English is a compulsory language subject — replacement is strictly prohibited</td>
+                    </tr>
+                    <tr>
+                        <td><span class="subj-cell">Hindi / Sanskrit (Language 2)</span></td>
+                        <td><span class="cant">✗ Never</span></td>
+                        <td>Second language is also protected — cannot be replaced by a Skill Subject</td>
+                    </tr>
+                    <tr>
+                        <td><span class="subj-cell">Skill Subject itself</span></td>
+                        <td><span class="cant">✗ N/A</span></td>
+                        <td>The Skill Subject is the replacement — it cannot replace itself</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout-blue" style="margin-top:18px;">
+            <p><strong>The replacement is automatic and optimised.</strong> CBSE's result computation system checks all valid combinations and selects the one that gives you the best result. You do not need to apply for this or inform anyone. It happens as part of the standard result calculation process.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 4: THE ENGLISH EXCEPTION ══ -->
+    <section class="content-section">
+        <div class="section-label">⚠️ Critical Exception</div>
+        <h2>English and Your Second Language Are Untouchable</h2>
+
+        <div class="exception-banner">
+            <div class="exception-icon">🚫</div>
+            <div class="exception-body">
+                <h3>A Skill Subject Can NEVER Replace English or Your Second Language</h3>
+                <p>This is the single most important limitation of the Skill Subject replacement rule, and it is absolute. No matter how high you score in IT or AI, and no matter how low your marks in English or Hindi are — the Skill Subject cannot replace either language.</p>
+                <p>Both English (your first language) and your second language (Hindi, Sanskrit, or any other offered by your school) must be passed independently. If you fail English, you go to compartment for English — IT cannot save you. If you fail Hindi, you go to compartment for Hindi — AI cannot save you.</p>
+                <p>This is why our <a href="cbse-english-compulsory-rule.html" style="color:#c05621;font-weight:700;">English Compulsory Rule guide</a> treats English as a completely separate and critical risk factor — it sits outside the Skill Subject safety net entirely.</p>
+            </div>
+        </div>
+
+        <h3>Why This Rule Exists</h3>
+
+        <p>CBSE's position is that language proficiency — particularly English — is a foundational academic skill that cannot be substituted by a vocational or technical subject. The Board considers language competence essential for every student regardless of their stream or career path, and therefore protects both language slots from replacement by design.</p>
+
+        <div class="callout-green">
+            <p><strong>Practical advice:</strong> Treat English and your second language as subjects that must be handled on their own merit. Invest time in both independently of your Skill Subject strategy. For a full breakdown of how English affects your result, see the <a href="cbse-english-compulsory-rule.html" style="color:#276749;font-weight:700;">English Compulsory Rule guide</a>.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 5: BEFORE / AFTER TABLE ══ -->
+    <section class="content-section">
+        <div class="section-label">Before vs. After</div>
+        <h2>How the Replacement Actually Changes Your Percentage</h2>
+
+        <p>The table below shows a realistic student's marks and calculates their Best of 5 percentage both without and with the IT Skill Subject replacement. The weakest eligible compulsory subject (Mathematics, 52) is automatically swapped out for IT (88).</p>
+
+        <div class="bvsa-wrap">
+            <table class="bvsa">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks / 100</th>
+                        <th>In Best of 5?<br>(Without IT)</th>
+                        <th>In Best of 5?<br>(With IT)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bvsa-subj">English</td>
+                        <td>74</td>
+                        <td>✓ Always included</td>
+                        <td>✓ Always included</td>
+                    </tr>
+                    <tr>
+                        <td class="bvsa-subj">Hindi</td>
+                        <td>71</td>
+                        <td>✓ Always included</td>
+                        <td>✓ Always included</td>
+                    </tr>
+                    <tr>
+                        <td class="bvsa-subj">Science</td>
+                        <td>78</td>
+                        <td>✓ Included</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td class="bvsa-subj">Social Science</td>
+                        <td>82</td>
+                        <td>✓ Included</td>
+                        <td>✓ Included</td>
+                    </tr>
+                    <tr>
+                        <td class="bvsa-subj">Mathematics</td>
+                        <td class="bvsa-low">52</td>
+                        <td>✓ Included (lowest)</td>
+                        <td class="bvsa-low">✗ Replaced by IT</td>
+                    </tr>
+                    <tr>
+                        <td class="bvsa-subj">IT (402) — Skill Subject</td>
+                        <td class="bvsa-high">88</td>
+                        <td>— Not used</td>
+                        <td class="bvsa-high">✓ Replaces Maths</td>
+                    </tr>
+                    <tr class="bvsa-total-row">
+                        <td><strong>Best of 5 Total</strong></td>
+                        <td></td>
+                        <td class="bvsa-pct-before">74+71+78+82+52 = <strong>357 → 71.4%</strong></td>
+                        <td class="bvsa-pct-after">74+71+78+82+88 = <strong>393 → 78.6%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout-green" style="margin-top:18px;">
+            <p><strong>Result:</strong> By adding IT as a 6th subject and scoring 88, this student's Best of 5 percentage rises from <strong>71.4% to 78.6%</strong> — a gain of <strong>7.2 percentage points</strong> from a single subject choice. This is why IT is widely considered the highest-value Skill Subject for percentage maximisation.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 6: SCENARIO EXAMPLES ══ -->
+    <section class="content-section">
+        <div class="section-label">Real-World Scenarios</div>
+        <h2>Two Students, Two Very Different Situations</h2>
+
+        <p>The replacement rule looks different depending on whether a student is trying to boost their percentage or trying to avoid a compartment exam. Here is how it plays out for each.</p>
+
+        <div class="scenario-stack">
+
+            <!-- Scenario A -->
+            <div class="scenario-card">
+                <div class="scenario-header a">
+                    <span class="scenario-label">Scenario A</span>
+                    <h3>Passed all subjects — using IT to boost percentage</h3>
+                </div>
+                <div class="scenario-body">
+                    <p>Priya has passed all her subjects but is disappointed with her Maths score. She scored <strong>40 in Mathematics</strong> and <strong>90 in Information Technology (IT 402)</strong>. Her other marks are: English 80, Hindi 75, Science 76, Social Science 79.</p>
+
+                    <p><strong>Without IT in Best of 5:</strong></p>
+                    <div class="scenario-calc">
+                        Best of 5 = English (80) + Hindi (75) + Science (76) + SST (79) + <strong>Maths (40)</strong><br>
+                        Total = 80 + 75 + 76 + 79 + 40 = <strong>350</strong><br>
+                        Percentage = 350 ÷ 500 × 100 = <strong class="bvsa-pct-before">70.0%</strong>
+                    </div>
+
+                    <p><strong>With IT replacing Maths in Best of 5:</strong></p>
+                    <div class="scenario-calc">
+                        Best of 5 = English (80) + Hindi (75) + Science (76) + SST (79) + <strong>IT (90)</strong><br>
+                        Total = 80 + 75 + 76 + 79 + 90 = <strong>400</strong><br>
+                        Percentage = 400 ÷ 500 × 100 = <strong class="bvsa-pct-after">80.0%</strong>
+                    </div>
+
+                    <div class="scenario-result">
+                        🎉 Priya's percentage jumps from 70.0% to 80.0% — a gain of 10 full percentage points
+                    </div>
+                    <p style="margin-top:12px;">This is especially significant for stream eligibility. Many schools require 80% for Science stream — Priya crosses that threshold because she took IT as her 6th subject.</p>
+                </div>
+            </div>
+
+            <!-- Scenario B -->
+            <div class="scenario-card">
+                <div class="scenario-header b">
+                    <span class="scenario-label">Scenario B</span>
+                    <h3>Failed Science — AI saves the year</h3>
+                </div>
+                <div class="scenario-body">
+                    <p>Rahul scored <strong>28 in Science</strong> — below the 33/100 passing threshold. This would normally mean a compartment exam. However, Rahul also took <strong>Artificial Intelligence (AI 417)</strong> as his Skill Subject and scored <strong>72</strong>. His other marks: English 65, Hindi 60, Maths 55, SST 70.</p>
+
+                    <p><strong>Without the Skill Subject rule:</strong></p>
+                    <div class="scenario-calc">
+                        Science = 28 → <strong class="bvsa-pct-before">FAIL</strong> (below 33/100)<br>
+                        Result: Compartment required in Science<br>
+                        Best of 5 percentage would be calculated after compartment
+                    </div>
+
+                    <p><strong>With AI replacing Science:</strong></p>
+                    <div class="scenario-calc">
+                        Science (28) is failed → AI (72) is passed → AI replaces Science in the result<br>
+                        Best of 5 = English (65) + Hindi (60) + Maths (55) + SST (70) + <strong>AI (72)</strong><br>
+                        Total = 65 + 60 + 55 + 70 + 72 = <strong>322</strong><br>
+                        Percentage = 322 ÷ 500 × 100 = <strong class="bvsa-pct-after">64.4%</strong>
+                    </div>
+
+                    <div class="scenario-result">
+                        ✅ Rahul passes the year without a compartment exam — AI rescues his result
+                    </div>
+                    <p style="margin-top:12px;">Without the Skill Subject, Rahul would have faced a compartment exam in Science, delayed his admission timelines, and needed additional preparation in July–August. The AI subject absorbed the failed Science score and kept his academic year on track.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 7: CTAs ══ -->
+    <section class="content-section">
+        <div class="section-label">Use Our Tools</div>
+        <h2>See Your Actual Numbers — Right Now</h2>
+
+        <p>Understanding the rule is one thing. Seeing how it applies to your specific marks is another. Our calculators handle the Skill Subject replacement automatically — just enter your marks and the tool does the rest.</p>
+
+        <div class="cta-pair">
+            <div class="cta-box primary">
+                <div class="cta-eyebrow">🧮 Free Calculator</div>
+                <h3>Ready to see your boosted score? Calculate with Skill Subject in Best of 5</h3>
+                <p>Enter all your marks including your IT or AI Skill Subject score. The calculator automatically applies the replacement rule and shows your maximum possible percentage.</p>
+                <a href="index.html" class="cta-btn">Calculate My Best of 5 →</a>
+            </div>
+            <div class="cta-box secondary">
+                <div class="cta-eyebrow">📊 Stream Planning</div>
+                <h3>Planning for Class 11? Check your Stream Eligibility</h3>
+                <p>Once you have your boosted percentage, find out which streams and subject combinations you qualify for in Class 11 — Science, Commerce, or Arts.</p>
+                <a href="stream-eligibility.html" class="cta-btn">Check Stream Eligibility →</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 8: FAQ ══ -->
+    <section class="content-section">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2>Skill Subject Replacement — All FAQs Answered</h2>
+
+        <div class="faq-stack">
+
+            <div class="faq-card">
+                <div class="faq-q">Can IT (402) replace Science in the Best of 5 calculation?</div>
+                <div class="faq-a">
+                    <p>Yes. Science is one of the three compulsory subjects (along with Mathematics and Social Science) that a Skill Subject like IT can replace in the Best of 5 percentage calculation. If your IT marks are higher than your Science marks, CBSE will automatically use IT in your Best of 5 instead of Science, giving you a higher percentage.</p>
+                    <p>The same applies if you failed Science — if you passed IT, IT replaces the failed Science score in your result, potentially saving you from a compartment exam.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Is taking a Skill Subject like IT compulsory?</div>
+                <div class="faq-a">
+                    <p>No — choosing a Skill Subject as your 6th subject is entirely optional. CBSE does not require students to take more than five subjects. However, the potential benefits (percentage boost and safety net against a failed compulsory subject) make it a strategically excellent choice for most students, particularly if your school offers IT or AI and you can score well in it.</p>
+                    <p>Whether a specific Skill Subject is available depends on your school — not all schools offer all Skill Subjects, and schools must be affiliated to offer each particular course.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">What happens if I fail the Skill Subject itself?</div>
+                <div class="faq-a">
+                    <p>If you fail your Skill Subject (score below 33/100), it cannot function as a replacement for any compulsory subject. A failed Skill Subject is simply not counted in your result — it does not help, but it also does not harm your existing compulsory subject scores. You are not penalised for failing a Skill Subject in the same way you would be for failing a compulsory subject.</p>
+                    <p>However, if you were counting on the Skill Subject to replace a compulsory subject you also scored low in, a failed Skill Subject means that safety net is gone. Your compulsory subject results stand on their own, which could mean a compartment exam if any compulsory subject is also below 33.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Can a Skill Subject replace English or Hindi?</div>
+                <div class="faq-a">
+                    <p>No — absolutely not. The CBSE Skill Subject replacement rule explicitly excludes both language subjects. English (Language 1) and your second language (Hindi, Sanskrit, or other) must each be passed independently. No Skill Subject can replace either of them, regardless of your score in the Skill Subject or how low your language marks are. If you fail English, you sit the English compartment exam. There is no Skill Subject escape route for languages.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Do I need to apply for the replacement, or does it happen automatically?</div>
+                <div class="faq-a">
+                    <p>The replacement is fully automatic. CBSE's result computation system evaluates all valid combinations for every student who has a Skill Subject on record and selects the combination that produces the best result. You do not need to fill any form, request anything from your school, or inform CBSE. The optimised result — with or without the replacement — is what appears on your marksheet.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Can the Skill Subject replace more than one failed compulsory subject?</div>
+                <div class="faq-a">
+                    <p>No. One Skill Subject can replace only one compulsory subject. If you fail two compulsory subjects (say, both Maths and Science), the Skill Subject can only replace one of them. You would still need a compartment exam for the other failed subject. This is why the Skill Subject is a safety net for one failure — not a blanket pass for multiple failures.</p>
+                    <p>If you have failed two or more of Maths, Science, and Social Science, you will need compartment exams for the ones the Skill Subject cannot cover.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Does the Skill Subject replacement affect Class 11 stream eligibility?</div>
+                <div class="faq-a">
+                    <p>Yes, in a meaningful way. Your Best of 5 percentage — after the Skill Subject replacement is applied — is what schools use for Class 11 admission cutoffs. A higher percentage from the replacement can make the difference between qualifying for and missing a specific stream or school cutoff.</p>
+                    <p>However, note that replacing Maths with IT in your Best of 5 does not eliminate the need for Standard Maths if you want to take Maths in Class 11. Stream eligibility is based on both percentage and the specific subject requirements of the stream. Use our <a href="stream-eligibility.html" style="color:var(--primary);font-weight:600;">Stream Eligibility Tool</a> to check exactly what your boosted percentage qualifies you for.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 9: RELATED GUIDES ══ -->
+    <section class="content-section">
+        <div class="section-label">Related Guides &amp; Tools</div>
+        <h2>Everything Else You Need to Know After Results</h2>
+
+        <div class="tools-grid">
+            <a href="index.html" class="tool-card">
+                <span class="tool-card-icon">🧮</span>
+                <h3>Best of 5 Calculator</h3>
+                <p>Calculate your official CBSE percentage with Skill Subject replacement applied automatically.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="stream-eligibility.html" class="tool-card">
+                <span class="tool-card-icon">📊</span>
+                <h3>Stream Eligibility Tool</h3>
+                <p>Check which Class 11 streams you qualify for based on your boosted Best of 5 percentage.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="cbse-class-10-passing-criteria-2026.html" class="tool-card">
+                <span class="tool-card-icon">✅</span>
+                <h3>Passing Criteria 2026</h3>
+                <p>The complete 33% rule, compartment triggers, and Skill Subject interactions explained in full.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-english-compulsory-rule.html" class="tool-card">
+                <span class="tool-card-icon">📝</span>
+                <h3>English Compulsory Rule</h3>
+                <p>Why English sits outside the Skill Subject safety net and what to do if your English score is at risk.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-basic-vs-standard-maths-rules.html" class="tool-card">
+                <span class="tool-card-icon">📐</span>
+                <h3>Basic vs Standard Maths</h3>
+                <p>If IT replaced your Maths in Best of 5, understand what your Maths choice means for Class 11 streams.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-class-10-results-day-guide.html" class="tool-card">
+                <span class="tool-card-icon">📋</span>
+                <h3>Results Day Guide</h3>
+                <p>Your complete step-by-step plan from the moment CBSE Class 10 results are declared.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">CBSE Decision<span class="dot">.</span>Hub</a>
+                <p>CBSE Decision Hub provides free academic tools and guides for CBSE Class 10 students — calculators, stream guidance, grading rules, and result tools.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">🧮 % Calculator</a></li>
+                    <li><a href="target-marks.html">🎯 Target Marks</a></li>
+                    <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html">🎓 Grade Predictor</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="best-of-5-rule-cbse-class-10.html">📚 Best of 5 Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html">✅ Passing Criteria 2026</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html">📝 English Rule</a></li>
+                    <li><a href="cbse-internal-assessment-marks.html">🏫 Internal Assessment</a></li>
+                    <li><a href="cbse-skill-subject-replacement-rule.html">💡 Skill Subject Rule</a></li>
+                    <li><a href="cbse-basic-vs-standard-maths-rules.html">📐 Basic vs Standard Maths</a></li>
+                    <li><a href="cbse-class-11-stream-selection-guide.html">🎯 Stream Selection Guide</a></li>
+                    <li><a href="cbse-class-10-results-day-guide.html">📋 Results Day Guide</a></li>
+                    <li><a href="cbse-class-10-re-evaluation-process.html">🔁 Re-Evaluation Process</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html">📱 DigiLocker Guide</a></li>
+                    <li><a href="maths-answer-key-2025.html">📝 Maths Answer Key</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="contact.html">✉️ Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>© 2026 CBSE Decision Hub. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══ Nav logic ══ -->
+<script src="navigation.js"></script>
+
+<!-- ════════ STRUCTURED DATA ════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can IT (402) replace Science in CBSE Class 10 Best of 5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. IT (Code 402) is a Skill Subject that can replace Science (or Maths or Social Science) in the CBSE Class 10 Best of 5 percentage calculation. If your IT marks are higher than your Science marks, CBSE automatically uses IT instead of Science, giving you a higher percentage. The same applies if you failed Science — passing IT means IT replaces the failed Science in your result, potentially saving you from a compartment exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is taking a Skill Subject like IT compulsory in CBSE Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Taking a Skill Subject as a 6th subject is completely optional in CBSE Class 10. CBSE does not require more than five subjects. However, the potential benefits — a higher Best of 5 percentage and a safety net against a failed compulsory subject — make it a valuable strategic choice for most students, particularly if their school offers IT or AI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I fail the 6th Skill Subject in CBSE Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you fail your Skill Subject (score below 33/100), it cannot replace any compulsory subject. A failed Skill Subject is simply not counted in your result. It does not harm your compulsory subject scores, but if you were relying on it as a safety net for a low-scoring compulsory subject, that safety net disappears. Your compulsory subject results then stand on their own, which could mean a compartment exam if any compulsory subject is also below 33/100."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a Skill Subject replace English in CBSE Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The CBSE Skill Subject replacement rule strictly excludes language subjects. Neither English (Language 1) nor your second language (Hindi, Sanskrit, etc.) can be replaced by any Skill Subject. Both languages must be passed independently. If you fail English, you sit the compartment exam in English — no Skill Subject can save you from this."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Skill Subject replacement happen automatically or do I apply for it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The replacement is fully automatic. CBSE's result system evaluates all valid subject combinations for every student with a Skill Subject and selects the combination that produces the best result. You do not need to fill any form, request anything, or inform your school. The optimised result appears automatically on your marksheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the Skill Subject replace more than one failed compulsory subject?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. One Skill Subject can replace only one compulsory subject at a time. If you fail two compulsory subjects, the Skill Subject covers one and you still need a compartment exam for the other."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CBSE Skill Subject Replacement Rule Class 10 (2026): IT, AI and the 6th Subject Advantage",
+  "description": "Can a skill subject like IT or AI replace Math or Science in CBSE Class 10? Read the official 2026 rules on subject replacement and how to calculate your best 5 percentage with a 6th subject.",
+  "keywords": "CBSE skill subject replacement rule class 10, IT 402 replacement rule, AI 417 replacing marks, how to boost percentage with skill subjects, CBSE 6th subject rule 2026",
+  "author": { "@type": "Organization", "name": "CBSE Decision Hub", "url": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+  "publisher": { "@type": "Organization", "name": "CBSE Decision Hub", "url": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-02-27",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-skill-subject-replacement-rule.html" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-10-results-day-guide.html" },
+    { "@type": "ListItem", "position": 3, "name": "Skill Subject Replacement Rule", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-skill-subject-replacement-rule.html" }
+  ]
+}
+</script>
+
+</body>
+</html>

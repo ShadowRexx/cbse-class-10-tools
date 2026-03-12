@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A complete breakdown of CBSE Class 10 Basic vs Standard Mathematics. Learn about the difficulty levels, eligibility for Class 11 Science, and the official switching rules.">
+    <meta name="keywords" content="difference between basic and standard maths cbse class 10, can I take science with basic maths, CBSE maths standard vs basic difficulty level, switching from basic to standard maths, cbse basic maths class 11 eligibility, cbse standard maths compartment upgrade 2026">
+    <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/cbse-basic-vs-standard-maths-rules.html">
+    <title>Basic vs Standard Maths CBSE Class 10: Differences, Science Eligibility & Switching Rules (2026)</title>
+
+    <!-- ══ Shared styles ══ -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* ═══════════════════════════════════════════════
+           PAGE-SPECIFIC STYLES
+           All colours use main.css :root variables only
+        ═══════════════════════════════════════════════ */
+
+        /* ── TOC ── */
+        .toc-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 22px 28px;
+            margin-top: 28px;
+        }
+        .toc-box h3 {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            counter-reset: toc;
+        }
+        .toc-list li { counter-increment: toc; }
+        .toc-list li a {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            text-decoration: none;
+            line-height: 1.45;
+            transition: color 0.18s;
+        }
+        .toc-list li a::before {
+            content: counter(toc, decimal-leading-zero);
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary);
+            opacity: 0.7;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .toc-list li a:hover { color: var(--primary); }
+
+        /* ── Split comparison cards (Basic vs Standard) ── */
+        .vs-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border);
+            margin-top: 28px;
+        }
+        @media (max-width: 540px) { .vs-split { grid-template-columns: 1fr; } }
+
+        .vs-col {
+            padding: 28px 26px;
+        }
+        .vs-col.basic  { background: #f0fff4; border-right: 1px solid var(--border); }
+        .vs-col.standard { background: #f0f4ff; }
+        @media (max-width: 540px) {
+            .vs-col.basic  { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+
+        .vs-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .vs-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+        .vs-badge.basic    { background: #c6f6d5; color: #276749; }
+        .vs-badge.standard { background: #c3dafe; color: #2b4c7e; }
+
+        .vs-col h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+        .vs-col.basic    h3 { color: #276749; }
+        .vs-col.standard h3 { color: #2b4c7e; }
+
+        .vs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+        .vs-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.88rem;
+            line-height: 1.58;
+        }
+        .vs-col.basic    .vs-list li { color: #2f5c40; }
+        .vs-col.standard .vs-list li { color: #2b4080; }
+        .vs-list li::before {
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .vs-col.basic    .vs-list li::before { content: '✓'; font-weight: 800; color: #38a169; }
+        .vs-col.standard .vs-list li::before { content: '✦'; font-weight: 800; color: #667eea; }
+
+        /* ── Difficulty spectrum bar ── */
+        .diff-bar-wrap {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 24px 28px;
+            margin-top: 24px;
+        }
+        .diff-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .diff-bar-label .basic-lbl  { color: #276749; }
+        .diff-bar-label .std-lbl    { color: #2b4c7e; }
+        .diff-track {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+        .diff-fill {
+            height: 100%;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #68d391 0%, #667eea 60%, #764ba2 100%);
+        }
+        .diff-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+        .diff-marker {
+            font-size: 0.72rem;
+            color: var(--text-light);
+        }
+
+        /* Question-type comparison rows */
+        .qtype-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        @media (max-width: 560px) { .qtype-grid { grid-template-columns: 1fr; } }
+
+        .qtype-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 18px 16px;
+            text-align: center;
+        }
+        .qtype-icon  { font-size: 1.6rem; margin-bottom: 8px; }
+        .qtype-label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .qtype-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+        .qtype-card p {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── Stream eligibility table ── */
+        .stream-table-wrap { overflow-x: auto; margin-top: 24px; }
+        table.stream-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        table.stream-table thead tr {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+        }
+        table.stream-table th {
+            padding: 13px 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.3px;
+        }
+        table.stream-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+            line-height: 1.5;
+            font-size: 0.88rem;
+            color: var(--text-mid);
+        }
+        table.stream-table tbody tr:nth-child(even) { background: #f7f9fc; }
+        table.stream-table tbody tr:last-child td   { border-bottom: none; }
+        .tick  { color: #38a169; font-weight: 800; font-size: 1rem; }
+        .cross { color: #e53e3e; font-weight: 800; font-size: 1rem; }
+        .stream-name { font-weight: 700; color: var(--text-dark); }
+
+        /* ── Switching flowchart ── */
+        .flow-wrap {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
+        }
+        .flow-node {
+            width: 100%;
+            max-width: 520px;
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 18px 22px;
+            text-align: center;
+        }
+        .flow-node.start {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-color: transparent;
+        }
+        .flow-node.start h4  { color: #fff; }
+        .flow-node.start p   { color: rgba(255,255,255,0.85); }
+
+        .flow-node.action {
+            background: #fffbeb;
+            border-color: #fde68a;
+        }
+        .flow-node.action h4 { color: #92400e; }
+        .flow-node.action p  { color: #78350f; }
+
+        .flow-node.result-good {
+            background: #f0fff4;
+            border-color: #9ae6b4;
+        }
+        .flow-node.result-good h4 { color: #276749; }
+        .flow-node.result-good p  { color: #2f5c40; }
+
+        .flow-node.result-bad {
+            background: #fff5f5;
+            border-color: #feb2b2;
+        }
+        .flow-node.result-bad h4 { color: #742a2a; }
+        .flow-node.result-bad p  { color: #7b341e; }
+
+        .flow-node h4 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        .flow-node p {
+            font-size: 0.83rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .flow-arrow {
+            font-size: 1.4rem;
+            color: var(--primary);
+            opacity: 0.5;
+            padding: 4px 0;
+            line-height: 1;
+        }
+        .flow-branch {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 520px;
+        }
+        .flow-branch-arrow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+        }
+        .flow-branch-arrow span {
+            font-size: 1.2rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+        .branch-label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            text-align: center;
+        }
+        .flow-branch-labels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 520px;
+        }
+
+        /* ── Pros / Cons table ── */
+        .pros-cons-wrap { overflow-x: auto; margin-top: 24px; }
+        table.pros-cons {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            font-size: 0.88rem;
+        }
+        table.pros-cons thead tr {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        table.pros-cons th {
+            padding: 13px 18px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.84rem;
+            text-align: left;
+        }
+        table.pros-cons th:first-child { width: 28%; }
+        table.pros-cons td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.6;
+            color: var(--text-mid);
+        }
+        table.pros-cons tbody tr:last-child td { border-bottom: none; }
+        table.pros-cons tbody tr:nth-child(even) { background: #f7f9fc; }
+        .pc-aspect {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 0.88rem;
+        }
+        .pc-pro { color: #276749; }
+        .pc-con { color: #742a2a; }
+        .pc-pro::before { content: '✓ '; font-weight: 800; }
+        .pc-con::before { content: '✗ '; font-weight: 800; }
+
+        /* ── Decision helper (should I choose?) ── */
+        .choose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        @media (max-width: 520px) { .choose-grid { grid-template-columns: 1fr; } }
+
+        .choose-card {
+            border-radius: var(--radius-md);
+            padding: 22px 20px;
+            border: 1.5px solid;
+        }
+        .choose-card.basic-choose    { background: #f0fff4; border-color: #9ae6b4; }
+        .choose-card.standard-choose { background: #eef2ff; border-color: #a3bffa; }
+
+        .choose-card-icon { font-size: 1.7rem; margin-bottom: 10px; }
+        .choose-card h3 {
+            font-size: 0.97rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .choose-card.basic-choose    h3 { color: #276749; }
+        .choose-card.standard-choose h3 { color: #3730a3; }
+
+        .choose-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .choose-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.84rem;
+            line-height: 1.55;
+        }
+        .choose-card.basic-choose    .choose-list li { color: #2f5c40; }
+        .choose-card.standard-choose .choose-list li { color: #312e81; }
+        .choose-card.basic-choose    .choose-list li::before { content: '→'; color: #38a169; font-weight: 700; flex-shrink: 0; }
+        .choose-card.standard-choose .choose-list li::before { content: '→'; color: #667eea; font-weight: 700; flex-shrink: 0; }
+
+        /* ── CTA pair (two side-by-side CTAs) ── */
+        .cta-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        @media (max-width: 560px) { .cta-pair { grid-template-columns: 1fr; } }
+
+        .cta-box {
+            border-radius: var(--radius-lg);
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .cta-box.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 8px 24px rgba(102,126,234,0.28);
+        }
+        .cta-box.secondary {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+        .cta-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+        .cta-box.primary   .cta-eyebrow { color: rgba(255,255,255,0.7); }
+        .cta-box.secondary .cta-eyebrow { color: var(--primary); }
+
+        .cta-box h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin: 0;
+        }
+        .cta-box.primary   h3 { color: #fff; }
+        .cta-box.secondary h3 { color: var(--text-dark); }
+
+        .cta-box p {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .cta-box.primary   p { color: rgba(255,255,255,0.82); }
+        .cta-box.secondary p { color: var(--text-light); }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 9px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            align-self: flex-start;
+            margin-top: 4px;
+        }
+        .cta-box.primary .cta-btn {
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.32);
+        }
+        .cta-box.primary .cta-btn:hover {
+            background: rgba(255,255,255,0.28);
+            transform: translateY(-2px);
+        }
+        .cta-box.secondary .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.28);
+        }
+        .cta-box.secondary .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.38);
+        }
+
+        /* ── FAQ cards ── */
+        .faq-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 24px;
+        }
+        .faq-q {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .faq-q::before {
+            content: 'Q';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            border-radius: 7px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.74;
+            padding-left: 36px;
+        }
+        .faq-a p { margin-bottom: 8px; }
+        .faq-a p:last-child { margin-bottom: 0; }
+
+        /* ── Callout boxes ── */
+        .callout-blue {
+            background: #f0f7ff;
+            border: 1px solid #bee3f8;
+            border-left: 4px solid #4299e1;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-blue p {
+            font-size: 0.88rem;
+            color: #2b6cb0;
+            line-height: 1.68;
+            margin-bottom: 6px;
+        }
+        .callout-blue p:last-child { margin-bottom: 0; }
+
+        .callout-red {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-left: 4px solid #fc8181;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-red p {
+            font-size: 0.88rem;
+            color: #742a2a;
+            line-height: 1.68;
+            margin-bottom: 6px;
+        }
+        .callout-red p:last-child { margin-bottom: 0; }
+
+        .callout-green {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-left: 4px solid #48bb78;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-green p {
+            font-size: 0.88rem;
+            color: #276749;
+            line-height: 1.68;
+            margin-bottom: 6px;
+        }
+        .callout-green p:last-child { margin-bottom: 0; }
+
+        /* ── Quick-stat pills ── */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 18px 14px;
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 0.76rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        @media (max-width: 500px) {
+            .diff-bar-wrap { padding: 18px 16px; }
+            .toc-box { padding: 18px 18px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
+        <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Tools dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Tools
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
+                    <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
+                    <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
+                </ul>
+            </li>
+
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-internal-assessment-marks.html" role="menuitem"><span>🏫</span>Internal Assessment</a></li>
+                    <li><a href="cbse-skill-subject-replacement-rule.html" role="menuitem"><span>💡</span>Skill Subject Rule</a></li>
+                    <li><a href="cbse-basic-vs-standard-maths-rules.html" role="menuitem"><span>📐</span>Basic vs Standard Maths</a></li>
+                    <li><a href="cbse-class-11-stream-selection-guide.html" role="menuitem"><span>🎯</span>Stream Selection Guide</a></li>
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="cbse-class-10-re-evaluation-process.html" role="menuitem"><span>🔁</span>Re-Evaluation Process</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html" role="menuitem"><span>📱</span>DigiLocker Guide</a></li>
+                </ul>
+            </li>
+
+            <li><a href="maths-answer-key-2025.html">Answer Key</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+    <div class="hero-eyebrow">📐 Complete Comparison Guide · 2026</div>
+    <h1>Basic vs Standard Maths — CBSE Class 10</h1>
+    <p class="hero-sub">Same syllabus, different question styles, completely different career implications. Everything you need to know before choosing — or switching.</p>
+</section>
+
+<!-- ════════ PAGE BODY ════════ -->
+<main class="page-body">
+
+    <!-- ══ SECTION 0: QUICK FACTS + TOC ══ -->
+    <section class="content-section">
+        <div class="section-label">At a Glance</div>
+        <h2>The Two Numbers That Define This Choice</h2>
+
+        <div class="stat-row">
+            <div class="stat-card">
+                <div class="stat-num">2019</div>
+                <div class="stat-label">Year CBSE introduced the Basic/Standard split</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Syllabus overlap — the content is identical for both papers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">0</div>
+                <div class="stat-label">Streams you can take with Math in Class 11 if you chose Basic</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">1</div>
+                <div class="stat-label">Chance to switch — during the Compartment exam window only</div>
+            </div>
+        </div>
+
+        <div class="toc-box">
+            <h3>📋 What's In This Guide</h3>
+            <ol class="toc-list">
+                <li><a href="#why-cbse-did-this">Why CBSE Introduced the Split (2019)</a></li>
+                <li><a href="#difficulty-comparison">Difficulty Level — Same Syllabus, Different Question Style</a></li>
+                <li><a href="#science-conflict">The Science Stream Conflict — The Biggest Decision Factor</a></li>
+                <li><a href="#switching-rule">The Switching Rule — Upgrading Basic to Standard</a></li>
+                <li><a href="#pros-cons">Pros &amp; Cons Comparison Table</a></li>
+                <li><a href="#which-should-i-choose">Which Should You Choose?</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 1: WHY CBSE DID THIS ══ -->
+    <section class="content-section" id="why-cbse-did-this">
+        <div class="section-label">Background · 2019</div>
+        <h2>Why CBSE Introduced Basic and Standard Maths</h2>
+
+        <div class="highlight-card">
+            <p>For decades, every CBSE Class 10 student sat for the same Mathematics paper — regardless of whether they planned to pursue Engineering, Commerce, Arts, or had no intention of ever studying Mathematics again after Class 10. A student destined for a Biology or Humanities stream was evaluated on the same trigonometry, polynomials, and complex problem-solving as someone aiming for the IITs.</p>
+            <p>CBSE recognised that this created unnecessary pressure on hundreds of thousands of students every year. In 2019, the Board officially split the Class 10 Mathematics exam into two distinct papers: <strong>Mathematics Standard</strong> (paper code 041) and <strong>Mathematics Basic</strong> (paper code 241). The goal was clear — reduce board exam stress and allow students who do not need advanced Mathematics to be assessed at a level appropriate to their actual academic path.</p>
+            <p>The reform was widely welcomed. Students planning for Biology, Commerce, or Humanities could now focus on a Mathematics paper calibrated to conceptual understanding rather than advanced application — and stop competing on a paper designed for future engineers and mathematicians.</p>
+        </div>
+
+        <div class="accent-box" style="margin-top: 24px;">
+            <p>The key principle CBSE set out: <strong>the choice of Basic or Standard Mathematics signals a student's intended academic path after Class 10.</strong> It is not a measure of intelligence or academic ability — it is a routing mechanism that lets students study Maths at the level of depth appropriate for where they are headed next.</p>
+            <ul class="confusion-list">
+                <li>Students heading into Science (PCM/PCMB with Maths) → Standard Maths is mandatory</li>
+                <li>Students heading into Biology, Commerce, or Arts → Basic Maths is fully appropriate</li>
+                <li>Students who are undecided → Standard Maths keeps all options open</li>
+                <li>Students prioritising a higher percentage → Basic Maths offers a more accessible paper</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 2: DIFFICULTY COMPARISON ══ -->
+    <section class="content-section" id="difficulty-comparison">
+        <div class="section-label">Core Difference</div>
+        <h2>Same Syllabus — Completely Different Question Style</h2>
+
+        <p>This is the single most important technical fact about Basic vs Standard Maths, and it surprises most students: <strong>both papers cover exactly the same CBSE Class 10 syllabus.</strong> Every chapter — Real Numbers, Polynomials, Quadratic Equations, Triangles, Trigonometry, Statistics, Probability — appears in both papers. There is no topic that Standard covers and Basic skips, or vice versa.</p>
+
+        <p>The difference lies entirely in <strong>how questions are asked</strong>. Standard Maths questions test whether a student can apply concepts to unfamiliar situations, reason through multi-step problems, and draw logical connections. Basic Maths questions test whether a student understands and can recall the same concepts — but through direct, predictable question patterns.</p>
+
+        <h3>How the Question Styles Differ</h3>
+
+        <div class="qtype-grid">
+            <div class="qtype-card">
+                <div class="qtype-icon">💭</div>
+                <div class="qtype-label">Basic Maths</div>
+                <h4>Memory &amp; Understanding</h4>
+                <p>Questions ask you to recall formulas, apply standard procedures to familiar problem types, and demonstrate conceptual understanding directly.</p>
+            </div>
+            <div class="qtype-card">
+                <div class="qtype-icon">🔧</div>
+                <div class="qtype-label">Standard Maths</div>
+                <h4>Application &amp; Analysis</h4>
+                <p>Questions present novel scenarios requiring multi-step reasoning, proof construction, and applying concepts in unfamiliar or combined contexts.</p>
+            </div>
+            <div class="qtype-card">
+                <div class="qtype-icon">🎯</div>
+                <div class="qtype-label">Standard Maths</div>
+                <h4>Logic &amp; Evaluation</h4>
+                <p>Higher-order questions test whether you can evaluate different approaches, justify a solution method, or construct an argument — not just compute an answer.</p>
+            </div>
+        </div>
+
+        <h3>The Difficulty Spectrum</h3>
+
+        <div class="diff-bar-wrap">
+            <div class="diff-bar-label">
+                <span class="basic-lbl">Basic Maths (Code 241)</span>
+                <span class="std-lbl">Standard Maths (Code 041)</span>
+            </div>
+            <div class="diff-track">
+                <div class="diff-fill" style="width:100%"></div>
+            </div>
+            <div class="diff-markers">
+                <span class="diff-marker">Memory / Recall</span>
+                <span class="diff-marker">Conceptual</span>
+                <span class="diff-marker">Application</span>
+                <span class="diff-marker">Logic / Proof</span>
+            </div>
+        </div>
+
+        <div class="callout-blue">
+            <p><strong>Practical implication:</strong> A student who has studied all chapters thoroughly will find Basic Maths straightforward — the questions are predictable and reward preparation. Standard Maths rewards the same preparation but additionally demands that you can think on your feet. Students who find Maths intuitive tend to score higher in Standard; students who find Maths challenging often score significantly better in Basic because the question patterns are more familiar.</p>
+        </div>
+
+        <h3>Side-by-Side at a Glance</h3>
+
+        <div class="vs-split">
+            <div class="vs-col basic">
+                <div class="vs-header">
+                    <span class="vs-badge basic">Basic · Code 241</span>
+                </div>
+                <h3>Mathematics Basic</h3>
+                <ul class="vs-list">
+                    <li>Identical syllabus to Standard — all chapters covered</li>
+                    <li>Questions focus on knowledge, comprehension, and direct application</li>
+                    <li>Shorter, more predictable question patterns</li>
+                    <li>Typically easier to score 80+ marks with consistent preparation</li>
+                    <li>Suitable for students not pursuing Maths in Class 11</li>
+                    <li>Does <strong>not</strong> qualify you for Maths in Class 11 or PCM stream</li>
+                    <li>Can be upgraded to Standard during Compartment window</li>
+                </ul>
+            </div>
+            <div class="vs-col standard">
+                <div class="vs-header">
+                    <span class="vs-badge standard">Standard · Code 041</span>
+                </div>
+                <h3>Mathematics Standard</h3>
+                <ul class="vs-list">
+                    <li>Identical syllabus to Basic — all chapters covered</li>
+                    <li>Questions test application, analysis, reasoning, and proof</li>
+                    <li>Includes higher-order thinking (HOT) questions and case-based problems</li>
+                    <li>More challenging to score 90+ marks; requires conceptual depth</li>
+                    <li>Mandatory for students who want Maths in Class 11 (PCM/PCMB)</li>
+                    <li>Keeps all stream options fully open after Class 10</li>
+                    <li>If failed, students appear for Standard in compartment (not Basic)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 3: THE SCIENCE CONFLICT ══ -->
+    <section class="content-section" id="science-conflict">
+        <div class="section-label">⚠️ Most Critical Rule</div>
+        <h2>The Science Stream Conflict — What Basic Maths Closes Off</h2>
+
+        <p>This is the rule that catches the most students off guard, and it has consequences that cannot be reversed without going through the Compartment exam. If you chose Basic Maths in Class 10 and passed, you are barred from taking Mathematics as a subject in Class 11.</p>
+
+        <div class="callout-red">
+            <p><strong>The hard rule:</strong> To take Mathematics as a subject in Class 11 — whether in PCM (Physics, Chemistry, Maths), PCMB (Physics, Chemistry, Maths, Biology), or any other stream with Maths — you must have passed <strong>Mathematics Standard (Code 041)</strong> in your CBSE Class 10 board examination. Passing Mathematics Basic (Code 241) does not satisfy this requirement under any circumstances.</p>
+        </div>
+
+        <h3>Stream-by-Stream Eligibility</h3>
+
+        <div class="stream-table-wrap">
+            <table class="stream-table">
+                <thead>
+                    <tr>
+                        <th>Class 11 Stream / Combination</th>
+                        <th>Basic Maths (241)</th>
+                        <th>Standard Maths (041)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="stream-name">PCM — Physics, Chemistry, Maths</span></td>
+                        <td><span class="cross">✗ Not Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>Maths is a core subject — Standard mandatory</td>
+                    </tr>
+                    <tr>
+                        <td><span class="stream-name">PCMB — Physics, Chemistry, Maths, Biology</span></td>
+                        <td><span class="cross">✗ Not Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>Maths is a core subject — Standard mandatory</td>
+                    </tr>
+                    <tr>
+                        <td><span class="stream-name">PCB — Physics, Chemistry, Biology (no Maths)</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>Maths not required; both qualify</td>
+                    </tr>
+                    <tr>
+                        <td><span class="stream-name">Commerce with Maths / Applied Maths</span></td>
+                        <td><span class="cross">✗ Usually Not Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>Many schools require Standard for Applied Maths</td>
+                    </tr>
+                    <tr>
+                        <td><span class="stream-name">Commerce without Maths</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>No Maths requirement for this combination</td>
+                    </tr>
+                    <tr>
+                        <td><span class="stream-name">Humanities / Arts</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>No Maths requirement; both fully qualify</td>
+                    </tr>
+                    <tr>
+                        <td><span class="stream-name">Applied Mathematics (Class 11 CBSE)</span></td>
+                        <td><span class="cross">✗ Generally Not Eligible</span></td>
+                        <td><span class="tick">✓ Eligible</span></td>
+                        <td>Applied Maths is still a Maths subject; Standard typically required</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout-red" style="margin-top: 20px;">
+            <p><strong>The most common regret:</strong> Students who choose Basic Maths assuming they will go into Biology sometimes change their mind after results and want to add Maths to their stream — perhaps to keep Engineering options open alongside Medicine. Without the Compartment switch (explained in the next section), this is not possible. <strong>Think carefully before choosing Basic if you are even slightly uncertain about wanting Maths later.</strong></p>
+        </div>
+
+        <h3>Why This Rule Exists</h3>
+
+        <p>CBSE's position is straightforward: Standard Maths is designed to build the foundational problem-solving skills required for Mathematics at the Class 11–12 level (particularly NCERT Maths for Science stream). Basic Maths, while covering the same topics, does not test the depth of analytical thinking that Class 11 Maths demands. Allowing Basic Maths students into advanced Maths streams would set students up to struggle in Class 11 where the difficulty jump from Class 10 Standard is already significant.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 4: SWITCHING RULE ══ -->
+    <section class="content-section" id="switching-rule">
+        <div class="section-label">The Escape Route</div>
+        <h2>The Switching Rule — Upgrading from Basic to Standard</h2>
+
+        <p>CBSE provides one official mechanism for a student who chose Basic Maths and passed, but has since changed their mind about needing Standard Maths for Class 11. This is called the <strong>Compartment Examination</strong> route for upgrading — and it has strict conditions.</p>
+
+        <h3>How the Switch Works</h3>
+
+        <div class="flow-wrap">
+            <div class="flow-node start">
+                <h4>Student chose Basic Maths · Results declared · Passed</h4>
+                <p>You passed Mathematics Basic but now realise you need Standard for Class 11 PCM or Maths stream.</p>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node action">
+                <h4>Apply for Standard Maths in the Compartment Exam Window</h4>
+                <p>During the CBSE Compartment exam registration period (typically July–August), apply to appear for Mathematics Standard (Code 041) as an "improvement" or upgrade candidate. Check the CBSE circular for the exact registration process each year.</p>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node action">
+                <h4>Appear for Mathematics Standard Paper</h4>
+                <p>You sit for the full Mathematics Standard (Code 041) board paper alongside compartment candidates. You must score at least 33/100 to pass.</p>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-branch-labels">
+                <div class="branch-label">If you PASS Standard</div>
+                <div class="branch-label">If you FAIL Standard</div>
+            </div>
+            <div class="flow-branch-arrow">
+                <span>↓</span>
+                <span>↓</span>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-node result-good">
+                    <h4>Standard Maths on record ✓</h4>
+                    <p>Your marksheet is updated. You are now eligible for PCM, PCMB, or any stream requiring Maths in Class 11.</p>
+                </div>
+                <div class="flow-node result-bad">
+                    <h4>Basic Maths result stands ✗</h4>
+                    <p>Your original Basic Maths pass is retained. You are not eligible for Maths streams in Class 11 this year. You may attempt again if another window exists.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Critical Conditions for the Switch</h3>
+
+        <div class="accent-box" style="margin-top: 24px;">
+            <p>The upgrade window is time-sensitive and has specific eligibility conditions. Understand all of these before assuming the switch is straightforward:</p>
+            <ul class="confusion-list">
+                <li>You must have passed Basic Maths — this route is for passing students upgrading, not for students who failed</li>
+                <li>The switch window aligns with the annual CBSE Compartment exam schedule — typically July to August. Class 11 admissions in many schools may already be underway during this period</li>
+                <li>There is no guarantee that your Class 11 school will hold your seat while awaiting the Compartment result — confirm this with your school in advance</li>
+                <li>You must score at least 33/100 in Standard Maths to pass — this is the same passing threshold as the regular board exam</li>
+                <li>If you fail the Compartment Standard Maths attempt, your Basic Maths pass stands on your record</li>
+                <li>CBSE releases an official circular each year specifying the exact procedure — always check cbse.gov.in for the current year's rules</li>
+            </ul>
+        </div>
+
+        <div class="callout-green">
+            <p><strong>Bottom line:</strong> The switch is possible but not risk-free. Preparing for a full Standard Maths board paper after results in a short window, while also managing Class 11 admission logistics, is stressful. If you are at all uncertain about needing Maths later, choosing Standard from the start is significantly simpler.</p>
+        </div>
+
+        <h3>What About Switching from Standard to Basic?</h3>
+
+        <p>There is no official mechanism for a Standard Maths student to switch to Basic after the exam. If you chose Standard and passed — even with low marks — your result stands as Standard Maths. If you chose Standard and failed, you appear for the Compartment exam in Standard (not Basic). There is no downgrade path.</p>
+
+        <div class="callout-blue">
+            <p>If you chose Standard Maths but scored poorly and are worried about your grade or percentage, note that passing Standard Maths (even with a C or D grade) still keeps all your stream options open. A low score in Standard is better for long-term academic flexibility than a high score in Basic.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 5: PROS & CONS TABLE ══ -->
+    <section class="content-section" id="pros-cons">
+        <div class="section-label">Full Comparison</div>
+        <h2>Pros &amp; Cons — Basic vs Standard Maths</h2>
+
+        <p>Read every row carefully. Some advantages of Basic Maths look appealing in the short term but create real constraints in Class 11. Some perceived disadvantages of Standard Maths are manageable with the right preparation strategy.</p>
+
+        <div class="pros-cons-wrap">
+            <table class="pros-cons">
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Basic Maths (Code 241)</th>
+                        <th>Standard Maths (Code 041)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="pc-aspect">Syllabus</span></td>
+                        <td>Identical — all Class 10 Maths chapters</td>
+                        <td>Identical — all Class 10 Maths chapters</td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Question Style</span></td>
+                        <td>Memory, comprehension, direct application</td>
+                        <td>Application, analysis, logic, higher-order thinking</td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Exam Difficulty</span></td>
+                        <td><span class="pc-pro">Easier for most students</span></td>
+                        <td><span class="pc-con">Harder — requires deeper conceptual clarity</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Scoring High</span></td>
+                        <td><span class="pc-pro">Easier to score 80–90+</span></td>
+                        <td><span class="pc-con">90+ requires strong conceptual preparation</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Best of 5 Percentage</span></td>
+                        <td><span class="pc-pro">Higher Maths score boosts Best of 5 % more reliably</span></td>
+                        <td><span class="pc-con">Lower Maths score may hurt Best of 5 if unprepared</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Class 11 Maths Eligibility</span></td>
+                        <td><span class="pc-con">Not eligible for Math in Class 11 (PCM/PCMB)</span></td>
+                        <td><span class="pc-pro">Fully eligible for all streams including PCM/PCMB</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Biology (PCB) Stream</span></td>
+                        <td><span class="pc-pro">Eligible — no restriction</span></td>
+                        <td><span class="pc-pro">Eligible — no restriction</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Commerce Stream</span></td>
+                        <td><span class="pc-pro">Eligible (without Applied Maths in most schools)</span></td>
+                        <td><span class="pc-pro">Eligible for all Commerce combinations</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Humanities / Arts</span></td>
+                        <td><span class="pc-pro">Fully eligible</span></td>
+                        <td><span class="pc-pro">Fully eligible</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Engineering Entrance Prep</span></td>
+                        <td><span class="pc-con">Not a viable path — cannot do PCM</span></td>
+                        <td><span class="pc-pro">Full pathway open for JEE, BITSAT, state CETs</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Switching After Results</span></td>
+                        <td><span class="pc-pro">Can upgrade to Standard via Compartment exam</span></td>
+                        <td><span class="pc-con">No downgrade option; failed Standard stays Standard</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Stress During Preparation</span></td>
+                        <td><span class="pc-pro">Lower exam-related anxiety for most students</span></td>
+                        <td><span class="pc-con">Higher pressure; requires stronger conceptual foundation</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Class 11 Maths Readiness</span></td>
+                        <td><span class="pc-con">Not applicable — closed off from Maths streams</span></td>
+                        <td><span class="pc-pro">Better prepared for Class 11 Maths difficulty jump</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="pc-aspect">Long-Term Flexibility</span></td>
+                        <td><span class="pc-con">Permanently closes some career paths (Engineering, Data Science, Finance with Maths)</span></td>
+                        <td><span class="pc-pro">All career paths remain fully accessible</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 6: WHICH SHOULD I CHOOSE ══ -->
+    <section class="content-section" id="which-should-i-choose">
+        <div class="section-label">Decision Guide</div>
+        <h2>Which Should You Choose?</h2>
+
+        <p>There is no universally correct answer. The right choice depends entirely on where you are headed after Class 10. Use the guide below to make a decision you will not regret in June when admissions open.</p>
+
+        <div class="choose-grid">
+            <div class="choose-card basic-choose">
+                <div class="choose-card-icon">✅</div>
+                <h3>Choose Basic Maths if…</h3>
+                <ul class="choose-list">
+                    <li>You are absolutely certain you want Biology (PCB) in Class 11 and have no interest in Engineering</li>
+                    <li>You want Commerce or Arts and are confident you will not need Applied or Core Maths in Class 11</li>
+                    <li>You find Maths genuinely challenging and want to focus your preparation energy on scoring well in other subjects</li>
+                    <li>Maximising your Best of 5 percentage is a priority and Maths is likely to be your weakest subject in Standard</li>
+                    <li>You are comfortable with the understanding that Maths in Class 11 is permanently closed unless you do the Compartment switch</li>
+                </ul>
+            </div>
+            <div class="choose-card standard-choose">
+                <div class="choose-card-icon">✦</div>
+                <h3>Choose Standard Maths if…</h3>
+                <ul class="choose-list">
+                    <li>You are even slightly interested in Engineering, Data Science, Economics with Maths, or any career requiring strong quantitative skills</li>
+                    <li>You have not firmly decided your Class 11 stream and want to keep all options open</li>
+                    <li>You are good at Maths or enjoy it — Standard rewards preparation strongly and the extra challenge is manageable</li>
+                    <li>Your school or target Class 11 college has specific eligibility requirements mentioning Standard Maths</li>
+                    <li>You do not want to risk needing the Compartment upgrade later, which involves stress, timing, and uncertainty</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="callout-blue" style="margin-top: 24px;">
+            <p><strong>The golden rule:</strong> If you are uncertain, choose Standard Maths. The downside of choosing Standard and finding it hard is a lower Maths score — which you may be able to partially offset through other subjects in Best of 5. The downside of choosing Basic and later wanting Maths in Class 11 is a significant logistical challenge during the most stressful admission season of your academic life so far.</p>
+        </div>
+
+        <!-- CTA PAIR -->
+        <div class="cta-pair">
+            <div class="cta-box primary">
+                <div class="cta-eyebrow">🎓 Free Tool</div>
+                <h3>Worried about your grades? Try the CBSE Grade Predictor</h3>
+                <p>Enter your expected marks and see your projected grades (A1 through E) for every subject — before results are even declared.</p>
+                <a href="cbse-grade-predictor.html" class="cta-btn">Try Grade Predictor →</a>
+            </div>
+            <div class="cta-box secondary">
+                <div class="cta-eyebrow">📊 Percentage Strategy</div>
+                <h3>Need a high percentage? See how IT replaces Maths in Best of 5</h3>
+                <p>If you chose Standard Maths and scored lower than expected, a Skill Subject like IT can replace Maths in the Best of 5 calculation and significantly lift your percentage.</p>
+                <a href="cbse-class-10-passing-criteria-2026.html" class="cta-btn">Read Passing Criteria Guide →</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 7: FAQ ══ -->
+    <section class="content-section" id="faq">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2>Basic vs Standard Maths — All FAQs Answered</h2>
+
+        <div class="faq-stack">
+
+            <div class="faq-card">
+                <div class="faq-q">Can I take Science (PCM) with Basic Maths in Class 11?</div>
+                <div class="faq-a">
+                    <p>No. To take Mathematics as a subject in Class 11 — whether in PCM, PCMB, or any other combination — you must have passed Mathematics Standard (Code 041) in your CBSE Class 10 board exam. Passing Mathematics Basic (Code 241) does not satisfy this requirement, and no school is permitted to make exceptions to this CBSE rule.</p>
+                    <p>If you passed Basic Maths and want PCM in Class 11, your only official option is to upgrade via the Compartment exam window — explained in detail in the switching rule section above.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Is the syllabus different for Basic and Standard Maths?</div>
+                <div class="faq-a">
+                    <p>No — the syllabus is completely identical. Both papers cover exactly the same chapters and topics from the CBSE Class 10 Mathematics curriculum: Real Numbers, Polynomials, Pair of Linear Equations, Quadratic Equations, Arithmetic Progressions, Triangles, Coordinate Geometry, Trigonometry, Areas Related to Circles, Surface Areas and Volumes, Statistics, and Probability.</p>
+                    <p>The difference is not what is tested, but <strong>how</strong> it is tested. Standard Maths tests application and higher-order thinking; Basic Maths tests comprehension and direct application of the same concepts.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Can I change from Basic to Standard after results are declared?</div>
+                <div class="faq-a">
+                    <p>Yes, but only through the CBSE Compartment exam route. After Class 10 results are declared, CBSE opens a Compartment exam registration window (typically July–August). Students who passed Basic Maths can apply to appear for Standard Maths during this window. If you pass Standard Maths in the Compartment exam, your marksheet is updated to reflect Standard Maths and you become eligible for PCM/PCMB in Class 11.</p>
+                    <p>This window has a deadline and the timing is tight relative to Class 11 admissions. If you fail the Compartment Standard attempt, your original Basic Maths pass stands. There is no further appeal or attempt within the same academic year.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Does choosing Basic Maths affect my Best of 5 percentage?</div>
+                <div class="faq-a">
+                    <p>Not directly — both Basic and Standard marks are counted the same way in the Best of 5 calculation. What matters for Best of 5 is the actual marks you score, not which paper you sat for. If you score higher in Basic Maths than you would have in Standard (which is likely for many students), your Best of 5 percentage will be better with Basic.</p>
+                    <p>However, students with a Skill Subject like Information Technology (IT) can have it replace their lowest compulsory subject (which might be Maths) in the Best of 5 calculation. This is true regardless of whether you chose Basic or Standard. See our <a href="cbse-class-10-passing-criteria-2026.html" style="color: var(--primary); font-weight: 600;">Passing Criteria guide</a> for full details on this.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">I took Standard Maths and scored poorly. Am I penalised compared to Basic students?</div>
+                <div class="faq-a">
+                    <p>For CBSE grading purposes, no direct comparison is made between Basic and Standard students — each is graded on their own distribution. However, in practice, if you scored 60 in Standard Maths and a peer scored 80 in Basic Maths, their Best of 5 percentage will benefit more from their Maths score than yours will.</p>
+                    <p>There is no official moderation or conversion between Basic and Standard marks — they appear as-is on the marksheet. The key advantage of Standard Maths is stream eligibility, not score advantage.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Can I take Biology (PCB) in Class 11 if I chose Standard Maths?</div>
+                <div class="faq-a">
+                    <p>Yes, absolutely. Choosing Standard Maths in Class 10 does not restrict you from taking Biology without Mathematics in Class 11. Standard Maths is a superset — it keeps all options open. You can use your Standard Maths result to go into PCM, PCB, PCMB, Commerce, or Humanities. The restriction only applies in one direction: Basic Maths restricts you from PCM/Maths-based streams, but Standard Maths restricts nothing.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Will colleges or employers know whether I took Basic or Standard Maths?</div>
+                <div class="faq-a">
+                    <p>Your CBSE Class 10 marksheet shows the subject code — 041 for Standard and 241 for Basic. This is visible to anyone who reads the marksheet carefully. Most undergraduate college admissions do not specifically scrutinise this for courses that do not require Maths. However, for engineering colleges (JEE-based admissions), the eligibility criteria require Maths in Class 11–12, so the Class 10 choice is only indirectly relevant through the stream it enabled.</p>
+                    <p>Employers generally do not look at Class 10 subject codes. The choice primarily matters for Class 11 stream access — after that, your Class 11–12 subjects and performance take over.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">What happens if I fail Standard Maths? Do I get moved to Basic?</div>
+                <div class="faq-a">
+                    <p>No. If you chose Standard Maths and failed, you appear for the Compartment exam in Standard Maths (Code 041). CBSE does not offer a downgrade to Basic Maths as an alternative to passing Standard. You must pass Standard Maths to pass the subject. If you pass in the Compartment exam, Standard Maths is on your record. If you fail the Compartment attempt, you repeat the year.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 8: RELATED TOOLS ══ -->
+    <section class="content-section">
+        <div class="section-label">Explore More</div>
+        <h2>Related Tools &amp; Guides</h2>
+
+        <div class="tools-grid">
+            <a href="stream-eligibility.html" class="tool-card">
+                <span class="tool-card-icon">📊</span>
+                <h3>Stream Eligibility Tool</h3>
+                <p>Enter your Class 10 marks and see exactly which streams and subject combinations you qualify for.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="cbse-grade-predictor.html" class="tool-card">
+                <span class="tool-card-icon">🎓</span>
+                <h3>Grade Predictor</h3>
+                <p>Find your projected CBSE grade (A1 through E) for every subject based on your expected marks.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="cbse-class-10-passing-criteria-2026.html" class="tool-card">
+                <span class="tool-card-icon">✅</span>
+                <h3>Passing Criteria 2026</h3>
+                <p>The 33% rule, compartment triggers, Skill Subject strategy — everything that determines if you pass.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-class-10-re-evaluation-process.html" class="tool-card">
+                <span class="tool-card-icon">🔄</span>
+                <h3>Re-Evaluation Guide</h3>
+                <p>Unhappy with your Maths score? Learn the three-stage CBSE re-evaluation process, fees, and deadlines.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="index.html" class="tool-card">
+                <span class="tool-card-icon">🧮</span>
+                <h3>Best of 5 Calculator</h3>
+                <p>Calculate your official CBSE percentage using the Best of 5 rule — handles Skill Subjects automatically.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="cbse-class-10-results-day-guide.html" class="tool-card">
+                <span class="tool-card-icon">📋</span>
+                <h3>Results Day Guide</h3>
+                <p>What to do the moment CBSE results are declared — step by step from marksheet to admission.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">CBSE Decision<span class="dot">.</span>Hub</a>
+                <p>CBSE Decision Hub provides free academic tools and guides for CBSE Class 10 students — calculators, stream guidance, grading rules, and result tools.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">🧮 % Calculator</a></li>
+                    <li><a href="target-marks.html">🎯 Target Marks</a></li>
+                    <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html">🎓 Grade Predictor</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="best-of-5-rule-cbse-class-10.html">📚 Best of 5 Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html">✅ Passing Criteria 2026</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html">📝 English Rule</a></li>
+                    <li><a href="cbse-internal-assessment-marks.html">🏫 Internal Assessment</a></li>
+                    <li><a href="cbse-skill-subject-replacement-rule.html">💡 Skill Subject Rule</a></li>
+                    <li><a href="cbse-basic-vs-standard-maths-rules.html">📐 Basic vs Standard Maths</a></li>
+                    <li><a href="cbse-class-11-stream-selection-guide.html">🎯 Stream Selection Guide</a></li>
+                    <li><a href="cbse-class-10-results-day-guide.html">📋 Results Day Guide</a></li>
+                    <li><a href="cbse-class-10-re-evaluation-process.html">🔁 Re-Evaluation Process</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html">📱 DigiLocker Guide</a></li>
+                    <li><a href="maths-answer-key-2025.html">📝 Maths Answer Key</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="contact.html">✉️ Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>© 2026 CBSE Decision Hub. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══ Nav logic ══ -->
+<script src="navigation.js"></script>
+
+<!-- ════════ STRUCTURED DATA ════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I take Science (PCM) with Basic Maths in Class 11?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. To take Mathematics as a subject in Class 11 — whether PCM, PCMB, or any Maths-based stream — you must have passed Mathematics Standard (Code 041) in your CBSE Class 10 board exam. Passing Mathematics Basic (Code 241) does not qualify you for Maths in Class 11. The only way to upgrade is to pass Mathematics Standard in the CBSE Compartment exam window held after results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the syllabus different for Basic and Standard Maths in CBSE Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — the syllabus is completely identical. Both papers cover all the same CBSE Class 10 Mathematics chapters. The difference is in how questions are asked: Standard Maths tests application, analysis, and higher-order thinking; Basic Maths tests comprehension and direct application of the same concepts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change from Basic to Standard Maths after results are declared?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but only via the CBSE Compartment exam. Students who passed Basic Maths can apply to appear for Mathematics Standard during the Compartment exam registration window (typically July–August). If they pass Standard, their marksheet is updated and they become eligible for PCM/PCMB in Class 11. If they fail, the original Basic Maths pass stands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference in difficulty between Basic and Standard Maths?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both papers have the same syllabus. Basic Maths questions focus on memory, comprehension, and direct application of concepts, making it more predictable and accessible. Standard Maths questions test application, analysis, multi-step reasoning, and higher-order thinking, making it more challenging but essential for students pursuing Maths-based careers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Basic Maths affect my CBSE Best of 5 percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly — both Basic and Standard marks count identically in the Best of 5 calculation. If you score higher in Basic than you would have in Standard, your percentage will benefit. Students with a Skill Subject like IT can also have it replace their lowest subject (including Maths) in the Best of 5 calculation, regardless of whether they chose Basic or Standard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I fail Standard Maths? Am I moved to Basic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If you fail Standard Maths, you appear for the Compartment exam in Standard Maths (Code 041). CBSE does not offer a downgrade to Basic Maths as an alternative. You must pass Standard to pass the subject."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Basic vs Standard Maths CBSE Class 10: Differences, Science Eligibility & Switching Rules (2026)",
+  "description": "A complete breakdown of CBSE Class 10 Basic vs Standard Mathematics. Learn about the difficulty levels, eligibility for Class 11 Science, and the official switching rules.",
+  "keywords": "difference between basic and standard maths cbse class 10, can I take science with basic maths, CBSE maths standard vs basic difficulty level, switching from basic to standard maths",
+  "author": {
+    "@type": "Organization",
+    "name": "CBSE Decision Hub",
+    "url": "https://shadowrexx.github.io/cbse-class-10-tools/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CBSE Decision Hub",
+    "url": "https://shadowrexx.github.io/cbse-class-10-tools/"
+  },
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-02-27",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-basic-vs-standard-maths-rules.html"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-10-results-day-guide.html" },
+    { "@type": "ListItem", "position": 3, "name": "Basic vs Standard Maths CBSE Class 10", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-basic-vs-standard-maths-rules.html" }
+  ]
+}
+</script>
+
+</body>
+</html>

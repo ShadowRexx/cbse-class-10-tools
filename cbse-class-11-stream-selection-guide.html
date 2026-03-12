@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Struggling to choose between Science, Commerce, and Humanities? Our 2026 guide breaks down the subjects, career paths, and eligibility for each stream after CBSE Class 10.">
+    <meta name="keywords" content="how to choose stream after class 10 CBSE 2026, science vs commerce vs arts, PCM vs PCB career options, stream selection criteria, high salary careers after class 10, which stream to choose after 10th, science commerce humanities comparison">
+    <link rel="canonical" href="https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-11-stream-selection-guide.html">
+    <title>How to Choose Stream After Class 10 CBSE 2026: Science vs Commerce vs Humanities</title>
+
+    <!-- ══ Shared styles ══ -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* ═══════════════════════════════════════════
+           PAGE-SPECIFIC STYLES
+           All colours via main.css :root variables
+        ═══════════════════════════════════════════ */
+
+        /* ── Stream hero cards ── */
+        .stream-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .stream-card {
+            border-radius: var(--radius-lg);
+            border: 2px solid;
+            padding: 26px 22px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .stream-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .stream-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 90px; height: 90px;
+            border-radius: 0 0 0 90px;
+            opacity: 0.08;
+        }
+        .stream-card.science {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+        .stream-card.science::before { background: #2563eb; }
+        .stream-card.commerce {
+            background: #f0fdf4;
+            border-color: #86efac;
+        }
+        .stream-card.commerce::before { background: #16a34a; }
+        .stream-card.humanities {
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+        .stream-card.humanities::before { background: #d97706; }
+
+        .stream-card-emoji { font-size: 2rem; margin-bottom: 10px; display: block; }
+        .stream-card-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .stream-card.science   .stream-card-tag { background: #dbeafe; color: #1e40af; }
+        .stream-card.commerce  .stream-card-tag { background: #dcfce7; color: #166534; }
+        .stream-card.humanities .stream-card-tag { background: #fef3c7; color: #92400e; }
+
+        .stream-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .stream-card.science    h3 { color: #1e40af; }
+        .stream-card.commerce   h3 { color: #166534; }
+        .stream-card.humanities h3 { color: #92400e; }
+        .stream-card p {
+            font-size: 0.84rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .stream-card.science    p { color: #1e3a8a; }
+        .stream-card.commerce   p { color: #14532d; }
+        .stream-card.humanities p { color: #78350f; }
+
+        /* ── Deep-dive stream sections ── */
+        .stream-section {
+            border-radius: var(--radius-lg);
+            border: 1px solid;
+            overflow: hidden;
+            margin-top: 28px;
+            box-shadow: var(--shadow-card);
+        }
+        .stream-section-header {
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .stream-section.science  .stream-section-header { background: linear-gradient(135deg, #2563eb, #1e40af); }
+        .stream-section.commerce .stream-section-header { background: linear-gradient(135deg, #16a34a, #15803d); }
+        .stream-section.humanities .stream-section-header { background: linear-gradient(135deg, #d97706, #b45309); }
+
+        .stream-section.science  { border-color: #93c5fd; }
+        .stream-section.commerce { border-color: #86efac; }
+        .stream-section.humanities { border-color: #fcd34d; }
+
+        .stream-section-icon { font-size: 2.2rem; flex-shrink: 0; }
+        .stream-section-header h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 3px;
+            line-height: 1.2;
+        }
+        .stream-section-header p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.82rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .stream-section-body { padding: 22px 28px; background: var(--bg-card); }
+        .stream-section-body > p {
+            font-size: 0.93rem;
+            color: var(--text-mid);
+            line-height: 1.76;
+            margin-bottom: 14px;
+        }
+        .stream-section-body h4 {
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            margin-top: 18px;
+        }
+        .stream-section.science    .stream-section-body h4 { color: #1e40af; }
+        .stream-section.commerce   .stream-section-body h4 { color: #166534; }
+        .stream-section.humanities .stream-section-body h4 { color: #92400e; }
+
+        /* sub-tracks (PCM / PCB) */
+        .track-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        @media (max-width: 520px) { .track-split { grid-template-columns: 1fr; } }
+
+        .track-card {
+            border-radius: var(--radius-md);
+            padding: 16px 16px;
+            border: 1.5px solid;
+        }
+        .track-card.pcm   { background: #eff6ff; border-color: #93c5fd; }
+        .track-card.pcb   { background: #f0fdf4; border-color: #86efac; }
+        .track-card.math  { background: #eff6ff; border-color: #93c5fd; }
+        .track-card.nomth { background: #fffbeb; border-color: #fcd34d; }
+
+        .track-card-label {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .track-card.pcm   .track-card-label { color: #1e40af; }
+        .track-card.pcb   .track-card-label { color: #166534; }
+        .track-card.math  .track-card-label { color: #1e40af; }
+        .track-card.nomth .track-card-label { color: #92400e; }
+
+        .track-card h5 {
+            font-size: 0.88rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .track-card.pcm   h5 { color: #1e3a8a; }
+        .track-card.pcb   h5 { color: #14532d; }
+        .track-card.math  h5 { color: #1e3a8a; }
+        .track-card.nomth h5 { color: #78350f; }
+
+        .track-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin: 0;
+        }
+        .track-card ul li {
+            font-size: 0.8rem;
+            line-height: 1.45;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .track-card.pcm   ul li { color: #1e3a8a; }
+        .track-card.pcb   ul li { color: #14532d; }
+        .track-card.math  ul li { color: #1e3a8a; }
+        .track-card.nomth ul li { color: #78350f; }
+        .track-card ul li::before { content: '→'; font-weight: 700; flex-shrink: 0; }
+
+        /* career chips inside stream section */
+        .career-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 10px;
+        }
+        .career-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.79rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 50px;
+            border: 1px solid;
+        }
+        .stream-section.science    .career-chip { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+        .stream-section.commerce   .career-chip { background: #dcfce7; border-color: #86efac; color: #166534; }
+        .stream-section.humanities .career-chip { background: #fef3c7; border-color: #fcd34d; color: #92400e; }
+
+        /* eligibility mini-bar inside stream section */
+        .elig-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.84rem;
+            color: var(--text-mid);
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #f7f9fc;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+        .elig-row strong { color: var(--text-dark); }
+
+        /* conflict banner inside commerce */
+        .conflict-banner {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #fffbeb;
+            border: 1.5px solid #fcd34d;
+            border-left: 4px solid #d97706;
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            margin-top: 16px;
+        }
+        .conflict-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+        .conflict-body h5 {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #92400e;
+            margin-bottom: 5px;
+        }
+        .conflict-body p {
+            font-size: 0.83rem;
+            color: #78350f;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── 3-stream comparison table ── */
+        .compare-wrap { overflow-x: auto; margin-top: 24px; }
+        table.compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.87rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        table.compare thead tr {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        table.compare th {
+            padding: 12px 16px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+        table.compare th.science-col    { background: rgba(37,99,235,0.8); }
+        table.compare th.commerce-col   { background: rgba(22,163,74,0.8); }
+        table.compare th.humanities-col { background: rgba(217,119,6,0.8); }
+        table.compare td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-mid);
+            vertical-align: top;
+            line-height: 1.52;
+        }
+        table.compare tbody tr:nth-child(even) { background: #f7f9fc; }
+        table.compare tbody tr:last-child td   { border-bottom: none; }
+        .row-label {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .sci-val  { color: #1e40af; }
+        .com-val  { color: #166534; }
+        .hum-val  { color: #92400e; }
+        .diff-hard   { font-weight: 700; color: #e53e3e; }
+        .diff-medium { font-weight: 700; color: #c05621; }
+        .diff-easy   { font-weight: 700; color: #276749; }
+
+        /* ── Myths busting grid ── */
+        .myth-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .myth-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 540px) { .myth-card { grid-template-columns: 1fr; } }
+
+        .myth-side {
+            padding: 16px 18px;
+        }
+        .myth-side.false-col {
+            background: #fff5f5;
+            border-right: 1px solid #fed7d7;
+        }
+        @media (max-width: 540px) {
+            .myth-side.false-col { border-right: none; border-bottom: 1px solid #fed7d7; }
+        }
+        .myth-side.truth-col { background: #f0fff4; }
+
+        .myth-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 50px;
+            margin-bottom: 7px;
+        }
+        .false-col .myth-badge { background: #fed7d7; color: #742a2a; }
+        .truth-col .myth-badge { background: #c6f6d5; color: #276749; }
+
+        .myth-side p {
+            font-size: 0.86rem;
+            line-height: 1.62;
+            margin: 0;
+        }
+        .false-col p { color: #742a2a; }
+        .truth-col p { color: #276749; }
+
+        /* ── Checklist ── */
+        .checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+            counter-reset: chk;
+        }
+        .checklist li {
+            counter-increment: chk;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 16px 18px;
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.65;
+        }
+        .checklist li::before {
+            content: counter(chk);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 800;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .checklist li strong { color: var(--text-dark); }
+
+        /* ── CTA pair (same as previous guides) ── */
+        .cta-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        @media (max-width: 560px) { .cta-pair { grid-template-columns: 1fr; } }
+
+        .cta-box {
+            border-radius: var(--radius-lg);
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .cta-box.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 8px 24px rgba(102,126,234,0.28);
+        }
+        .cta-box.secondary {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+        .cta-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+        .cta-box.primary   .cta-eyebrow { color: rgba(255,255,255,0.7); }
+        .cta-box.secondary .cta-eyebrow { color: var(--primary); }
+        .cta-box h3 { font-size: 1rem; font-weight: 800; line-height: 1.35; margin: 0; }
+        .cta-box.primary   h3 { color: #fff; }
+        .cta-box.secondary h3 { color: var(--text-dark); }
+        .cta-box p { font-size: 0.82rem; line-height: 1.6; margin: 0; }
+        .cta-box.primary   p { color: rgba(255,255,255,0.82); }
+        .cta-box.secondary p { color: var(--text-light); }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 9px;
+            align-self: flex-start;
+            margin-top: 4px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+        .cta-box.primary .cta-btn {
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.32);
+        }
+        .cta-box.primary .cta-btn:hover {
+            background: rgba(255,255,255,0.28);
+            transform: translateY(-2px);
+        }
+        .cta-box.secondary .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.28);
+        }
+        .cta-box.secondary .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.38);
+        }
+
+        /* ── Interest-aptitude intro split ── */
+        .ia-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 22px;
+        }
+        @media (max-width: 520px) { .ia-split { grid-template-columns: 1fr; } }
+
+        .ia-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 18px;
+            text-align: center;
+        }
+        .ia-icon { font-size: 2rem; margin-bottom: 10px; }
+        .ia-card h4 {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .ia-card p {
+            font-size: 0.83rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── FAQ cards ── */
+        .faq-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            padding: 20px 24px;
+        }
+        .faq-q {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .faq-q::before {
+            content: 'Q';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            border-radius: 7px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.74;
+            padding-left: 36px;
+        }
+        .faq-a p { margin-bottom: 8px; }
+        .faq-a p:last-child { margin-bottom: 0; }
+
+        /* ── callout-blue / callout-green (standard palette) ── */
+        .callout-blue {
+            background: #f0f7ff;
+            border: 1px solid #bee3f8;
+            border-left: 4px solid #4299e1;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-blue p { font-size: 0.88rem; color: #2b6cb0; line-height: 1.68; margin-bottom: 6px; }
+        .callout-blue p:last-child { margin-bottom: 0; }
+
+        .callout-amber {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #f59e0b;
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-top: 18px;
+        }
+        .callout-amber p { font-size: 0.88rem; color: #92400e; line-height: 1.68; margin-bottom: 6px; }
+        .callout-amber p:last-child { margin-bottom: 0; }
+
+        @media (max-width: 600px) {
+            .stream-section-body { padding: 18px 16px; }
+            .stream-section-header { padding: 16px 18px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">CBSE Decision<span class="nav-dot">.</span>Hub</a>
+        <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Tools dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Tools
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="index.html" role="menuitem"><span>🧮</span>Percentage Calculator</a></li>
+                    <li><a href="target-marks.html" role="menuitem"><span>🎯</span>Target Marks</a></li>
+                    <li><a href="stream-eligibility.html" role="menuitem"><span>📊</span>Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html" role="menuitem"><span>🎓</span>Grade Predictor</a></li>
+                </ul>
+            </li>
+
+            <!-- Guides dropdown -->
+            <li class="nav-dropdown">
+                <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                    Guides
+                    <svg class="nav-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="nav-submenu" role="menu">
+                    <li><a href="best-of-5-rule-cbse-class-10.html" role="menuitem"><span>📚</span>Best of 5 Rule Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html" role="menuitem"><span>✅</span>Passing Criteria 2026</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html" role="menuitem"><span>📝</span>English Compulsory Rule</a></li>
+                    <li><a href="cbse-internal-assessment-marks.html" role="menuitem"><span>🏫</span>Internal Assessment</a></li>
+                    <li><a href="cbse-skill-subject-replacement-rule.html" role="menuitem"><span>💡</span>Skill Subject Rule</a></li>
+                    <li><a href="cbse-basic-vs-standard-maths-rules.html" role="menuitem"><span>📐</span>Basic vs Standard Maths</a></li>
+                    <li><a href="cbse-class-11-stream-selection-guide.html" role="menuitem"><span>🎯</span>Stream Selection Guide</a></li>
+                    <li><a href="cbse-class-10-results-day-guide.html" role="menuitem"><span>📋</span>Results Day Guide</a></li>
+                    <li><a href="cbse-class-10-re-evaluation-process.html" role="menuitem"><span>🔁</span>Re-Evaluation Process</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html" role="menuitem"><span>📱</span>DigiLocker Guide</a></li>
+                </ul>
+            </li>
+
+            <li><a href="maths-answer-key-2025.html">Answer Key</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+    <div class="hero-eyebrow">🎓 Complete Stream Guide · 2026</div>
+    <h1>How to Choose Your Stream After Class 10</h1>
+    <p class="hero-sub">Science, Commerce, or Humanities — the honest, career-first breakdown every CBSE student needs before results day.</p>
+</section>
+
+<!-- ════════ PAGE BODY ════════ -->
+<main class="page-body">
+
+    <!-- ══ SECTION 1: INTRODUCTION ══ -->
+    <section class="content-section">
+        <div class="section-label">Before You Decide</div>
+        <h2>Interest + Aptitude — Not Just Board Marks</h2>
+
+        <div class="highlight-card">
+            <p>Every year, lakhs of Class 10 students make a stream decision under the same pressure: they look at their percentage, listen to what relatives say, and pick whatever seems "safest" or "most respected." Most of them regret it by Class 11 second semester.</p>
+            <p>Your board marks matter for eligibility. They tell you which streams you <em>can</em> enter. But they should never be the primary reason you pick a stream. The student who scores 92% and chooses Science because it is expected — but genuinely loves writing and history — will struggle through two years of Physics. The student who scores 74% and chooses Humanities because they adore Political Science will build something far more valuable: genuine expertise in a field they care about.</p>
+            <p><strong>The right question is not "What stream do my marks allow?" — it is "What stream aligns with my interests and where I want to go in the next 10 years?"</strong> This guide helps you answer that question honestly, stream by stream.</p>
+        </div>
+
+        <h3>The Two Factors That Should Drive Your Decision</h3>
+
+        <div class="ia-split">
+            <div class="ia-card">
+                <div class="ia-icon">❤️</div>
+                <h4>Interest</h4>
+                <p>Which subjects genuinely engage you? When a chapter is interesting, you study it without being told. Which Class 10 subjects did you actually enjoy — not just perform well in?</p>
+            </div>
+            <div class="ia-card">
+                <div class="ia-icon">🧠</div>
+                <h4>Aptitude</h4>
+                <p>Where does your mind work naturally? Are you drawn to logic and calculation? Memorisation and analysis? Creativity and expression? Your natural thinking style predicts your Class 11–12 experience more than your Class 10 marks do.</p>
+            </div>
+        </div>
+
+        <div class="callout-blue">
+            <p><strong>Before reading further:</strong> Take 2 minutes and answer one question — "If I had to study one subject for the next 5 years, with no one watching and no marks attached, what would it be?" Your gut answer to that question is often the most accurate stream indicator you have.</p>
+        </div>
+
+        <h3>Your Three Options at a Glance</h3>
+
+        <div class="stream-cards">
+            <div class="stream-card science">
+                <span class="stream-card-emoji">🔬</span>
+                <span class="stream-card-tag">The Prestige Choice</span>
+                <h3>Science</h3>
+                <p>Physics, Chemistry, Maths or Biology. Widest career range but highest academic demand. Gateway to Engineering, Medicine, Data Science, Space Research.</p>
+            </div>
+            <div class="stream-card commerce">
+                <span class="stream-card-emoji">📊</span>
+                <span class="stream-card-tag">The Money Choice</span>
+                <h3>Commerce</h3>
+                <p>Accounts, Business Studies, Economics. Leads to CA, Investment Banking, MBA, Entrepreneurship. Strong Maths adds further options.</p>
+            </div>
+            <div class="stream-card humanities">
+                <span class="stream-card-emoji">🎭</span>
+                <span class="stream-card-tag">The Creative/Civil Choice</span>
+                <h3>Humanities</h3>
+                <p>Psychology, History, Political Science, Sociology. Leads to UPSC, Law, Journalism, Design. Often underestimated — frequently most fulfilling.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 2: SCIENCE STREAM ══ -->
+    <section class="content-section" id="science">
+        <div class="section-label">Stream 1 of 3</div>
+        <h2>Science Stream — The 'Prestige' Choice</h2>
+
+        <p>Science is the most sought-after stream after CBSE Class 10 — and for good reason. It genuinely offers the widest range of career options in India and globally. It also demands the most sustained academic effort of the three streams. Choose it because you want it, not because it looks impressive on a family WhatsApp status.</p>
+
+        <div class="stream-section science">
+            <div class="stream-section-header">
+                <div class="stream-section-icon">🔬</div>
+                <div>
+                    <h3>Science Stream — Full Breakdown</h3>
+                    <p>Physics · Chemistry · Maths or Biology · English · Optional 5th subject</p>
+                </div>
+            </div>
+            <div class="stream-section-body">
+
+                <h4>PCM vs PCB — Choose Your Specialisation</h4>
+
+                <div class="track-split">
+                    <div class="track-card pcm">
+                        <div class="track-card-label">PCM</div>
+                        <h5>Physics + Chemistry + Maths</h5>
+                        <ul>
+                            <li>Engineering (JEE Main / Advanced)</li>
+                            <li>Architecture (NATA, JEE Paper 2)</li>
+                            <li>Data Science &amp; AI (after B.Tech/BSc)</li>
+                            <li>Defence (NDA, AFCAT)</li>
+                            <li>Pure Sciences (BSc Physics/Maths)</li>
+                        </ul>
+                    </div>
+                    <div class="track-card pcb">
+                        <div class="track-card-label">PCB</div>
+                        <h5>Physics + Chemistry + Biology</h5>
+                        <ul>
+                            <li>Medicine (NEET — MBBS, BDS)</li>
+                            <li>Biotechnology &amp; Genetics</li>
+                            <li>Pharmacy (B.Pharm, D.Pharm)</li>
+                            <li>Nursing &amp; Allied Health Sciences</li>
+                            <li>Environmental &amp; Life Sciences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>High-Growth Careers from Science</h4>
+                <div class="career-chips">
+                    <span class="career-chip">🤖 Artificial Intelligence Engineer</span>
+                    <span class="career-chip">🚀 ISRO / Space Research</span>
+                    <span class="career-chip">🩺 Doctor (MBBS/MD)</span>
+                    <span class="career-chip">📊 Data Scientist</span>
+                    <span class="career-chip">⚙️ Software Engineer</span>
+                    <span class="career-chip">🔬 Research Scientist</span>
+                    <span class="career-chip">🏗️ Civil / Structural Engineer</span>
+                    <span class="career-chip">💊 Pharmacist / Biotech Researcher</span>
+                </div>
+
+                <h4>Who Science Is Right For</h4>
+                <p>You genuinely enjoyed Maths and Science in Class 10. You are comfortable with hours of problem-solving and self-study. You are targeting a specific technical career (engineering, medicine, data science) or want to keep your options completely open. You scored well in Maths and Science — typically 70%+ in those subjects is a comfortable baseline, though schools may require more.</p>
+
+                <h4>Who Should Think Twice</h4>
+                <p>You are choosing Science because of parental pressure or because "everyone does it." You scored below 60% in Maths or Science consistently. You know you enjoy History, Literature, or Business more than any Science subject. Choosing Science when your interest and ability lie elsewhere means two extremely difficult years followed by career choices driven by avoidance rather than ambition.</p>
+
+                <div class="elig-row">
+                    <span>📋</span>
+                    <span><strong>Eligibility note:</strong> PCM requires <strong>Mathematics Standard</strong> in Class 10. Basic Maths students cannot take Maths in Class 11. See the <a href="cbse-basic-vs-standard-maths-rules.html" style="color:var(--primary);font-weight:600;">Basic vs Standard guide</a> for the upgrade path.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 3: COMMERCE STREAM ══ -->
+    <section class="content-section" id="commerce">
+        <div class="section-label">Stream 2 of 3</div>
+        <h2>Commerce Stream — The 'Money' Choice</h2>
+
+        <p>Commerce has evolved dramatically. It is no longer just "accountancy and shop-keeping." The Commerce stream today is the launchpad for some of the highest-earning careers in India — Chartered Accountancy, Investment Banking, Management Consulting, and Entrepreneurship. It is also more intellectually demanding than most students expect before entering it.</p>
+
+        <div class="stream-section commerce">
+            <div class="stream-section-header">
+                <div class="stream-section-icon">📊</div>
+                <div>
+                    <h3>Commerce Stream — Full Breakdown</h3>
+                    <p>Accountancy · Business Studies · Economics · English · Maths or IP</p>
+                </div>
+            </div>
+            <div class="stream-section-body">
+
+                <h4>Core Subjects</h4>
+                <p><strong>Accountancy</strong> — Financial statements, balance sheets, journal entries. Requires precision and pattern recognition. Forms the foundation of CA and Finance careers.</p>
+                <p><strong>Business Studies</strong> — Management principles, business organisation, marketing, HRM. Conceptual and analytical. Directly relevant to MBA entrance and entrepreneurship.</p>
+                <p><strong>Economics</strong> — Micro and macroeconomics, market structures, national income. The most academic of the three; rewards students who enjoy logical analysis.</p>
+
+                <h4>High-Growth Careers from Commerce</h4>
+                <div class="career-chips">
+                    <span class="career-chip">📘 Chartered Accountant (CA)</span>
+                    <span class="career-chip">💹 Investment Banker</span>
+                    <span class="career-chip">🏢 MBA / Management Consultant</span>
+                    <span class="career-chip">🚀 Startup Founder / Entrepreneur</span>
+                    <span class="career-chip">📈 Stock Market Analyst</span>
+                    <span class="career-chip">🏦 Banker / Financial Planner</span>
+                    <span class="career-chip">📦 Supply Chain Manager</span>
+                    <span class="career-chip">💻 FinTech / Business Analyst</span>
+                </div>
+
+                <h4>The Maths vs. Non-Maths Commerce Conflict</h4>
+
+                <div class="conflict-banner">
+                    <div class="conflict-icon">⚠️</div>
+                    <div class="conflict-body">
+                        <h5>Critical Decision: Do You Take Maths in Commerce?</h5>
+                        <p>Most Commerce students choose between taking Maths (or Applied Maths) as their 5th subject, or replacing it with Informatics Practices (IP) or Physical Education. This choice has long-term consequences. If you want to pursue CA, CFA, Investment Banking, or an Economics Honours degree, <strong>Maths in Commerce is strongly advisable</strong> — sometimes even required. If you are targeting management, marketing, or HR, non-Maths Commerce is perfectly viable. Students who chose Basic Maths in Class 10 are typically ineligible for Core Maths in Class 11 Commerce — only Standard Maths qualifies.</p>
+                    </div>
+                </div>
+
+                <div class="track-split" style="margin-top:16px;">
+                    <div class="track-card math">
+                        <div class="track-card-label">Commerce + Maths</div>
+                        <h5>With Mathematics / Applied Maths</h5>
+                        <ul>
+                            <li>CA Foundation, CA Inter (quantitative advantage)</li>
+                            <li>Economics Honours (DU, BHU, JMI)</li>
+                            <li>BBA with specialisation in Finance</li>
+                            <li>CFA, CPA, Actuarial Science</li>
+                        </ul>
+                    </div>
+                    <div class="track-card nomth">
+                        <div class="track-card-label">Commerce Without Maths</div>
+                        <h5>With IP or Physical Education</h5>
+                        <ul>
+                            <li>BBA, B.Com, BBM</li>
+                            <li>Event Management, Fashion Management</li>
+                            <li>Hotel Management, Travel &amp; Tourism</li>
+                            <li>BJMC (Journalism &amp; Mass Communication)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="elig-row" style="margin-top:16px;">
+                    <span>📋</span>
+                    <span><strong>Eligibility note:</strong> Most schools admit students with 55–60%+ for Commerce. Students with Basic Maths in Class 10 are generally not eligible for Maths-based Commerce — check with your target school directly.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 4: HUMANITIES ══ -->
+    <section class="content-section" id="humanities">
+        <div class="section-label">Stream 3 of 3</div>
+        <h2>Humanities / Arts — The 'Creative &amp; Civil' Choice</h2>
+
+        <p>Humanities is the most underestimated stream in India. It is chosen last, recommended reluctantly, and yet it produces the country's civil servants, judges, journalists, psychologists, policymakers, designers, filmmakers, and authors. The careers it opens are not "backup" careers — they are some of the most impactful and sought-after roles in the country. If Humanities aligns with your interest and aptitude, do not let anyone talk you out of it.</p>
+
+        <div class="stream-section humanities">
+            <div class="stream-section-header">
+                <div class="stream-section-icon">🎭</div>
+                <div>
+                    <h3>Humanities / Arts Stream — Full Breakdown</h3>
+                    <p>History · Political Science · Psychology · Geography · Sociology · Economics</p>
+                </div>
+            </div>
+            <div class="stream-section-body">
+
+                <h4>What You Study</h4>
+                <p><strong>History</strong> — Indian and world history, civilisations, modern India. Trains analytical reading, source criticism, and long-form argumentation. Essential for UPSC preparation.</p>
+                <p><strong>Political Science</strong> — Indian Constitution, international relations, political theory. Directly relevant to law, civil services, journalism, and public policy careers.</p>
+                <p><strong>Psychology</strong> — One of the most popular electives. Covers human behaviour, cognition, mental health, and research methods. Opens pathways to clinical psychology, counselling, HR, and UX research.</p>
+                <p><strong>Economics</strong> (available in Humanities too) — A crossover subject that enables finance and public policy careers alongside a Humanities base.</p>
+                <p><strong>Geography</strong> — Physical and human geography, maps, environment. Useful for urban planning, civil services, and environmental careers.</p>
+
+                <h4>High-Growth Careers from Humanities</h4>
+                <div class="career-chips">
+                    <span class="career-chip">🏛️ IAS / IPS / IFS (UPSC)</span>
+                    <span class="career-chip">⚖️ Lawyer / Advocate</span>
+                    <span class="career-chip">🧠 Psychologist / Counsellor</span>
+                    <span class="career-chip">📰 Journalist / Author</span>
+                    <span class="career-chip">🎨 Designer / UX Researcher</span>
+                    <span class="career-chip">🎬 Filmmaker / Content Creator</span>
+                    <span class="career-chip">🗳️ Politician / Policy Analyst</span>
+                    <span class="career-chip">🌐 Social Worker / NGO Leader</span>
+                </div>
+
+                <h4>Who Humanities Is Right For</h4>
+                <p>You read widely outside of school. You are drawn to current affairs, social issues, creative writing, or human behaviour. You found History, Geography, or Social Science engaging in Class 10. You are interested in law, civil services, journalism, psychology, or design. You prefer reading and writing over numerical problem-solving.</p>
+
+                <div class="elig-row">
+                    <span>📋</span>
+                    <span><strong>Eligibility note:</strong> Humanities typically has the most accessible admission criteria — many schools admit students across all percentage ranges. The barrier is willingness, not marks.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 5: COMPARISON TABLE ══ -->
+    <section class="content-section">
+        <div class="section-label">Side by Side</div>
+        <h2>Science vs Commerce vs Humanities — Full Comparison</h2>
+
+        <p>Use this table to compare the three streams quickly across the factors that actually matter when making your decision.</p>
+
+        <div class="compare-wrap">
+            <table class="compare">
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th class="science-col">🔬 Science</th>
+                        <th class="commerce-col">📊 Commerce</th>
+                        <th class="humanities-col">🎭 Humanities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-label">Core Subjects</td>
+                        <td class="sci-val">Physics, Chemistry, Maths/Biology</td>
+                        <td class="com-val">Accountancy, Business Studies, Economics</td>
+                        <td class="hum-val">History, Pol. Science, Psychology, Geography</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Typical Difficulty</td>
+                        <td><span class="diff-hard">High</span> — requires strong conceptual depth</td>
+                        <td><span class="diff-medium">Medium</span> — analytical + memorisation balance</td>
+                        <td><span class="diff-easy">Medium–Low</span> — reading, writing, analysis</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Typical Eligibility Cutoff</td>
+                        <td class="sci-val">70%+ (often 75–80% for top schools)</td>
+                        <td class="com-val">55–65% (varies by school)</td>
+                        <td class="hum-val">Open — most schools have no cutoff</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Maths Requirement</td>
+                        <td class="sci-val">Mandatory for PCM; optional for PCB</td>
+                        <td class="com-val">Optional but advisable for Finance/CA</td>
+                        <td class="hum-val">Not required; Economics available optionally</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Class 11–12 Workload</td>
+                        <td><span class="diff-hard">Heaviest</span> — 5–8 hrs daily study typical</td>
+                        <td><span class="diff-medium">Moderate</span> — 3–5 hrs daily study typical</td>
+                        <td><span class="diff-easy">Moderate</span> — reading-intensive but manageable</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Top Competitive Exams</td>
+                        <td class="sci-val">JEE, NEET, GATE, BITSAT, NDA</td>
+                        <td class="com-val">CA Foundation, CFA, CAT, CLAT (Economics)</td>
+                        <td class="hum-val">UPSC, CLAT, NLU, Mass Comm, NID/NIFT</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Highest-Salary Careers</td>
+                        <td class="sci-val">AI Engineer, Doctor, Space Scientist</td>
+                        <td class="com-val">CA, Investment Banker, CFA Charterholder</td>
+                        <td class="hum-val">IAS Officer, Senior Lawyer, Journalist</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Switches to Other Streams</td>
+                        <td class="sci-val">Can move to Commerce/Humanities later; reverse is harder</td>
+                        <td class="com-val">Can add Economics or move to Humanities</td>
+                        <td class="hum-val">Cannot switch to Science — plan ahead</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Best Suited For</td>
+                        <td class="sci-val">Logical thinkers, problem-solvers, future engineers/doctors</td>
+                        <td class="com-val">Analytical minds with interest in business/money</td>
+                        <td class="hum-val">Readers, writers, debaters, empathetic thinkers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 6: MYTHS ══ -->
+    <section class="content-section">
+        <div class="section-label">Myth Busting</div>
+        <h2>Common Myths That Ruin Good Decisions</h2>
+
+        <p>These are the four myths that lead thousands of students into the wrong stream every year. Read each one carefully — at least one of them is probably influencing your thinking right now.</p>
+
+        <div class="myth-grid">
+
+            <div class="myth-card">
+                <div class="myth-side false-col">
+                    <span class="myth-badge">❌ Myth</span>
+                    <p>"Only toppers and intelligent students should take Science."</p>
+                </div>
+                <div class="myth-side truth-col">
+                    <span class="myth-badge">✅ Reality</span>
+                    <p>Science requires sustained effort, not genius. Many excellent engineers and doctors were average Class 10 performers who were genuinely passionate about their subject. Interest drives the work; the work creates the results.</p>
+                </div>
+            </div>
+
+            <div class="myth-card">
+                <div class="myth-side false-col">
+                    <span class="myth-badge">❌ Myth</span>
+                    <p>"Arts / Humanities is only for students who failed or couldn't get Science."</p>
+                </div>
+                <div class="myth-side truth-col">
+                    <span class="myth-badge">✅ Reality</span>
+                    <p>India's IAS officers, Supreme Court judges, published authors, and award-winning journalists are mostly Humanities alumni. The stream produces careers of extraordinary impact and income. Choosing it intentionally is a sign of self-awareness, not weakness.</p>
+                </div>
+            </div>
+
+            <div class="myth-card">
+                <div class="myth-side false-col">
+                    <span class="myth-badge">❌ Myth</span>
+                    <p>"Commerce is just about becoming a CA or going to business school. Nothing else."</p>
+                </div>
+                <div class="myth-side truth-col">
+                    <span class="myth-badge">✅ Reality</span>
+                    <p>Commerce graduates go on to become startup founders, investment bankers, policy economists, FinTech professionals, international trade specialists, and more. The stream is far broader than its reputation suggests.</p>
+                </div>
+            </div>
+
+            <div class="myth-card">
+                <div class="myth-side false-col">
+                    <span class="myth-badge">❌ Myth</span>
+                    <p>"If I take Science, all doors stay open. Other streams close doors."</p>
+                </div>
+                <div class="myth-side truth-col">
+                    <span class="myth-badge">✅ Reality</span>
+                    <p>Science does open many technical paths — but it also closes others if you spend two years struggling through subjects you dislike. A Commerce or Humanities graduate who is excellent in their field will consistently outperform a Science graduate who chose it reluctantly. Every stream opens its own doors when you engage with it seriously.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="callout-amber">
+            <p><strong>The one real constraint:</strong> Switching from Humanities to Science after Class 11 is essentially impossible within the CBSE system. The reverse (Science to Humanities or Commerce) is difficult but sometimes possible. If you are undecided between Science and another stream, Science keeps more technical options open — but only if you are willing to do the work it requires.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 7: CTAs ══ -->
+    <section class="content-section">
+        <div class="section-label">Use Our Tools</div>
+        <h2>Check Your Eligibility Before Deciding</h2>
+
+        <p>Your interest and aptitude should drive the choice. But before you finalise anything, verify that your Class 10 marks actually qualify you for the stream and specific subject combinations you want. Our tools do the calculation for you.</p>
+
+        <div class="cta-pair">
+            <div class="cta-box primary">
+                <div class="cta-eyebrow">📊 Free Tool</div>
+                <h3>Not sure if your marks are enough? Check Stream Eligibility with our Tool</h3>
+                <p>Enter your subject marks and see exactly which streams and combinations you qualify for — based on your actual Best of 5 percentage and subject scores.</p>
+                <a href="stream-eligibility.html" class="cta-btn">Check My Stream Eligibility →</a>
+            </div>
+            <div class="cta-box secondary">
+                <div class="cta-eyebrow">📐 Basic Maths Students</div>
+                <h3>Did you take Basic Maths? Read the Standard vs Basic Maths Rules</h3>
+                <p>Basic Maths in Class 10 affects your eligibility for PCM and Maths-based Commerce. Know the official rules — and whether you can still upgrade — before making any stream decision.</p>
+                <a href="cbse-basic-vs-standard-maths-rules.html" class="cta-btn">Read Basic vs Standard Guide →</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 8: CHECKLIST ══ -->
+    <section class="content-section">
+        <div class="section-label">Action Checklist</div>
+        <h2>5 Questions to Ask Yourself Before Picking a Stream</h2>
+
+        <p>Work through this checklist honestly — ideally with a pen and paper. Your answers will clarify which stream you are genuinely suited for, separate from external pressure.</p>
+
+        <ol class="checklist">
+            <li>
+                <strong>Which Class 10 subjects did I actually enjoy studying, not just score well in?</strong> Write down the two subjects that felt engaging even when you did not have an exam coming. Those subjects map directly onto streams — Maths/Science → Science stream; Accounts/Economics → Commerce; History/Pol. Science/Psychology → Humanities.
+            </li>
+            <li>
+                <strong>Where do I want to be professionally at age 28?</strong> Pick one career you would genuinely be excited about — not the one that sounds most impressive, but the one that excites you when you imagine doing it daily. Trace that career back to the stream it requires. That stream is your answer.
+            </li>
+            <li>
+                <strong>Am I choosing this stream for myself, or because of someone else?</strong> If the first reason that comes to mind is "my parents want me to" or "my friends are taking it" — that is a warning sign. Those are valid inputs, not decision-makers. You will live with this choice every school day for two years.
+            </li>
+            <li>
+                <strong>Do I have the Maths eligibility I need for my first-choice stream?</strong> If you want PCM or Maths-based Commerce, confirm you have Standard Maths on your Class 10 record. If you have Basic Maths, understand your options before the admissions window opens.
+            </li>
+            <li>
+                <strong>Have I researched what Class 11 actually looks like in this stream?</strong> Talk to a Class 11 or 12 student in the stream you are considering. Ask them what a typical week of study looks like. Ask them what they wish they had known. Their lived experience will tell you more than any guide — including this one.
+            </li>
+        </ol>
+
+        <div class="callout-blue" style="margin-top: 8px;">
+            <p><strong>One final thought:</strong> No stream is a life sentence. Commerce students go to engineering college. Science students become civil servants. Humanities graduates build tech startups. The stream gives you a foundation and two years of depth — your career is built over decades. Choose the foundation that genuinely fits you, do the work, and the doors will open.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 9: FAQ ══ -->
+    <section class="content-section">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2>Stream Selection FAQs</h2>
+
+        <div class="faq-stack">
+
+            <div class="faq-card">
+                <div class="faq-q">Can I change my stream in Class 11 after I have already joined?</div>
+                <div class="faq-a">
+                    <p>In some cases, yes — but it is difficult and time-sensitive. Most schools allow stream changes within the first 2–4 weeks of Class 11, subject to availability of seats and the school's policy. After that window closes, changing streams typically means leaving the school or repeating the year.</p>
+                    <p>The practical reality: if you join Science and switch to Commerce after 3 weeks, you have missed foundational content in Accountancy and Business Studies. Budget time to catch up — and confirm the school's policy before assuming you can change easily. Switching from Humanities to Science mid-year is functionally impossible.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">What if my marks are low — which stream should I choose?</div>
+                <div class="faq-a">
+                    <p>Low marks do not disqualify you from making a good stream choice — they just narrow your eligibility for certain schools. If your percentage is below the Science stream cutoff at your target school, check whether a different school in the same area offers Science with a lower cutoff, or honestly assess whether Commerce or Humanities might be a better fit for your interests anyway.</p>
+                    <p>Remember: most students with low marks who choose Science because they "want to keep options open" end up with two very stressful years and ultimately choose Commerce or Arts at the degree level. If your interest genuinely lies elsewhere, low marks are an honest nudge in the right direction — not a punishment.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Is Maths compulsory for Commerce in Class 11?</div>
+                <div class="faq-a">
+                    <p>No — Maths is not compulsory for Commerce in Class 11. Most Commerce students choose between Mathematics, Applied Mathematics, Informatics Practices (IP), or Physical Education as their 5th subject. Commerce without Maths is a completely legitimate and commonly chosen path.</p>
+                    <p>However, if you plan to pursue CA, CFA, Economics Honours, or any Finance-heavy career, having Maths in Class 11–12 gives you a significant advantage — both in terms of course eligibility and in handling the quantitative content in those fields. Students who took Basic Maths in Class 10 are typically not eligible for Core Maths in Class 11 — only Standard Maths qualifies.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Can a Humanities student become a doctor or engineer later?</div>
+                <div class="faq-a">
+                    <p>Not through the standard NEET or JEE routes — these require Physics, Chemistry, and Biology/Maths in Class 11–12, which Humanities does not include. However, Humanities students can pursue careers adjacent to medicine (healthcare management, hospital administration, public health policy) or technology (tech journalism, UX research, product management) without the standard Science route.</p>
+                    <p>If a student takes Class 11–12 as a Humanities student and then genuinely wants to pivot to Science, the only realistic path is to re-do Class 11–12 with Science subjects — which some students do, though it is a costly detour.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Does my Class 10 percentage affect which stream I can get in Class 11?</div>
+                <div class="faq-a">
+                    <p>Yes — your Class 10 percentage (calculated using the Best of 5 rule) is the primary eligibility criterion that schools use for Class 11 admission. Science stream typically requires the highest percentage (often 70–80%+ at competitive schools). Commerce is typically 55–65%+. Humanities generally has no percentage cutoff at most schools.</p>
+                    <p>Individual subject scores also matter — many Science schools require 70%+ specifically in Maths and Science. Use our <a href="stream-eligibility.html" style="color:var(--primary);font-weight:600;">Stream Eligibility Tool</a> to check your exact eligibility based on your marks.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-q">Is it true that PCMB (all four — Physics, Chemistry, Maths AND Biology) is an option?</div>
+                <div class="faq-a">
+                    <p>Yes — PCMB is offered by some schools and allows students to keep both engineering (JEE) and medical (NEET) options open simultaneously. However, it is an extremely heavy workload — you are essentially studying five difficult subjects instead of four. Most students who attempt PCMB find it exhausting and end up focusing on one track anyway. Unless you have a very specific reason to keep both options open and are confident in your capacity to handle the workload, choosing either PCM or PCB and committing fully is the smarter path for most students.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ SECTION 10: RELATED TOOLS ══ -->
+    <section class="content-section">
+        <div class="section-label">Related Tools &amp; Guides</div>
+        <h2>Everything You Need Before Results Day</h2>
+
+        <div class="tools-grid">
+            <a href="stream-eligibility.html" class="tool-card">
+                <span class="tool-card-icon">📊</span>
+                <h3>Stream Eligibility Tool</h3>
+                <p>Enter your marks and see exactly which Class 11 streams and combinations you qualify for.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="index.html" class="tool-card">
+                <span class="tool-card-icon">🧮</span>
+                <h3>Best of 5 Calculator</h3>
+                <p>Calculate your official CBSE percentage — the number schools use for admission cutoffs.</p>
+                <span class="tool-badge">Live Tool</span>
+            </a>
+            <a href="cbse-basic-vs-standard-maths-rules.html" class="tool-card">
+                <span class="tool-card-icon">📐</span>
+                <h3>Basic vs Standard Maths</h3>
+                <p>Did you take Basic Maths? Find out what it means for PCM and Maths-based Commerce eligibility.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-skill-subject-replacement-rule.html" class="tool-card">
+                <span class="tool-card-icon">🎯</span>
+                <h3>Skill Subject Replacement Rule</h3>
+                <p>How IT or AI can boost your Best of 5 percentage and improve your stream eligibility standing.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-class-10-results-day-guide.html" class="tool-card">
+                <span class="tool-card-icon">📋</span>
+                <h3>Results Day Guide</h3>
+                <p>What to do from the moment CBSE Class 10 results are declared — stream, percentage, next steps.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+            <a href="cbse-class-10-passing-criteria-2026.html" class="tool-card">
+                <span class="tool-card-icon">✅</span>
+                <h3>Passing Criteria 2026</h3>
+                <p>The 33% rule, compartment conditions, and how your subject choices affect your overall result.</p>
+                <span class="tool-badge">Full Guide</span>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">CBSE Decision<span class="dot">.</span>Hub</a>
+                <p>CBSE Decision Hub provides free academic tools and guides for CBSE Class 10 students — calculators, stream guidance, grading rules, and result tools.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="index.html">🧮 % Calculator</a></li>
+                    <li><a href="target-marks.html">🎯 Target Marks</a></li>
+                    <li><a href="stream-eligibility.html">📊 Stream Eligibility</a></li>
+                    <li><a href="cbse-grade-predictor.html">🎓 Grade Predictor</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="best-of-5-rule-cbse-class-10.html">📚 Best of 5 Guide</a></li>
+                    <li><a href="cbse-class-10-passing-criteria-2026.html">✅ Passing Criteria 2026</a></li>
+                    <li><a href="cbse-english-compulsory-rule.html">📝 English Rule</a></li>
+                    <li><a href="cbse-internal-assessment-marks.html">🏫 Internal Assessment</a></li>
+                    <li><a href="cbse-skill-subject-replacement-rule.html">💡 Skill Subject Rule</a></li>
+                    <li><a href="cbse-basic-vs-standard-maths-rules.html">📐 Basic vs Standard Maths</a></li>
+                    <li><a href="cbse-class-11-stream-selection-guide.html">🎯 Stream Selection Guide</a></li>
+                    <li><a href="cbse-class-10-results-day-guide.html">📋 Results Day Guide</a></li>
+                    <li><a href="cbse-class-10-re-evaluation-process.html">🔁 Re-Evaluation Process</a></li>
+                    <li><a href="how-to-check-cbse-result-on-digilocker.html">📱 DigiLocker Guide</a></li>
+                    <li><a href="maths-answer-key-2025.html">📝 Maths Answer Key</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="contact.html">✉️ Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>© 2026 CBSE Decision Hub. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══ Nav logic ══ -->
+<script src="navigation.js"></script>
+
+<!-- ════════ STRUCTURED DATA ════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I change my stream in Class 11 after I have already joined?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In some cases yes — most schools allow stream changes within the first 2–4 weeks of Class 11, subject to seat availability. After that window, changing streams typically requires leaving the school or repeating the year. Switching from Humanities to Science mid-year is functionally impossible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my marks are low — which stream should I choose after Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Low marks narrow your eligibility for certain schools but do not determine your stream choice. Science typically requires 70–80%+, Commerce 55–65%+, and Humanities generally has no cutoff. More importantly, choose the stream that aligns with your genuine interests — students who force themselves into Science with low aptitude for it typically struggle more than students who choose Commerce or Humanities intentionally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Maths compulsory for Commerce in Class 11 CBSE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Maths is not compulsory for Commerce in Class 11. Most Commerce students choose between Mathematics, Applied Mathematics, or Informatics Practices as their 5th subject. However, Maths is strongly advisable for students targeting CA, CFA, Economics Honours, or Investment Banking. Students who took Basic Maths in Class 10 are typically not eligible for Core Maths in Class 11 Commerce."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the eligibility for Science stream after CBSE Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most schools require 70–80%+ Best of 5 percentage for Science stream admission. Individual subject requirements typically include 70%+ in Mathematics and Science specifically. For PCM (Physics, Chemistry, Maths), Mathematics Standard in Class 10 is mandatory — students with Basic Maths are not eligible for Maths in Class 11."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which stream has the highest salary careers after Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All three streams lead to high-income careers in their respective domains. Science stream leads to AI Engineers, Doctors, Space Scientists, and Data Scientists. Commerce leads to Chartered Accountants, Investment Bankers, and CFAs. Humanities leads to IAS Officers, Senior Lawyers, and Senior Journalists. Salary potential is determined more by dedication, exam performance, and career choices within a stream than by the stream itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Humanities / Arts a good stream choice after Class 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Humanities is one of the most underestimated streams in India. It leads to careers as IAS/IPS officers, Supreme Court lawyers, journalists, psychologists, designers, policy analysts, and authors. The stream is rigorous, intellectually rewarding, and produces some of India's most impactful professionals. Choosing Humanities intentionally and performing well in it is far better than choosing Science reluctantly and struggling through it."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Choose Stream After Class 10 CBSE 2026: Science vs Commerce vs Humanities",
+  "description": "Struggling to choose between Science, Commerce, and Humanities? Our 2026 guide breaks down the subjects, career paths, and eligibility for each stream after CBSE Class 10.",
+  "keywords": "how to choose stream after class 10 CBSE 2026, science vs commerce vs arts, PCM vs PCB career options, stream selection criteria, high salary careers after class 10",
+  "author": { "@type": "Organization", "name": "CBSE Decision Hub", "url": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+  "publisher": { "@type": "Organization", "name": "CBSE Decision Hub", "url": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-02-27",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-11-stream-selection-guide.html" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shadowrexx.github.io/cbse-class-10-tools/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-10-results-day-guide.html" },
+    { "@type": "ListItem", "position": 3, "name": "Class 11 Stream Selection Guide 2026", "item": "https://shadowrexx.github.io/cbse-class-10-tools/cbse-class-11-stream-selection-guide.html" }
+  ]
+}
+</script>
+
+</body>
+</html>
