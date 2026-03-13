@@ -207,6 +207,32 @@ body {
     color: #fff;
 }
 
+/* Divider between guide items and View All link */
+.nav-submenu .nav-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 5px 6px;
+}
+
+/* View All Guides link — stands out from regular items */
+.nav-submenu .nav-view-all a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+    padding: 9px 12px;
+    color: #c4b5fd;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 9px;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-submenu .nav-view-all a:hover {
+    background: rgba(255, 255, 255, 0.13);
+    color: #fff;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
